@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolCard from "@/components/ToolCard";
@@ -6,9 +6,10 @@ import { getCategoryMeta, getToolsByCategory } from "@/config/tools";
 import type { ToolCategory } from "@/config/tools";
 
 const CategoryPage = () => {
-  const { slug } = useParams<{ slug: string }>();
-  const cat = getCategoryMeta(slug || "");
-  const tools = getToolsByCategory(slug as ToolCategory);
+  const location = useLocation();
+  const slug = location.pathname.replace("/", "") as ToolCategory;
+  const cat = getCategoryMeta(slug);
+  const tools = getToolsByCategory(slug);
 
   if (!cat) return <Layout><div className="container py-12 text-center text-muted-foreground">Category not found.</div></Layout>;
 

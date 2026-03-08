@@ -1,7 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Search, Menu, X, ChevronDown, Zap } from "lucide-react";
+import { Search, Menu, X, ChevronDown, Zap, Sun, Moon } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import { tools, categories, getPopularTools } from "@/config/tools";
+import { tools, categories } from "@/config/tools";
+import { useTheme } from "@/hooks/useTheme";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,6 +11,7 @@ const Header = () => {
   const [catOpen, setCatOpen] = useState(false);
   const navigate = useNavigate();
   const searchRef = useRef<HTMLDivElement>(null);
+  const { theme, toggleTheme } = useTheme();
 
   const filtered = query.length > 1
     ? tools.filter(t => t.title.toLowerCase().includes(query.toLowerCase()) || t.keywords.some(k => k.includes(query.toLowerCase()))).slice(0, 8)
@@ -30,7 +32,7 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2.5 shrink-0">
           <div className="h-9 w-9 rounded-xl hero-gradient flex items-center justify-center shadow-lg shadow-primary/20">
-            <Zap className="h-4.5 w-4.5 text-primary-foreground" />
+            <Zap className="h-4 w-4 text-primary-foreground" />
           </div>
           <span className="font-display font-bold text-xl text-foreground">ToolVerse</span>
         </Link>
@@ -90,6 +92,11 @@ const Header = () => {
             </div>
           )}
         </div>
+
+        {/* Theme toggle */}
+        <button onClick={toggleTheme} className="h-9 w-9 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-all" aria-label="Toggle theme">
+          {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
+        </button>
 
         {/* Mobile menu */}
         <button className="lg:hidden p-2 rounded-lg hover:bg-secondary/60 transition-all" onClick={() => setMenuOpen(!menuOpen)}>

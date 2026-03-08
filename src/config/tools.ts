@@ -144,6 +144,23 @@ export const tools: ToolMeta[] = [
   { slug: "contrast-checker", title: "Contrast Checker", description: "Check color contrast ratios for WCAG accessibility compliance.", category: "design-tools", keywords: ["contrast", "wcag", "accessibility", "a11y"], isNew: true },
   { slug: "rgb-to-cmyk", title: "RGB to CMYK Converter", description: "Convert RGB color values to CMYK for print design.", category: "design-tools", keywords: ["rgb", "cmyk", "print", "color"], isNew: true },
   { slug: "image-color-picker", title: "Image Color Picker", description: "Pick colors from uploaded images and get HEX, RGB values.", category: "design-tools", keywords: ["image", "color", "picker", "eyedropper"], isNew: true },
+
+  // Additional tools to reach 100+
+  { slug: "electricity-cost-calculator", title: "Electricity Cost", description: "Calculate electricity cost based on wattage, usage hours, and rate.", category: "calculators", keywords: ["electricity", "cost", "power", "bill"], isNew: true },
+  { slug: "square-root-calculator", title: "Square Root Calculator", description: "Calculate square roots and nth roots of any number.", category: "calculators", keywords: ["square", "root", "math", "sqrt"], isNew: true },
+  { slug: "exponent-calculator", title: "Exponent Calculator", description: "Calculate powers and exponents of any base number.", category: "calculators", keywords: ["exponent", "power", "math"], isNew: true },
+  { slug: "ratio-calculator", title: "Ratio Calculator", description: "Solve ratios, scale values, and find missing ratio terms.", category: "calculators", keywords: ["ratio", "proportion", "scale"], isNew: true },
+  { slug: "frequency-converter", title: "Frequency Converter", description: "Convert between Hz, kHz, MHz, GHz, and RPM.", category: "converters", keywords: ["frequency", "hertz", "mhz", "ghz"], isNew: true },
+  { slug: "data-transfer-rate-converter", title: "Data Rate Converter", description: "Convert between bps, Kbps, Mbps, Gbps, and bytes per second.", category: "converters", keywords: ["data", "rate", "mbps", "bandwidth"], isNew: true },
+  { slug: "text-to-binary", title: "Text to Binary", description: "Convert text to binary representation and binary back to text.", category: "text-tools", keywords: ["text", "binary", "ascii", "convert"], isNew: true },
+  { slug: "word-frequency-counter", title: "Word Frequency Counter", description: "Count how often each word appears in your text.", category: "text-tools", keywords: ["word", "frequency", "count", "analysis"], isNew: true },
+  { slug: "text-to-morse-code", title: "Morse Code Translator", description: "Convert text to Morse code and Morse code back to text.", category: "text-tools", keywords: ["morse", "code", "translate", "dots"], isNew: true },
+  { slug: "qr-text-generator", title: "QR Code Generator", description: "Generate QR codes from any text or URL using Canvas.", category: "generators", keywords: ["qr", "code", "barcode", "url"], isNew: true, popular: true },
+  { slug: "password-strength-checker", title: "Password Strength Checker", description: "Check how strong your password is with detailed analysis.", category: "generators", keywords: ["password", "strength", "security", "check"], isNew: true },
+  { slug: "cron-expression-parser", title: "Cron Expression Parser", description: "Parse cron expressions and see next scheduled run times.", category: "developer-tools", keywords: ["cron", "schedule", "job", "expression"], isNew: true },
+  { slug: "chmod-calculator", title: "Chmod Calculator", description: "Calculate Unix file permissions in numeric and symbolic notation.", category: "developer-tools", keywords: ["chmod", "permissions", "unix", "linux"], isNew: true },
+  { slug: "css-unit-converter", title: "CSS Unit Converter", description: "Convert between px, rem, em, vh, vw, and other CSS units.", category: "design-tools", keywords: ["css", "px", "rem", "em", "unit"], isNew: true },
+  { slug: "box-shadow-generator", title: "Box Shadow Generator", description: "Generate CSS box-shadow with live preview and copy code.", category: "design-tools", keywords: ["shadow", "css", "box-shadow", "design"], isNew: true, popular: true },
 ];
 
 export const getToolsByCategory = (cat: ToolCategory) => tools.filter(t => t.category === cat);

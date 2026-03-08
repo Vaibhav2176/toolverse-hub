@@ -105,14 +105,14 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Quick Access Strip - redesigned */}
-        <div className="container py-4">
-            <div className="flex items-center gap-3 overflow-x-auto no-scrollbar">
+        {/* Quick Access Strip */}
+        <div className="container py-3">
+            <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar">
               <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider shrink-0">Quick Access</span>
               {popularTools.map((t, i) => (
                 <motion.div key={t.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.06 }}>
-                  <Link to={`/tools/${t.slug}`} className="quick-access-chip shrink-0 group">
-                    <span>{t.title}</span>
+                  <Link to={`/tools/${t.slug}`} className="shrink-0 inline-flex items-center justify-center rounded-full border border-border bg-card/80 backdrop-blur-sm px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:shadow-md hover:bg-card">
+                    {t.title}
                   </Link>
                 </motion.div>
               ))}

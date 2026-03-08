@@ -92,6 +92,9 @@ export const tools: ToolMeta[] = [
   { slug: "random-color-generator", title: "Random Color Generator", description: "Generate random colors in HEX, RGB, and HSL formats.", category: "generators", keywords: ["color", "hex", "rgb"] },
   { slug: "username-generator", title: "Username Generator", description: "Generate creative and unique usernames for any platform.", category: "generators", keywords: ["username", "name", "handle"] },
   { slug: "business-name-generator", title: "Business Name Generator", description: "Generate creative business name ideas for your startup.", category: "generators", keywords: ["business", "name", "startup"] },
+  { slug: "lorem-ipsum-generator", title: "Lorem Ipsum Generator", description: "Generate placeholder text in paragraphs, sentences, or words.", category: "generators", keywords: ["lorem", "ipsum", "placeholder", "dummy"], isNew: true },
+  { slug: "quotes-generator", title: "Quotes Generator", description: "Get random inspirational and motivational quotes.", category: "generators", keywords: ["quotes", "inspiration", "motivation"], isNew: true },
+  { slug: "hash-generator", title: "Hash Generator", description: "Generate hash values for any text using multiple algorithms.", category: "generators", keywords: ["hash", "djb2", "checksum"], isNew: true },
 
   // Student Tools
   { slug: "pomodoro-timer", title: "Pomodoro Study Timer", description: "Stay focused with the Pomodoro technique – 25 min work, 5 min break.", category: "student-tools", keywords: ["pomodoro", "timer", "study", "focus"], featured: true, popular: true },

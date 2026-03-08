@@ -49,10 +49,10 @@ const ToolLayout = ({ slug, children, howTo, example, faqs }: ToolLayoutProps) =
 
       {howTo && howTo.length > 0 && (
         <section className="mb-10">
-          <h2 className="font-display text-xl font-semibold mb-5">How to Use</h2>
+          <h2 className="font-display text-xl font-semibold mb-5">How to <span className="gradient-text">Use</span></h2>
           <div className="grid sm:grid-cols-2 gap-3">
             {howTo.map((s, i) => (
-              <div key={i} className="flex items-start gap-3 text-sm text-muted-foreground bg-card rounded-xl border border-border p-4">
+              <div key={i} className="flex items-start gap-3 text-sm text-muted-foreground bg-card rounded-xl border border-border p-4 hover:border-primary/20 transition-colors">
                 <span className="h-7 w-7 rounded-full hero-gradient text-primary-foreground text-xs font-bold flex items-center justify-center shrink-0">{i + 1}</span>
                 <span className="pt-0.5">{s}</span>
               </div>
@@ -70,13 +70,13 @@ const ToolLayout = ({ slug, children, howTo, example, faqs }: ToolLayoutProps) =
 
       {faqs && faqs.length > 0 && (
         <section className="mb-10">
-          <h2 className="font-display text-xl font-semibold mb-5">Frequently Asked Questions</h2>
+          <h2 className="font-display text-xl font-semibold mb-5">Frequently Asked <span className="gradient-text">Questions</span></h2>
           <div className="space-y-3">
             {faqs.map((f, i) => (
-              <details key={i} className="group border border-border rounded-xl bg-card overflow-hidden">
+              <details key={i} className="group border border-border rounded-xl bg-card overflow-hidden hover:border-primary/20 transition-colors">
                 <summary className="cursor-pointer px-5 py-4 font-medium text-sm flex items-center justify-between hover:bg-secondary/30 transition-colors">
                   {f.q}
-                  <span className="text-muted-foreground group-open:rotate-180 transition-transform duration-200">▾</span>
+                  <span className="text-muted-foreground group-open:rotate-180 transition-transform duration-300">▾</span>
                 </summary>
                 <p className="px-5 pb-4 text-sm text-muted-foreground leading-relaxed">{f.a}</p>
               </details>
@@ -89,7 +89,7 @@ const ToolLayout = ({ slug, children, howTo, example, faqs }: ToolLayoutProps) =
 
       {related.length > 0 && (
         <section className="mt-14">
-          <h2 className="section-title mb-6">Related Tools</h2>
+          <h2 className="section-title mb-6">Related <span className="gradient-text">Tools</span></h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {related.map(t => <ToolCard key={t.slug} tool={t} />)}
           </div>

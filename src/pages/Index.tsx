@@ -51,7 +51,7 @@ const Index = () => {
           <div className="container relative z-10">
             <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
               <motion.div initial="hidden" animate="visible" className="text-center lg:text-left">
-                <motion.div custom={0} variants={fadeUp} className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-5 py-2 text-sm text-primary-foreground mb-8">
+                <motion.div custom={0} variants={fadeUp} className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/10 backdrop-blur-md border border-primary-foreground/20 px-5 py-2 text-sm text-primary-foreground mb-4">
                   <Sparkles className="h-4 w-4" /> <span className="font-medium">Free & Open Tools Platform</span>
                 </motion.div>
                 <motion.h1 custom={1} variants={fadeUp} className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-primary-foreground mb-6 leading-[1.05] tracking-tight">

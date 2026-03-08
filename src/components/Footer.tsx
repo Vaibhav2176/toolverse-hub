@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Zap, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Zap, Github, Twitter, Linkedin, Mail, Heart } from "lucide-react";
 import { categories, getPopularTools } from "@/config/tools";
 
 const Footer = () => {
@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="h-8 w-8 rounded-lg hero-gradient flex items-center justify-center">
+              <div className="h-9 w-9 rounded-xl hero-gradient flex items-center justify-center shadow-lg shadow-primary/20">
                 <Zap className="h-4 w-4 text-primary-foreground" />
               </div>
               <span className="font-display font-bold text-lg text-foreground">ToolVerse</span>
@@ -20,19 +20,17 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground leading-relaxed mb-5">
               Free, fast, and private online tools for everyday tasks. No signup, no tracking.
             </p>
-            <div className="flex items-center gap-3">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-all">
-                <Github className="h-4 w-4" />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-all">
-                <Twitter className="h-4 w-4" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-all">
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a href="mailto:hello@toolverse.com" className="h-9 w-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-all">
-                <Mail className="h-4 w-4" />
-              </a>
+            <div className="flex items-center gap-2">
+              {[
+                { href: "https://github.com", icon: Github },
+                { href: "https://twitter.com", icon: Twitter },
+                { href: "https://linkedin.com", icon: Linkedin },
+                { href: "mailto:hello@toolverse.com", icon: Mail },
+              ].map(({ href, icon: Icon }) => (
+                <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 hover:text-primary transition-all">
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
             </div>
           </div>
 
@@ -41,7 +39,7 @@ const Footer = () => {
             <h4 className="font-display font-semibold text-sm mb-4 text-foreground">Categories</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               {categories.map(c => (
-                <li key={c.slug}><Link to={`/${c.slug}`} className="hover:text-foreground transition-colors">{c.title}</Link></li>
+                <li key={c.slug}><Link to={`/${c.slug}`} className="hover:text-primary transition-colors">{c.title}</Link></li>
               ))}
             </ul>
           </div>
@@ -51,7 +49,7 @@ const Footer = () => {
             <h4 className="font-display font-semibold text-sm mb-4 text-foreground">Popular Tools</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
               {popularTools.map(t => (
-                <li key={t.slug}><Link to={`/tools/${t.slug}`} className="hover:text-foreground transition-colors">{t.title}</Link></li>
+                <li key={t.slug}><Link to={`/tools/${t.slug}`} className="hover:text-primary transition-colors">{t.title}</Link></li>
               ))}
             </ul>
           </div>
@@ -60,9 +58,9 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-sm mb-4 text-foreground">Quick Links</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
-              <li><Link to="/tools" className="hover:text-foreground transition-colors">All Tools</Link></li>
-              <li><Link to="/about" className="hover:text-foreground transition-colors">About Us</Link></li>
-              <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
+              <li><Link to="/tools" className="hover:text-primary transition-colors">All Tools</Link></li>
+              <li><Link to="/about" className="hover:text-primary transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -70,15 +68,15 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-sm mb-4 text-foreground">Legal</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
-              <li><Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link></li>
+              <li><Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-primary transition-colors">Terms of Service</Link></li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
           <p>© {new Date().getFullYear()} ToolVerse. All rights reserved.</p>
-          <p>Built with care for everyone.</p>
+          <p className="flex items-center gap-1.5">Built with <Heart className="h-3.5 w-3.5 text-cat-student fill-cat-student" /> for everyone</p>
         </div>
       </div>
     </footer>

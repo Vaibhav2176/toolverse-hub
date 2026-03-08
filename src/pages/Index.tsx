@@ -156,13 +156,12 @@ const Index = () => {
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-5">
             {categories.map(c => (
-              <motion.div key={c.slug} variants={scaleIn}>
-                <Link to={`/${c.slug}`} className="tool-card text-center group p-6 block gradient-border">
+              <motion.div key={c.slug} variants={scaleIn} className="h-full">
+                <Link to={`/${c.slug}`} className="tool-card text-center group p-6 block gradient-border h-full items-center justify-center">
                   <div className={`h-14 w-14 rounded-2xl ${c.bgClass} flex items-center justify-center mx-auto mb-3 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300`}>
                     <c.icon className={`h-7 w-7 ${c.colorClass}`} />
                   </div>
-                  <h3 className="font-display font-semibold text-sm mb-1">{c.title}</h3>
-                  <p className="text-xs text-muted-foreground">{c.description}</p>
+                  <h3 className="font-display font-semibold text-sm">{c.title}</h3>
                 </Link>
               </motion.div>
             ))}

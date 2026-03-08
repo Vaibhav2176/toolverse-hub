@@ -100,6 +100,13 @@ export const tools: ToolMeta[] = [
   { slug: "pomodoro-timer", title: "Pomodoro Study Timer", description: "Stay focused with the Pomodoro technique – 25 min work, 5 min break.", category: "student-tools", keywords: ["pomodoro", "timer", "study", "focus"], featured: true, popular: true },
   { slug: "random-question-picker", title: "Random Question Picker", description: "Pick random questions from a list for quizzes and study sessions.", category: "student-tools", keywords: ["question", "random", "quiz", "study"] },
   { slug: "unit-circle-helper", title: "Unit Circle Helper", description: "Interactive unit circle reference with angles, radians, and coordinates.", category: "student-tools", keywords: ["unit circle", "trigonometry", "angles", "radians"], isNew: true },
+  { slug: "countdown-timer", title: "Countdown Timer", description: "Set a custom countdown timer with hours, minutes, and seconds.", category: "student-tools", keywords: ["countdown", "timer", "alarm"], isNew: true },
+  { slug: "stopwatch", title: "Stopwatch", description: "Precise stopwatch with lap tracking and centisecond accuracy.", category: "student-tools", keywords: ["stopwatch", "timer", "lap", "time"], isNew: true },
+  { slug: "date-difference-calculator", title: "Date Difference", description: "Calculate the difference between two dates in days, weeks, months.", category: "student-tools", keywords: ["date", "difference", "days", "between"], isNew: true },
+  { slug: "cgpa-to-percentage", title: "CGPA to Percentage", description: "Convert CGPA to percentage using standard formulas.", category: "student-tools", keywords: ["cgpa", "percentage", "grades", "college"], isNew: true },
+  { slug: "json-formatter", title: "JSON Formatter", description: "Format, beautify, and minify JSON data with syntax validation.", category: "text-tools", keywords: ["json", "format", "beautify", "minify"], featured: true, isNew: true },
+  { slug: "base64-encoder-decoder", title: "Base64 Encoder", description: "Encode text to Base64 or decode Base64 back to text.", category: "text-tools", keywords: ["base64", "encode", "decode"], isNew: true },
+  { slug: "url-encoder-decoder", title: "URL Encoder", description: "Encode or decode URL components and special characters.", category: "text-tools", keywords: ["url", "encode", "decode", "percent"], isNew: true },
 ];
 
 export const getToolsByCategory = (cat: ToolCategory) => tools.filter(t => t.category === cat);

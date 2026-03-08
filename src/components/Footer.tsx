@@ -6,16 +6,18 @@ const Footer = () => {
   const popularTools = getPopularTools().slice(0, 6);
 
   return (
-    <footer className="border-t border-border bg-card mt-16">
-      <div className="container py-16">
+    <footer className="border-t border-border mt-16 relative overflow-hidden">
+      {/* Gradient background accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+      
+      <div className="container py-16 relative">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
-          {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="h-9 w-9 rounded-xl hero-gradient flex items-center justify-center shadow-lg shadow-primary/20">
+              <div className="h-9 w-9 rounded-xl hero-gradient flex items-center justify-center shadow-lg shadow-primary/25">
                 <Zap className="h-4 w-4 text-primary-foreground" />
               </div>
-              <span className="font-display font-bold text-lg text-foreground">ToolVerse</span>
+              <span className="font-display font-bold text-lg text-foreground">Tool<span className="gradient-text">Verse</span></span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-5">
               Free, fast, and private online tools for everyday tasks. No signup, no tracking.
@@ -27,14 +29,13 @@ const Footer = () => {
                 { href: "https://linkedin.com", icon: Linkedin },
                 { href: "mailto:hello@toolverse.com", icon: Mail },
               ].map(({ href, icon: Icon }) => (
-                <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 hover:text-primary transition-all">
+                <a key={href} href={href} target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-lg bg-secondary flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-300">
                   <Icon className="h-4 w-4" />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Categories */}
           <div>
             <h4 className="font-display font-semibold text-sm mb-4 text-foreground">Categories</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
@@ -44,7 +45,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Popular Tools */}
           <div>
             <h4 className="font-display font-semibold text-sm mb-4 text-foreground">Popular Tools</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
@@ -54,7 +54,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="font-display font-semibold text-sm mb-4 text-foreground">Quick Links</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
@@ -64,7 +63,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Legal */}
           <div>
             <h4 className="font-display font-semibold text-sm mb-4 text-foreground">Legal</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">

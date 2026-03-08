@@ -28,28 +28,27 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border/60">
+    <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border/50">
       <div className="container flex h-16 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2.5 shrink-0">
-          <div className="h-9 w-9 rounded-xl hero-gradient flex items-center justify-center shadow-lg shadow-primary/20">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
+          <div className="h-9 w-9 rounded-xl hero-gradient flex items-center justify-center shadow-lg shadow-primary/25 group-hover:shadow-primary/40 transition-shadow">
             <Zap className="h-4 w-4 text-primary-foreground" />
           </div>
-          <span className="font-display font-bold text-xl text-foreground">ToolVerse</span>
+          <span className="font-display font-bold text-xl text-foreground">Tool<span className="gradient-text">Verse</span></span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-0.5 text-sm font-medium">
           <Link to="/" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">Home</Link>
           <Link to="/tools" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">All Tools</Link>
           <div className="relative" onMouseEnter={() => setCatOpen(true)} onMouseLeave={() => setCatOpen(false)}>
             <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">
-              Categories <ChevronDown className={`h-3.5 w-3.5 transition-transform ${catOpen ? 'rotate-180' : ''}`} />
+              Categories <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${catOpen ? 'rotate-180' : ''}`} />
             </button>
             {catOpen && (
               <div className="absolute top-full left-0 mt-1 w-64 rounded-xl border border-border bg-card p-2 shadow-2xl animate-fade-in">
                 {categories.map(c => (
-                  <Link key={c.slug} to={`/${c.slug}`} className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm hover:bg-secondary/60 transition-all" onClick={() => setCatOpen(false)}>
-                    <div className={`h-9 w-9 rounded-lg ${c.bgClass} flex items-center justify-center`}>
+                  <Link key={c.slug} to={`/${c.slug}`} className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm hover:bg-secondary/60 transition-all group/item" onClick={() => setCatOpen(false)}>
+                    <div className={`h-9 w-9 rounded-lg ${c.bgClass} flex items-center justify-center group-hover/item:scale-110 transition-transform`}>
                       <c.icon className={`h-4 w-4 ${c.colorClass}`} />
                     </div>
                     <div>
@@ -65,7 +64,6 @@ const Header = () => {
           <Link to="/contact" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">Contact</Link>
         </nav>
 
-        {/* Search */}
         <div className="relative flex-1 max-w-xs" ref={searchRef}>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -93,12 +91,10 @@ const Header = () => {
           )}
         </div>
 
-        {/* Theme toggle */}
-        <button onClick={toggleTheme} className="h-9 w-9 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-secondary/80 transition-all" aria-label="Toggle theme">
+        <button onClick={toggleTheme} className="h-9 w-9 rounded-xl bg-secondary flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 hover:text-primary transition-all duration-300" aria-label="Toggle theme">
           {theme === "light" ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
         </button>
 
-        {/* Mobile menu */}
         <button className="lg:hidden p-2 rounded-lg hover:bg-secondary/60 transition-all" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>

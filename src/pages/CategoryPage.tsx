@@ -15,14 +15,18 @@ const CategoryPage = () => {
 
   return (
     <Layout>
-      <div className="container py-8 max-w-5xl">
+      <div className="container py-8 max-w-5xl animate-fade-in">
         <Breadcrumb items={[{ label: cat.title }]} />
-        <div className="flex items-center gap-3 mb-2">
-          <cat.icon className={`h-8 w-8 ${cat.colorClass}`} />
-          <h1 className="text-3xl font-bold">{cat.title}</h1>
+        <div className="flex items-center gap-4 mb-2">
+          <div className={`h-12 w-12 rounded-2xl ${cat.bgClass} flex items-center justify-center`}>
+            <cat.icon className={`h-6 w-6 ${cat.colorClass}`} />
+          </div>
+          <div>
+            <h1 className="text-3xl font-display font-bold tracking-tight">{cat.title}</h1>
+            <p className="text-muted-foreground">{cat.description}</p>
+          </div>
         </div>
-        <p className="text-muted-foreground mb-6">{cat.description} — {tools.length} tools available</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
           {tools.map(t => <ToolCard key={t.slug} tool={t} />)}
         </div>
       </div>

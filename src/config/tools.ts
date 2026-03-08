@@ -81,6 +81,10 @@ export const tools: ToolMeta[] = [
   { slug: "text-repeater", title: "Text Repeater", description: "Repeat any text multiple times with optional separators.", category: "text-tools", keywords: ["repeat", "text", "duplicate", "copy"], isNew: true },
   { slug: "remove-line-breaks", title: "Remove Line Breaks", description: "Remove line breaks and join text into a single paragraph.", category: "text-tools", keywords: ["line break", "newline", "paragraph", "join"], isNew: true },
   { slug: "text-diff-checker", title: "Text Difference Checker", description: "Compare two texts side by side and highlight the differences.", category: "text-tools", keywords: ["diff", "compare", "difference", "text"], isNew: true },
+  { slug: "markdown-previewer", title: "Markdown Previewer", description: "Write Markdown and see a live HTML preview side by side.", category: "text-tools", keywords: ["markdown", "preview", "html", "format"], isNew: true },
+  { slug: "text-to-slug", title: "Text to Slug", description: "Convert any text into a URL-friendly slug format.", category: "text-tools", keywords: ["slug", "url", "seo", "permalink"], isNew: true },
+  { slug: "reading-time-estimator", title: "Reading Time Estimator", description: "Estimate reading and speaking time for any text.", category: "text-tools", keywords: ["reading", "time", "words", "estimate"], isNew: true },
+  { slug: "text-encryptor", title: "Text Encryptor", description: "Encrypt and decrypt text using Caesar cipher substitution.", category: "text-tools", keywords: ["encrypt", "decrypt", "cipher", "caesar"], isNew: true },
 
   // Generators
   { slug: "password-generator", title: "Password Generator", description: "Generate strong, secure passwords with customizable options.", category: "generators", keywords: ["password", "security", "random"], featured: true, popular: true },

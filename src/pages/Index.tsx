@@ -31,7 +31,7 @@ const Index = () => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const filtered = query.length > 1 ? tools.filter(t => t.title.toLowerCase().includes(query.toLowerCase())).slice(0, 6) : [];
-  const popularTools = getPopularTools().slice(0, 8);
+  const popularTools = getPopularTools().slice(0, 12);
 
   return (
     <Layout>
@@ -111,7 +111,7 @@ const Index = () => {
               <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider shrink-0">Quick Access</span>
               {popularTools.map((t, i) => (
                 <motion.div key={t.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.06 }}>
-                  <Link to={`/tools/${t.slug}`} className="shrink-0 inline-flex items-center justify-center rounded-full border border-border bg-card/80 backdrop-blur-sm px-4 py-2 text-sm font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:shadow-md hover:bg-card">
+                  <Link to={`/tools/${t.slug}`} className="shrink-0 w-36 h-10 inline-flex items-center justify-center text-center rounded-full border border-border bg-card/80 backdrop-blur-sm text-sm font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:shadow-md hover:bg-card whitespace-nowrap overflow-hidden text-ellipsis">
                     {t.title}
                   </Link>
                 </motion.div>

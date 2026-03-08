@@ -100,6 +100,22 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "contrast-checker": lazy(() => import("@/tools/ContrastChecker")),
   "rgb-to-cmyk": lazy(() => import("@/tools/RgbToCmyk")),
   "image-color-picker": lazy(() => import("@/tools/ImageColorPicker")),
+  // Additional tools 100+
+  "electricity-cost-calculator": lazy(() => import("@/tools/ElectricityCostCalculator")),
+  "square-root-calculator": lazy(() => import("@/tools/SquareRootCalculator")),
+  "exponent-calculator": lazy(() => import("@/tools/ExponentCalculator")),
+  "ratio-calculator": lazy(() => import("@/tools/RatioCalculator")),
+  "frequency-converter": lazy(() => import("@/tools/FrequencyConverter")),
+  "data-transfer-rate-converter": lazy(() => import("@/tools/DataTransferRateConverter")),
+  "text-to-binary": lazy(() => import("@/tools/TextToBinary")),
+  "word-frequency-counter": lazy(() => import("@/tools/WordFrequencyCounter")),
+  "text-to-morse-code": lazy(() => import("@/tools/TextToMorseCode")),
+  "qr-text-generator": lazy(() => import("@/tools/QrTextGenerator")),
+  "password-strength-checker": lazy(() => import("@/tools/PasswordStrengthChecker")),
+  "cron-expression-parser": lazy(() => import("@/tools/CronExpressionParser")),
+  "chmod-calculator": lazy(() => import("@/tools/ChmodCalculator")),
+  "css-unit-converter": lazy(() => import("@/tools/CssUnitConverter")),
+  "box-shadow-generator": lazy(() => import("@/tools/BoxShadowGenerator")),
 };
 
 const ToolPage = () => {

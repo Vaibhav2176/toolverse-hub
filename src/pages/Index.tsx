@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Search, ArrowRight, Sparkles, TrendingUp, Clock, Zap, Shield, Globe, CheckCircle, Star, Layers, MousePointerClick } from "lucide-react";
+import { Search, ArrowRight, Sparkles, TrendingUp, Clock, Zap, Shield, Globe, CheckCircle, Star, MousePointerClick } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -37,13 +37,13 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="hero-gradient-2 animate-gradient py-24 md:py-32 px-4 relative">
+        <div className="hero-gradient-2 animate-gradient py-24 md:py-36 px-4 relative">
           {/* Animated blobs */}
           <div className="absolute top-10 left-[10%] w-80 h-80 bg-primary-foreground/10 rounded-full blur-[100px] animate-float" />
           <div className="absolute bottom-0 right-[5%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-foreground/5 rounded-full blur-[150px]" />
 
-          {/* Floating shapes */}
+          {/* Floating dots */}
           <div className="absolute top-20 right-[20%] w-3 h-3 bg-primary-foreground/30 rounded-full animate-float" style={{ animationDelay: "1s" }} />
           <div className="absolute top-40 left-[15%] w-2 h-2 bg-accent/40 rounded-full animate-float" style={{ animationDelay: "3s" }} />
           <div className="absolute bottom-32 right-[30%] w-4 h-4 bg-primary-foreground/20 rounded-full animate-float" style={{ animationDelay: "2.5s" }} />
@@ -64,54 +64,62 @@ const Index = () => {
                 <motion.p custom={2} variants={fadeUp} className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
                   Fast, private calculators, converters, text tools, and generators — all running in your browser.
                 </motion.p>
-                <motion.div custom={3} variants={fadeUp} className="relative max-w-lg mx-auto lg:mx-0">
-                  <Search className="absolute left-5 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+
+                {/* BIG Search Bar */}
+                <motion.div custom={3} variants={fadeUp} className="relative max-w-xl mx-auto lg:mx-0">
+                  <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-6 w-6 text-muted-foreground/70" />
                   <input
                     type="text"
-                    placeholder="Search for any tool..."
-                    className="w-full rounded-2xl bg-card py-4.5 pl-14 pr-5 text-base shadow-2xl shadow-black/10 outline-none focus:ring-2 focus:ring-primary/40 transition-all"
+                    placeholder="Search calculators, converters, generators..."
+                    className="w-full rounded-2xl bg-card py-5 pl-16 pr-6 text-base shadow-2xl shadow-black/15 outline-none focus:ring-2 focus:ring-primary/40 transition-all placeholder:text-muted-foreground/50"
                     value={query}
                     onChange={e => setQuery(e.target.value)}
                   />
                   {filtered.length > 0 && (
                     <div className="absolute top-full left-0 right-0 mt-2 rounded-xl border border-border bg-card shadow-2xl p-2 z-10 animate-fade-in">
                       {filtered.map(t => (
-                        <button key={t.slug} onClick={() => { navigate(`/tools/${t.slug}`); setQuery(""); }} className="w-full text-left rounded-xl px-4 py-3 text-sm hover:bg-secondary/60 transition-all">
-                          <span className="font-medium text-foreground">{t.title}</span>
-                          <span className="block text-xs text-muted-foreground mt-0.5">{t.description.slice(0, 60)}</span>
+                        <button key={t.slug} onClick={() => { navigate(`/tools/${t.slug}`); setQuery(""); }} className="w-full text-left rounded-xl px-5 py-3.5 text-sm hover:bg-secondary/60 transition-all">
+                          <span className="font-semibold text-foreground">{t.title}</span>
+                          <span className="block text-xs text-muted-foreground mt-0.5">{t.description.slice(0, 70)}</span>
                         </button>
                       ))}
                     </div>
                   )}
                 </motion.div>
-                <motion.div custom={4} variants={fadeUp} className="flex items-center gap-4 mt-8 justify-center lg:justify-start">
-                  <Link to="/tools" className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 text-sm rounded-2xl">
-                    Explore Tools <ArrowRight className="h-4 w-4" />
+
+                <motion.div custom={4} variants={fadeUp} className="flex items-center gap-5 mt-8 justify-center lg:justify-start">
+                  <Link to="/tools" className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-sm rounded-2xl">
+                    Explore All Tools <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <span className="text-primary-foreground/50 text-sm">{tools.length}+ free tools</span>
+                  <span className="text-primary-foreground/50 text-sm font-medium">{tools.length}+ free tools</span>
                 </motion.div>
               </motion.div>
 
               <motion.div initial={{ opacity: 0, scale: 0.85, y: 20 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }} className="hidden lg:flex justify-center">
                 <div className="relative">
                   <div className="absolute inset-0 bg-primary-foreground/5 rounded-full blur-3xl scale-110" />
-                  <img src={heroImg} alt="ToolVerse online tools illustration" className="w-full max-w-md drop-shadow-2xl relative animate-float" />
+                  <img src={heroImg} alt="ToolVerse online tools illustration" className="w-full max-w-lg drop-shadow-2xl relative animate-float" />
                 </div>
               </motion.div>
             </div>
           </div>
         </div>
 
-        {/* Quick Access Strip */}
-        <div className="bg-card/80 backdrop-blur-lg border-b border-border">
-          <div className="container py-4">
-            <div className="flex items-center gap-3 overflow-x-auto no-scrollbar">
-              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider shrink-0 mr-1 flex items-center gap-1.5"><MousePointerClick className="h-3.5 w-3.5" /> Quick Access</span>
+        {/* Quick Access Strip - redesigned */}
+        <div className="bg-card/60 backdrop-blur-xl border-b border-border/50">
+          <div className="container py-5">
+            <div className="flex items-center gap-2 mb-3">
+              <MousePointerClick className="h-4 w-4 text-primary" />
+              <span className="text-sm font-semibold text-foreground">Quick Access</span>
+              <span className="text-xs text-muted-foreground ml-1">— Jump to popular tools</span>
+            </div>
+            <div className="flex items-center gap-3 overflow-x-auto no-scrollbar pb-1">
               {popularTools.map((t, i) => (
-                <motion.div key={t.slug} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 + i * 0.05 }}>
-                  <Link to={`/tools/${t.slug}`} className="quick-access-chip shrink-0">
-                    <Star className="h-3.5 w-3.5 text-primary" />
-                    {t.title}
+                <motion.div key={t.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.06 }}>
+                  <Link to={`/tools/${t.slug}`} className="quick-access-chip shrink-0 group">
+                    <Star className="h-3.5 w-3.5 text-primary group-hover:scale-125 transition-transform" />
+                    <span>{t.title}</span>
+                    <ArrowRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </motion.div>
               ))}
@@ -122,40 +130,28 @@ const Index = () => {
 
       <AdPlaceholder label="Banner Ad Space" />
 
-      {/* Stats bar */}
-      <section className="container py-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {[
-            { num: `${tools.length}+`, label: "Free Tools", icon: Layers },
-            { num: "5", label: "Categories", icon: Sparkles },
-            { num: "0", label: "Ads & Trackers", icon: Shield },
-            { num: "100%", label: "Browser Based", icon: Globe },
-          ].map(({ num, label, icon: Icon }) => (
-            <motion.div key={label} variants={scaleIn} className="glass-card p-5 text-center shimmer">
-              <Icon className="h-5 w-5 text-primary mx-auto mb-2" />
-              <div className="font-display font-bold text-2xl gradient-text">{num}</div>
-              <div className="text-xs text-muted-foreground font-medium mt-1">{label}</div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </section>
-
-      {/* Value Props */}
-      <section className="container py-16">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-50px" }} variants={stagger} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            { icon: Zap, title: "Instant Results", desc: "Every tool runs in your browser with zero loading time. No servers, no waiting.", gradient: "from-primary to-accent" },
-            { icon: Shield, title: "100% Private", desc: "Your data never leaves your device. No tracking, no cookies, no signup required.", gradient: "from-cat-convert to-accent" },
-            { icon: Globe, title: "Works Everywhere", desc: "Fully responsive design that works on phones, tablets, and desktops.", gradient: "from-cat-student to-primary" },
-          ].map(({ icon: Icon, title, desc, gradient }) => (
-            <motion.div key={title} variants={scaleIn} className="glass-card p-8 text-center group hover:-translate-y-1 transition-all duration-300">
-              <div className={`h-14 w-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                <Icon className="h-7 w-7 text-primary-foreground" />
-              </div>
-              <h3 className="font-display font-semibold text-lg mb-2">{title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
-            </motion.div>
-          ))}
+      {/* Value Props — replaces old stats bar */}
+      <section className="container py-20">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+          <motion.div variants={scaleIn} className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3 tracking-tight">Why <span className="gradient-text">ToolVerse</span>?</h2>
+            <p className="text-muted-foreground text-lg max-w-lg mx-auto">Everything you need, nothing you don't.</p>
+          </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: Zap, title: "Lightning Fast", desc: "Every tool runs instantly in your browser. No loading, no servers — just results.", gradient: "from-primary to-accent" },
+              { icon: Shield, title: "Completely Private", desc: "Your data never leaves your device. Zero tracking, zero cookies, zero signups.", gradient: "from-cat-convert to-accent" },
+              { icon: Globe, title: "Works Everywhere", desc: "Designed for every screen — phones, tablets, laptops, desktops. Always accessible.", gradient: "from-cat-student to-primary" },
+            ].map(({ icon: Icon, title, desc, gradient }) => (
+              <motion.div key={title} variants={scaleIn} className="glass-card p-8 text-center group hover:-translate-y-2 transition-all duration-300">
+                <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 group-hover:shadow-xl transition-all duration-300`}>
+                  <Icon className="h-8 w-8 text-white" />
+                </div>
+                <h3 className="font-display font-bold text-lg mb-2">{title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </section>
 
@@ -188,7 +184,7 @@ const Index = () => {
           <div className="flex items-center justify-between mb-8">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-xl hero-gradient flex items-center justify-center animate-pulse-glow">
-                <Sparkles className="h-5 w-5 text-primary-foreground" />
+                <Sparkles className="h-5 w-5 text-white" />
               </div>
               <h2 className="section-title">Featured <span className="gradient-text">Tools</span></h2>
             </div>
@@ -197,7 +193,7 @@ const Index = () => {
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {getFeaturedTools().map((t, i) => (
+            {getFeaturedTools().map(t => (
               <motion.div key={t.slug} variants={scaleIn}>
                 <ToolCard tool={t} />
               </motion.div>
@@ -207,7 +203,7 @@ const Index = () => {
       </section>
 
       {/* Popular */}
-      <section className="gradient-glow py-14">
+      <section className="gradient-glow py-14 rounded-3xl mx-4 my-4">
         <div className="container">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <div className="flex items-center justify-between mb-8">
@@ -261,8 +257,8 @@ const Index = () => {
               <div className="absolute top-0 right-0 w-80 h-80 bg-primary-foreground/5 rounded-full blur-[80px]" />
               <div className="absolute bottom-0 left-0 w-60 h-60 bg-accent/10 rounded-full blur-[60px]" />
               <div className="max-w-2xl mx-auto text-center relative">
-                <h2 className="font-display text-3xl md:text-4xl font-bold mb-5 tracking-tight text-primary-foreground">Why Use Online Tools?</h2>
-                <p className="text-primary-foreground/75 leading-relaxed mb-10 text-lg">
+                <h2 className="font-display text-3xl md:text-4xl font-bold mb-5 tracking-tight text-white">Why Use Online Tools?</h2>
+                <p className="text-white/75 leading-relaxed mb-10 text-lg">
                   Online tools save you time by providing instant calculations, conversions, and text operations right in your browser.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
@@ -274,10 +270,10 @@ const Index = () => {
                     "New tools added regularly",
                     "Clean, distraction-free interface",
                   ].map(item => (
-                    <motion.div key={item} variants={fadeUp} className="flex items-center gap-3 text-sm bg-primary-foreground/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-primary-foreground/10">
-                      <CheckCircle className="h-4 w-4 text-primary-foreground shrink-0" />
-                      <span className="text-primary-foreground/90">{item}</span>
-                    </motion.div>
+                    <div key={item} className="flex items-center gap-3 text-sm bg-white/10 backdrop-blur-sm rounded-xl px-4 py-3 border border-white/10">
+                      <CheckCircle className="h-4 w-4 text-white shrink-0" />
+                      <span className="text-white/90">{item}</span>
+                    </div>
                   ))}
                 </div>
               </div>

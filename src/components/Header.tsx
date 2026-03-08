@@ -31,8 +31,12 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border/50">
       <div className="container flex h-12 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
-          <div className="h-9 w-9 rounded-xl hero-gradient flex items-center justify-center shadow-lg shadow-primary/25 group-hover:shadow-primary/40 transition-shadow">
-            <Zap className="h-4 w-4 text-primary-foreground" />
+          <div className="h-9 w-9 flex items-center justify-center">
+            <img
+              src="/toolverse-icon.png"
+              alt="ToolVerse Logo"
+              className="h-9 w-9 object-contain"
+            />
           </div>
           <span className="font-display font-bold text-xl text-foreground">Tool<span className="gradient-text">Verse</span></span>
         </Link>

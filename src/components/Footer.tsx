@@ -14,8 +14,12 @@ const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="h-9 w-9 rounded-xl hero-gradient flex items-center justify-center shadow-lg shadow-primary/25">
-                <Zap className="h-4 w-4 text-primary-foreground" />
+              <div className="h-9 w-9 flex items-center justify-center">
+                <img
+                  src="/toolverse-icon.png"
+                  alt="ToolVerse Logo"
+                  className="h-9 w-9 object-contain"
+                />
               </div>
               <span className="font-display font-bold text-lg text-foreground">Tool<span className="gradient-text">Verse</span></span>
             </div>

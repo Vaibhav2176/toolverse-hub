@@ -6,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 220 16% 96%;
+    --background: 220 20% 97%;
     --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
@@ -30,7 +30,7 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 89%;
+    --border: 220 13% 91%;
     --input: 220 13% 89%;
     --ring: 221 83% 53%;
 
@@ -60,6 +60,11 @@
 
     --gradient-warm: linear-gradient(135deg, hsl(25 95% 53%), hsl(340 75% 55%));
     --gradient-cool: linear-gradient(135deg, hsl(221 83% 53%), hsl(142 71% 45%));
+
+    /* Glass tokens */
+    --glass-bg: hsl(0 0% 100% / 0.7);
+    --glass-border: hsl(220 13% 91% / 0.8);
+    --glass-shadow: 0 8px 32px hsl(221 83% 53% / 0.08);
   }
 }
 
@@ -83,11 +88,25 @@
   }
   .tool-card {
     box-shadow: var(--card-shadow);
-    @apply bg-card rounded-2xl border border-border p-6 transition-all duration-300;
+    @apply bg-card rounded-2xl border border-border p-5 transition-all duration-300 relative overflow-hidden;
+  }
+  .tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--hero-gradient);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .tool-card:hover::before {
+    opacity: 1;
   }
   .tool-card:hover {
     box-shadow: var(--card-shadow-hover);
-    @apply -translate-y-1 border-primary/20;
+    @apply -translate-y-1.5 border-primary/20;
   }
   .section-title {
     @apply text-2xl font-bold text-foreground tracking-tight;
@@ -96,12 +115,33 @@
     @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
   }
   .btn-primary {
-    @apply rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-all duration-200 shadow-sm;
+    @apply rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-all duration-200 shadow-lg shadow-primary/20;
   }
   .btn-secondary {
     @apply rounded-xl bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground hover:bg-secondary/80 transition-all duration-200;
   }
   .input-field {
-    @apply rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200;
+    @apply rounded-xl border border-input bg-card px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200;
+  }
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    @apply rounded-2xl;
+  }
+  .quick-access-chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground hover:border-primary/30 hover:shadow-md hover:shadow-primary/5 transition-all duration-200 cursor-pointer;
+  }
+  .quick-access-chip:hover {
+    @apply -translate-y-0.5;
+  }
+  .floating-dot {
+    @apply absolute rounded-full opacity-20;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
   }
 }

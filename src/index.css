@@ -130,6 +130,8 @@
 }
 
 @layer components {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
   .hero-gradient {
     background: var(--hero-gradient);
   }

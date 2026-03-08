@@ -87,11 +87,11 @@ const Index = () => {
                   )}
                 </motion.div>
 
-                <motion.div custom={4} variants={fadeUp} className="flex items-center gap-5 mt-8 justify-center lg:justify-start">
+                <motion.div custom={4} variants={fadeUp} className="flex items-center gap-5 mt-6 justify-center lg:justify-start">
                   <Link to="/tools" className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-sm rounded-2xl">
                     Explore All Tools <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <span className="text-primary-foreground/50 text-sm font-medium">{tools.length}+ free tools</span>
+                  <span className="text-white font-bold text-base bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">{tools.length}+ free tools</span>
                 </motion.div>
               </motion.div>
 

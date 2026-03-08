@@ -1,6 +1,6 @@
-import { Calculator, ArrowRightLeft, Type, Sparkles, GraduationCap } from "lucide-react";
+import { Calculator, ArrowRightLeft, Type, Sparkles, GraduationCap, Code, Palette } from "lucide-react";
 
-export type ToolCategory = "calculators" | "converters" | "text-tools" | "generators" | "student-tools";
+export type ToolCategory = "calculators" | "converters" | "text-tools" | "generators" | "student-tools" | "developer-tools" | "design-tools";
 
 export interface ToolMeta {
   slug: string;
@@ -28,6 +28,8 @@ export const categories: CategoryMeta[] = [
   { slug: "text-tools", title: "Text Tools", description: "Text manipulation and analysis", icon: Type, colorClass: "text-cat-text", bgClass: "bg-cat-text/10" },
   { slug: "generators", title: "Generators", description: "Generate passwords, names, and more", icon: Sparkles, colorClass: "text-cat-gen", bgClass: "bg-cat-gen/10" },
   { slug: "student-tools", title: "Student Tools", description: "Study aids and academic tools", icon: GraduationCap, colorClass: "text-cat-student", bgClass: "bg-cat-student/10" },
+  { slug: "developer-tools", title: "Developer Tools", description: "JSON, CSV, UUID, JWT, and regex utilities", icon: Code, colorClass: "text-cat-dev", bgClass: "bg-cat-dev/10" },
+  { slug: "design-tools", title: "Design Tools", description: "Gradients, palettes, and color utilities", icon: Palette, colorClass: "text-cat-design", bgClass: "bg-cat-design/10" },
 ];
 
 export const tools: ToolMeta[] = [
@@ -107,6 +109,41 @@ export const tools: ToolMeta[] = [
   { slug: "json-formatter", title: "JSON Formatter", description: "Format, beautify, and minify JSON data with syntax validation.", category: "text-tools", keywords: ["json", "format", "beautify", "minify"], featured: true, isNew: true },
   { slug: "base64-encoder-decoder", title: "Base64 Encoder", description: "Encode text to Base64 or decode Base64 back to text.", category: "text-tools", keywords: ["base64", "encode", "decode"], isNew: true },
   { slug: "url-encoder-decoder", title: "URL Encoder", description: "Encode or decode URL components and special characters.", category: "text-tools", keywords: ["url", "encode", "decode", "percent"], isNew: true },
+
+  // Date & Time (Student Tools)
+  { slug: "days-until-date", title: "Days Until Date", description: "Calculate how many days remain until a selected future date.", category: "student-tools", keywords: ["days", "until", "countdown", "future"], isNew: true },
+  { slug: "business-days-calculator", title: "Business Days Calculator", description: "Calculate business days between two dates excluding weekends.", category: "student-tools", keywords: ["business", "working", "days", "weekends"], isNew: true, popular: true },
+  { slug: "workdays-calculator", title: "Workdays Calculator", description: "Calculate total working days between two dates.", category: "student-tools", keywords: ["workdays", "working", "business"], isNew: true },
+  { slug: "week-number-calculator", title: "Week Number Calculator", description: "Find the ISO week number for any date.", category: "student-tools", keywords: ["week", "number", "iso", "date"], isNew: true },
+  { slug: "unix-timestamp-converter", title: "Unix Timestamp Converter", description: "Convert Unix timestamps to readable dates and vice versa.", category: "student-tools", keywords: ["unix", "timestamp", "epoch", "date"], isNew: true, popular: true },
+
+  // Math Calculators
+  { slug: "lcm-calculator", title: "LCM Calculator", description: "Calculate the least common multiple of multiple numbers.", category: "calculators", keywords: ["lcm", "least", "common", "multiple"], isNew: true },
+  { slug: "gcd-calculator", title: "GCD Calculator", description: "Calculate the greatest common divisor of multiple numbers.", category: "calculators", keywords: ["gcd", "greatest", "common", "divisor"], isNew: true },
+  { slug: "prime-factorization", title: "Prime Factorization", description: "Find the prime factors of any number with step-by-step breakdown.", category: "calculators", keywords: ["prime", "factor", "factorization", "math"], isNew: true },
+  { slug: "matrix-calculator", title: "Matrix Calculator", description: "Perform matrix addition, subtraction, and multiplication.", category: "calculators", keywords: ["matrix", "linear", "algebra", "math"], isNew: true },
+  { slug: "determinant-calculator", title: "Determinant Calculator", description: "Calculate the determinant of a 2x2 or 3x3 matrix.", category: "calculators", keywords: ["determinant", "matrix", "linear", "algebra"], isNew: true },
+
+  // Finance Calculators
+  { slug: "gst-calculator", title: "GST Calculator", description: "Calculate GST amount and final price for any tax rate.", category: "calculators", keywords: ["gst", "tax", "india", "goods"], isNew: true, popular: true },
+  { slug: "savings-calculator", title: "Savings Calculator", description: "Calculate future savings based on monthly contributions and interest.", category: "calculators", keywords: ["savings", "monthly", "interest", "future"], isNew: true },
+  { slug: "investment-calculator", title: "Investment Calculator", description: "Estimate investment growth with compound interest over time.", category: "calculators", keywords: ["investment", "growth", "compound", "returns"], isNew: true, featured: true },
+  { slug: "inflation-calculator", title: "Inflation Calculator", description: "Calculate how inflation affects purchasing power over time.", category: "calculators", keywords: ["inflation", "purchasing", "power", "money"], isNew: true },
+  { slug: "sales-tax-calculator", title: "Sales Tax Calculator", description: "Calculate price after applying sales tax percentages.", category: "calculators", keywords: ["sales", "tax", "price", "total"], isNew: true },
+
+  // Developer Tools
+  { slug: "json-to-csv", title: "JSON to CSV Converter", description: "Convert JSON data into downloadable CSV format.", category: "developer-tools", keywords: ["json", "csv", "convert", "data"], isNew: true, featured: true },
+  { slug: "csv-to-json", title: "CSV to JSON Converter", description: "Convert CSV data into structured JSON format.", category: "developer-tools", keywords: ["csv", "json", "convert", "data"], isNew: true },
+  { slug: "uuid-generator", title: "UUID Generator", description: "Generate random UUID v4 identifiers instantly.", category: "developer-tools", keywords: ["uuid", "guid", "unique", "identifier"], isNew: true, popular: true },
+  { slug: "jwt-decoder", title: "JWT Decoder", description: "Decode JSON Web Tokens and display header, payload, and signature.", category: "developer-tools", keywords: ["jwt", "token", "decode", "json"], isNew: true, popular: true },
+  { slug: "regex-tester", title: "Regex Tester", description: "Test regular expressions with live matching and highlighting.", category: "developer-tools", keywords: ["regex", "regular", "expression", "test"], isNew: true, featured: true },
+
+  // Design Tools
+  { slug: "gradient-generator", title: "Gradient Generator", description: "Generate beautiful CSS gradients with live preview and copy code.", category: "design-tools", keywords: ["gradient", "css", "color", "background"], isNew: true, featured: true, popular: true },
+  { slug: "color-palette-generator", title: "Color Palette Generator", description: "Generate harmonious color palettes from any base color.", category: "design-tools", keywords: ["palette", "color", "harmony", "scheme"], isNew: true, popular: true },
+  { slug: "contrast-checker", title: "Contrast Checker", description: "Check color contrast ratios for WCAG accessibility compliance.", category: "design-tools", keywords: ["contrast", "wcag", "accessibility", "a11y"], isNew: true },
+  { slug: "rgb-to-cmyk", title: "RGB to CMYK Converter", description: "Convert RGB color values to CMYK for print design.", category: "design-tools", keywords: ["rgb", "cmyk", "print", "color"], isNew: true },
+  { slug: "image-color-picker", title: "Image Color Picker", description: "Pick colors from uploaded images and get HEX, RGB values.", category: "design-tools", keywords: ["image", "color", "picker", "eyedropper"], isNew: true },
 ];
 
 export const getToolsByCategory = (cat: ToolCategory) => tools.filter(t => t.category === cat);

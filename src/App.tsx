@@ -34,6 +34,8 @@ const App = () => (
             <Route path="/text-tools" element={<CategoryPage />} />
             <Route path="/generators" element={<CategoryPage />} />
             <Route path="/student-tools" element={<CategoryPage />} />
+            <Route path="/developer-tools" element={<CategoryPage />} />
+            <Route path="/design-tools" element={<CategoryPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />

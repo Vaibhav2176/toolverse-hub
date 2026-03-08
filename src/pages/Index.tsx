@@ -31,7 +31,7 @@ const Index = () => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const filtered = query.length > 1 ? tools.filter(t => t.title.toLowerCase().includes(query.toLowerCase())).slice(0, 6) : [];
-  const popularTools = getPopularTools().slice(0, 8);
+  const popularTools = getPopularTools().slice(0, 12);
 
   return (
     <Layout>

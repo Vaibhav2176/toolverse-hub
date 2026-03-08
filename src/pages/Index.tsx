@@ -107,11 +107,11 @@ const Index = () => {
 
         {/* Quick Access Strip */}
         <div className="container py-3">
-            <div className="flex items-center gap-2.5 overflow-x-auto no-scrollbar">
-              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider shrink-0">Quick Access</span>
+            <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider shrink-0 mr-1">Quick Access</span>
               {popularTools.map((t, i) => (
-                <motion.div key={t.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.06 }}>
-                  <Link to={`/tools/${t.slug}`} className="shrink-0 w-36 h-10 inline-flex items-center justify-center text-center rounded-full border border-border bg-card/80 backdrop-blur-sm text-sm font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:shadow-md hover:bg-card whitespace-nowrap overflow-hidden text-ellipsis">
+                <motion.div key={t.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.06 }} className="shrink-0">
+                  <Link to={`/tools/${t.slug}`} className="inline-flex items-center justify-center rounded-full border border-border bg-card/80 backdrop-blur-sm px-5 py-2 text-xs font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:shadow-md hover:bg-card whitespace-nowrap">
                     {t.title}
                   </Link>
                 </motion.div>

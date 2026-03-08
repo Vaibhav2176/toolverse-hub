@@ -2,39 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 220 20% 10%;
+    --background: 220 16% 96%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 200 80% 44%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 20% 94%;
-    --secondary-foreground: 220 20% 20%;
+    --secondary: 220 14% 92%;
+    --secondary-foreground: 222 47% 20%;
 
-    --muted: 210 15% 93%;
-    --muted-foreground: 220 10% 46%;
+    --muted: 220 14% 92%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 170 60% 45%;
+    --accent: 142 71% 45%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 72% 51%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214 20% 88%;
-    --input: 214 20% 88%;
-    --ring: 200 80% 44%;
+    --border: 220 13% 89%;
+    --input: 220 13% 89%;
+    --ring: 221 83% 53%;
 
-    --radius: 0.625rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -43,18 +43,23 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 221 83% 53%;
 
     /* Custom tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(200 80% 44%), hsl(170 60% 45%));
-    --card-shadow: 0 1px 3px 0 hsl(220 20% 10% / 0.06), 0 1px 2px -1px hsl(220 20% 10% / 0.06);
-    --card-shadow-hover: 0 10px 25px -5px hsl(200 80% 44% / 0.12), 0 4px 10px -2px hsl(200 80% 44% / 0.06);
-    --ad-bg: 210 15% 96%;
-    --category-calc: 200 80% 44%;
-    --category-convert: 170 60% 45%;
-    --category-text: 260 60% 55%;
-    --category-gen: 30 85% 55%;
-    --category-student: 340 65% 55%;
+    --hero-start: 221 83% 53%;
+    --hero-end: 250 80% 60%;
+    --hero-gradient: linear-gradient(135deg, hsl(221 83% 53%), hsl(250 80% 60%));
+    --card-shadow: 0 1px 3px 0 hsl(222 47% 11% / 0.04), 0 1px 2px -1px hsl(222 47% 11% / 0.04);
+    --card-shadow-hover: 0 20px 40px -12px hsl(221 83% 53% / 0.15);
+    --ad-bg: 220 14% 95%;
+    --category-calc: 221 83% 53%;
+    --category-convert: 142 71% 45%;
+    --category-text: 250 80% 60%;
+    --category-gen: 25 95% 53%;
+    --category-student: 340 75% 55%;
+
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 53%), hsl(340 75% 55%));
+    --gradient-cool: linear-gradient(135deg, hsl(221 83% 53%), hsl(142 71% 45%));
   }
 }
 
@@ -74,20 +79,29 @@
   .ad-placeholder {
     background: hsl(var(--ad-bg));
     border: 2px dashed hsl(var(--border));
-    @apply rounded-lg flex items-center justify-center text-muted-foreground text-sm py-4;
+    @apply rounded-xl flex items-center justify-center text-muted-foreground text-sm py-4;
   }
   .tool-card {
     box-shadow: var(--card-shadow);
-    @apply bg-card rounded-xl border border-border p-5 transition-all duration-200;
+    @apply bg-card rounded-2xl border border-border p-6 transition-all duration-300;
   }
   .tool-card:hover {
     box-shadow: var(--card-shadow-hover);
-    @apply -translate-y-0.5 border-primary/30;
+    @apply -translate-y-1 border-primary/20;
   }
   .section-title {
-    @apply text-2xl font-bold text-foreground;
+    @apply text-2xl font-bold text-foreground tracking-tight;
   }
   .category-badge {
     @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium;
+  }
+  .btn-primary {
+    @apply rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-all duration-200 shadow-sm;
+  }
+  .btn-secondary {
+    @apply rounded-xl bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground hover:bg-secondary/80 transition-all duration-200;
+  }
+  .input-field {
+    @apply rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200;
   }
 }

@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout";
 import { useParams } from "react-router-dom";
 
-// Lazy load all tool components
 const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentType>> = {
   "percentage-calculator": lazy(() => import("@/tools/PercentageCalculator")),
   "age-calculator": lazy(() => import("@/tools/AgeCalculator")),
@@ -12,6 +11,15 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "simple-interest-calculator": lazy(() => import("@/tools/SimpleInterestCalculator")),
   "compound-interest-calculator": lazy(() => import("@/tools/CompoundInterestCalculator")),
   "gpa-calculator": lazy(() => import("@/tools/GpaCalculator")),
+  "basic-calculator": lazy(() => import("@/tools/BasicCalculator")),
+  "scientific-calculator": lazy(() => import("@/tools/ScientificCalculator")),
+  "logarithm-calculator": lazy(() => import("@/tools/LogarithmCalculator")),
+  "trigonometry-calculator": lazy(() => import("@/tools/TrigonometryCalculator")),
+  "fraction-calculator": lazy(() => import("@/tools/FractionCalculator")),
+  "bmi-calculator": lazy(() => import("@/tools/BmiCalculator")),
+  "area-calculator": lazy(() => import("@/tools/AreaCalculator")),
+  "speed-calculator": lazy(() => import("@/tools/SpeedCalculator")),
+  "average-calculator": lazy(() => import("@/tools/AverageCalculator")),
   "length-converter": lazy(() => import("@/tools/LengthConverter")),
   "weight-converter": lazy(() => import("@/tools/WeightConverter")),
   "temperature-converter": lazy(() => import("@/tools/TemperatureConverter")),
@@ -20,6 +28,10 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "decimal-to-binary": lazy(() => import("@/tools/DecimalToBinary")),
   "roman-numeral-converter": lazy(() => import("@/tools/RomanNumeralConverter")),
   "bytes-converter": lazy(() => import("@/tools/BytesConverter")),
+  "angle-converter": lazy(() => import("@/tools/AngleConverter")),
+  "speed-converter": lazy(() => import("@/tools/SpeedConverter")),
+  "energy-converter": lazy(() => import("@/tools/EnergyConverter")),
+  "pressure-converter": lazy(() => import("@/tools/PressureConverter")),
   "word-counter": lazy(() => import("@/tools/WordCounter")),
   "character-counter": lazy(() => import("@/tools/CharacterCounter")),
   "text-case-converter": lazy(() => import("@/tools/TextCaseConverter")),
@@ -27,6 +39,9 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "reverse-text": lazy(() => import("@/tools/ReverseText")),
   "sort-text": lazy(() => import("@/tools/SortText")),
   "remove-duplicate-lines": lazy(() => import("@/tools/RemoveDuplicateLines")),
+  "text-repeater": lazy(() => import("@/tools/TextRepeater")),
+  "remove-line-breaks": lazy(() => import("@/tools/RemoveLineBreaks")),
+  "text-diff-checker": lazy(() => import("@/tools/TextDiffChecker")),
   "password-generator": lazy(() => import("@/tools/PasswordGenerator")),
   "random-number-generator": lazy(() => import("@/tools/RandomNumberGenerator")),
   "random-color-generator": lazy(() => import("@/tools/RandomColorGenerator")),
@@ -34,6 +49,7 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "business-name-generator": lazy(() => import("@/tools/BusinessNameGenerator")),
   "pomodoro-timer": lazy(() => import("@/tools/PomodoroTimer")),
   "random-question-picker": lazy(() => import("@/tools/RandomQuestionPicker")),
+  "unit-circle-helper": lazy(() => import("@/tools/UnitCircleHelper")),
 };
 
 const ToolPage = () => {

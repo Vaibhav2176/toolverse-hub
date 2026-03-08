@@ -1,12 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Search, Menu, X, ChevronDown } from "lucide-react";
+import { Search, Menu, X, ChevronDown, Zap, TrendingUp } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import { tools, categories } from "@/config/tools";
+import { tools, categories, getPopularTools } from "@/config/tools";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [searchFocused, setSearchFocused] = useState(false);
   const [catOpen, setCatOpen] = useState(false);
   const navigate = useNavigate();
   const searchRef = useRef<HTMLDivElement>(null);
@@ -17,60 +17,73 @@ const Header = () => {
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(e.target as Node)) setSearchOpen(false);
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setSearchFocused(false);
+      }
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
 
+  const popularTools = getPopularTools().slice(0, 5);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-md">
-      <div className="container flex h-16 items-center justify-between gap-4">
-        <Link to="/" className="flex items-center gap-2 font-bold text-xl shrink-0">
-          <span className="hero-gradient bg-clip-text text-transparent">ToolVerse</span>
+    <header className="sticky top-0 z-50 border-b border-border bg-card/90 backdrop-blur-xl">
+      <div className="container flex h-16 items-center justify-between gap-6">
+        <Link to="/" className="flex items-center gap-2.5 shrink-0">
+          <div className="h-8 w-8 rounded-lg hero-gradient flex items-center justify-center">
+            <Zap className="h-4 w-4 text-primary-foreground" />
+          </div>
+          <span className="font-display font-bold text-xl text-foreground">ToolVerse</span>
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-          <Link to="/tools" className="text-muted-foreground hover:text-foreground transition-colors">All Tools</Link>
+        <nav className="hidden lg:flex items-center gap-1 text-sm font-medium">
+          <Link to="/" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">Home</Link>
+          <Link to="/tools" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">All Tools</Link>
           <div className="relative" onMouseEnter={() => setCatOpen(true)} onMouseLeave={() => setCatOpen(false)}>
-            <button className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors">
+            <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">
               Categories <ChevronDown className="h-3.5 w-3.5" />
             </button>
             {catOpen && (
-              <div className="absolute top-full left-0 mt-1 w-56 rounded-lg border border-border bg-card p-2 shadow-lg">
+              <div className="absolute top-full left-0 mt-1 w-60 rounded-xl border border-border bg-card p-2 shadow-xl animate-fade-in">
                 {categories.map(c => (
-                  <Link key={c.slug} to={`/${c.slug}`} className="flex items-center gap-2 rounded-md px-3 py-2 text-sm hover:bg-secondary transition-colors" onClick={() => setCatOpen(false)}>
-                    <c.icon className={`h-4 w-4 ${c.colorClass}`} />
-                    {c.title}
+                  <Link key={c.slug} to={`/${c.slug}`} className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm hover:bg-secondary/60 transition-all" onClick={() => setCatOpen(false)}>
+                    <div className={`h-8 w-8 rounded-lg ${c.bgClass} flex items-center justify-center`}>
+                      <c.icon className={`h-4 w-4 ${c.colorClass}`} />
+                    </div>
+                    <div>
+                      <div className="font-medium text-foreground">{c.title}</div>
+                      <div className="text-xs text-muted-foreground">{c.description}</div>
+                    </div>
                   </Link>
                 ))}
               </div>
             )}
           </div>
-          <Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link>
+          <Link to="/about" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">About</Link>
+          <Link to="/contact" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">Contact</Link>
         </nav>
 
         {/* Search */}
-        <div className="relative flex-1 max-w-xs" ref={searchRef}>
+        <div className="relative flex-1 max-w-sm" ref={searchRef}>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <input
               type="text"
               placeholder="Search tools..."
-              className="w-full rounded-lg border border-border bg-secondary/50 py-2 pl-9 pr-3 text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+              className="w-full rounded-xl border border-border bg-secondary/40 py-2.5 pl-10 pr-4 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 focus:bg-card transition-all"
               value={query}
-              onChange={e => { setQuery(e.target.value); setSearchOpen(true); }}
-              onFocus={() => setSearchOpen(true)}
+              onChange={e => { setQuery(e.target.value); setSearchFocused(true); }}
+              onFocus={() => setSearchFocused(true)}
             />
           </div>
-          {searchOpen && filtered.length > 0 && (
-            <div className="absolute top-full left-0 right-0 mt-1 rounded-lg border border-border bg-card p-1 shadow-lg">
+          {searchFocused && filtered.length > 0 && (
+            <div className="absolute top-full left-0 right-0 mt-2 rounded-xl border border-border bg-card p-2 shadow-xl animate-fade-in">
               {filtered.map(t => (
-                <button key={t.slug} className="w-full text-left rounded-md px-3 py-2 text-sm hover:bg-secondary transition-colors" onClick={() => { navigate(`/tools/${t.slug}`); setQuery(""); setSearchOpen(false); }}>
-                  <span className="font-medium">{t.title}</span>
-                  <span className="block text-xs text-muted-foreground">{t.description.slice(0, 60)}…</span>
+                <button key={t.slug} className="w-full text-left rounded-lg px-3 py-2.5 text-sm hover:bg-secondary/60 transition-all" onClick={() => { navigate(`/tools/${t.slug}`); setQuery(""); setSearchFocused(false); }}>
+                  <span className="font-medium text-foreground">{t.title}</span>
+                  <span className="block text-xs text-muted-foreground mt-0.5">{t.description.slice(0, 70)}…</span>
                 </button>
               ))}
             </div>
@@ -78,20 +91,26 @@ const Header = () => {
         </div>
 
         {/* Mobile menu */}
-        <button className="md:hidden p-2" onClick={() => setMenuOpen(!menuOpen)}>
+        <button className="lg:hidden p-2 rounded-lg hover:bg-secondary/60 transition-all" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
       {menuOpen && (
-        <div className="md:hidden border-t border-border bg-card p-4 space-y-3">
-          <Link to="/" className="block py-1" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/tools" className="block py-1" onClick={() => setMenuOpen(false)}>All Tools</Link>
-          {categories.map(c => (
-            <Link key={c.slug} to={`/${c.slug}`} className="block py-1 pl-3 text-muted-foreground" onClick={() => setMenuOpen(false)}>{c.title}</Link>
-          ))}
-          <Link to="/about" className="block py-1" onClick={() => setMenuOpen(false)}>About</Link>
-          <Link to="/contact" className="block py-1" onClick={() => setMenuOpen(false)}>Contact</Link>
+        <div className="lg:hidden border-t border-border bg-card p-4 space-y-1 animate-fade-in">
+          <Link to="/" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>Home</Link>
+          <Link to="/tools" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>All Tools</Link>
+          <div className="py-2">
+            <p className="px-3 text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">Categories</p>
+            {categories.map(c => (
+              <Link key={c.slug} to={`/${c.slug}`} className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-secondary/60 text-muted-foreground" onClick={() => setMenuOpen(false)}>
+                <c.icon className={`h-4 w-4 ${c.colorClass}`} />
+                {c.title}
+              </Link>
+            ))}
+          </div>
+          <Link to="/about" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>About</Link>
+          <Link to="/contact" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>
       )}
     </header>

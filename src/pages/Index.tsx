@@ -37,7 +37,7 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="hero-gradient-2 animate-gradient py-24 md:py-36 px-4 relative">
+        <div className="hero-gradient-2 animate-gradient py-14 md:py-20 px-4 relative">
           {/* Animated blobs */}
           <div className="absolute top-10 left-[10%] w-80 h-80 bg-primary-foreground/10 rounded-full blur-[100px] animate-float" />
           <div className="absolute bottom-0 right-[5%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
@@ -87,11 +87,11 @@ const Index = () => {
                   )}
                 </motion.div>
 
-                <motion.div custom={4} variants={fadeUp} className="flex items-center gap-5 mt-8 justify-center lg:justify-start">
+                <motion.div custom={4} variants={fadeUp} className="flex items-center gap-5 mt-6 justify-center lg:justify-start">
                   <Link to="/tools" className="btn-primary inline-flex items-center gap-2 px-8 py-4 text-sm rounded-2xl">
                     Explore All Tools <ArrowRight className="h-4 w-4" />
                   </Link>
-                  <span className="text-primary-foreground/50 text-sm font-medium">{tools.length}+ free tools</span>
+                  <span className="text-white font-bold text-base bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 border border-white/30">{tools.length}+ free tools</span>
                 </motion.div>
               </motion.div>
 
@@ -106,25 +106,17 @@ const Index = () => {
         </div>
 
         {/* Quick Access Strip - redesigned */}
-        <div className="bg-card/60 backdrop-blur-xl border-b border-border/50">
-          <div className="container py-5">
-            <div className="flex items-center gap-2 mb-3">
-              <MousePointerClick className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Quick Access</span>
-              <span className="text-xs text-muted-foreground ml-1">— Jump to popular tools</span>
-            </div>
-            <div className="flex items-center gap-3 overflow-x-auto no-scrollbar pb-1">
+        <div className="container py-4">
+            <div className="flex items-center gap-3 overflow-x-auto no-scrollbar">
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider shrink-0">Quick Access</span>
               {popularTools.map((t, i) => (
                 <motion.div key={t.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.06 }}>
                   <Link to={`/tools/${t.slug}`} className="quick-access-chip shrink-0 group">
-                    <Star className="h-3.5 w-3.5 text-primary group-hover:scale-125 transition-transform" />
                     <span>{t.title}</span>
-                    <ArrowRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </motion.div>
               ))}
             </div>
-          </div>
         </div>
       </section>
 
@@ -164,13 +156,12 @@ const Index = () => {
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-5">
             {categories.map(c => (
-              <motion.div key={c.slug} variants={scaleIn}>
-                <Link to={`/${c.slug}`} className="tool-card text-center group p-6 block gradient-border">
+              <motion.div key={c.slug} variants={scaleIn} className="h-full">
+                <Link to={`/${c.slug}`} className="tool-card text-center group p-6 block gradient-border h-full items-center justify-center">
                   <div className={`h-14 w-14 rounded-2xl ${c.bgClass} flex items-center justify-center mx-auto mb-3 group-hover:scale-110 group-hover:shadow-lg transition-all duration-300`}>
                     <c.icon className={`h-7 w-7 ${c.colorClass}`} />
                   </div>
-                  <h3 className="font-display font-semibold text-sm mb-1">{c.title}</h3>
-                  <p className="text-xs text-muted-foreground">{c.description}</p>
+                  <h3 className="font-display font-semibold text-sm">{c.title}</h3>
                 </Link>
               </motion.div>
             ))}

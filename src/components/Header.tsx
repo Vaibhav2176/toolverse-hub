@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-card/80 backdrop-blur-xl border-b border-border/50">
-      <div className="container flex h-16 items-center justify-between gap-4">
+      <div className="container flex h-12 items-center justify-between gap-4">
         <Link to="/" className="flex items-center gap-2.5 shrink-0 group">
           <div className="h-9 w-9 rounded-xl hero-gradient flex items-center justify-center shadow-lg shadow-primary/25 group-hover:shadow-primary/40 transition-shadow">
             <Zap className="h-4 w-4 text-primary-foreground" />

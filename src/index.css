@@ -115,6 +115,8 @@
     --category-text: 200 85% 60%;
     --category-gen: 35 85% 62%;
     --category-student: 330 70% 62%;
+    --category-dev: 160 65% 55%;
+    --category-design: 280 70% 62%;
 
     --glass-bg: hsl(250 20% 14% / 0.9);
     --glass-border: hsl(252 60% 50% / 0.15);

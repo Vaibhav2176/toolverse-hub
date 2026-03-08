@@ -106,25 +106,17 @@ const Index = () => {
         </div>
 
         {/* Quick Access Strip - redesigned */}
-        <div className="bg-card/60 backdrop-blur-xl border-b border-border/50">
-          <div className="container py-5">
-            <div className="flex items-center gap-2 mb-3">
-              <MousePointerClick className="h-4 w-4 text-primary" />
-              <span className="text-sm font-semibold text-foreground">Quick Access</span>
-              <span className="text-xs text-muted-foreground ml-1">— Jump to popular tools</span>
-            </div>
-            <div className="flex items-center gap-3 overflow-x-auto no-scrollbar pb-1">
+        <div className="container py-4">
+            <div className="flex items-center gap-3 overflow-x-auto no-scrollbar">
+              <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider shrink-0">Quick Access</span>
               {popularTools.map((t, i) => (
                 <motion.div key={t.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.06 }}>
                   <Link to={`/tools/${t.slug}`} className="quick-access-chip shrink-0 group">
-                    <Star className="h-3.5 w-3.5 text-primary group-hover:scale-125 transition-transform" />
                     <span>{t.title}</span>
-                    <ArrowRight className="h-3 w-3 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                   </Link>
                 </motion.div>
               ))}
             </div>
-          </div>
         </div>
       </section>
 

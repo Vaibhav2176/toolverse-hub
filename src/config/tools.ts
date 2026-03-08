@@ -1,6 +1,6 @@
-import { Calculator, ArrowRightLeft, Type, Sparkles, GraduationCap } from "lucide-react";
+import { Calculator, ArrowRightLeft, Type, Sparkles, GraduationCap, Code, Palette } from "lucide-react";
 
-export type ToolCategory = "calculators" | "converters" | "text-tools" | "generators" | "student-tools";
+export type ToolCategory = "calculators" | "converters" | "text-tools" | "generators" | "student-tools" | "developer-tools" | "design-tools";
 
 export interface ToolMeta {
   slug: string;

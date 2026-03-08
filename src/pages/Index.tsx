@@ -37,7 +37,7 @@ const Index = () => {
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="hero-gradient-2 animate-gradient py-14 md:py-20 px-4 relative">
+        <div className="hero-gradient-2 animate-gradient py-8 md:py-12 px-4 relative">
           {/* Animated blobs */}
           <div className="absolute top-10 left-[10%] w-80 h-80 bg-primary-foreground/10 rounded-full blur-[100px] animate-float" />
           <div className="absolute bottom-0 right-[5%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />

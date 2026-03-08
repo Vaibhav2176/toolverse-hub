@@ -44,6 +44,8 @@ export default {
         "cat-text": "hsl(var(--category-text))",
         "cat-gen": "hsl(var(--category-gen))",
         "cat-student": "hsl(var(--category-student))",
+        "cat-dev": "hsl(var(--category-dev))",
+        "cat-design": "hsl(var(--category-design))",
       },
       borderRadius: {
         lg: "var(--radius)",

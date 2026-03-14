@@ -8,6 +8,7 @@ export interface ToolMeta {
   description: string;
   category: ToolCategory;
   keywords: string[];
+  emoji: string;
   featured?: boolean;
   popular?: boolean;
   isNew?: boolean;

@@ -31,11 +31,7 @@ const ToolLayout = ({ slug, children, howTo, example, faqs }: ToolLayoutProps) =
 
       <div className="mb-8">
         <div className="flex items-center gap-4 mb-3">
-          {cat && (
-            <div className={`h-12 w-12 rounded-xl ${cat.bgClass} flex items-center justify-center`}>
-              <cat.icon className={`h-6 w-6 ${cat.colorClass}`} />
-            </div>
-          )}
+          <span className="text-4xl shrink-0" role="img">{tool.emoji}</span>
           <div>
             <h1 className="text-3xl font-display font-bold tracking-tight">{tool.title}</h1>
             <p className="text-muted-foreground mt-0.5 leading-relaxed">{tool.description}</p>

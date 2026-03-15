@@ -1,10 +1,13 @@
 import { useState } from "react";
 import ToolLayout from "@/components/ToolLayout";
+import CurrencySelector from "@/components/CurrencySelector";
+import { formatCurrency } from "@/lib/currency";
 
 const TipCalculator = () => {
   const [bill, setBill] = useState("");
   const [tipPercent, setTipPercent] = useState("15");
   const [people, setPeople] = useState("1");
+  const [currency, setCurrency] = useState("USD");
 
   const billNum = parseFloat(bill) || 0;
   const tipNum = parseFloat(tipPercent) || 0;
@@ -14,10 +17,11 @@ const TipCalculator = () => {
   const perPerson = total / peopleNum;
 
   return (
-    <ToolLayout slug="tip-calculator" howTo={["Enter bill amount", "Choose tip percentage", "Split between people"]} faqs={[{ q: "What's a standard tip?", a: "15-20% is standard in the US. Adjust based on service quality." }]}>
+    <ToolLayout slug="tip-calculator" howTo={["Select currency", "Enter bill amount", "Choose tip percentage", "Split between people"]} faqs={[{ q: "What's a standard tip?", a: "15-20% is standard in the US. Adjust based on service quality." }]}>
       <div className="max-w-md mx-auto space-y-4">
+        <CurrencySelector value={currency} onChange={setCurrency} />
         <div>
-          <label className="text-sm font-medium text-foreground">Bill Amount ($)</label>
+          <label className="text-sm font-medium text-foreground">Bill Amount</label>
           <input type="number" value={bill} onChange={e => setBill(e.target.value)} placeholder="0.00" className="w-full mt-1 rounded-xl border border-input bg-background px-4 py-3 text-sm outline-none focus:border-primary" />
         </div>
         <div>
@@ -37,15 +41,15 @@ const TipCalculator = () => {
           <div className="grid grid-cols-3 gap-3 pt-2">
             <div className="bg-secondary rounded-xl p-4 text-center">
               <div className="text-xs text-muted-foreground">Tip</div>
-              <div className="text-lg font-bold text-foreground">${tipAmount.toFixed(2)}</div>
+              <div className="text-lg font-bold text-foreground">{formatCurrency(tipAmount, currency)}</div>
             </div>
             <div className="bg-secondary rounded-xl p-4 text-center">
               <div className="text-xs text-muted-foreground">Total</div>
-              <div className="text-lg font-bold text-foreground">${total.toFixed(2)}</div>
+              <div className="text-lg font-bold text-foreground">{formatCurrency(total, currency)}</div>
             </div>
             <div className="bg-primary/10 rounded-xl p-4 text-center">
               <div className="text-xs text-muted-foreground">Per Person</div>
-              <div className="text-lg font-bold text-primary">${perPerson.toFixed(2)}</div>
+              <div className="text-lg font-bold text-primary">{formatCurrency(perPerson, currency)}</div>
             </div>
           </div>
         )}

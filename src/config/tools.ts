@@ -1,6 +1,7 @@
 import { Calculator, ArrowRightLeft, Type, Sparkles, GraduationCap, Code, Palette } from "lucide-react";
 
 export type ToolCategory = "calculators" | "converters" | "text-tools" | "generators" | "student-tools" | "developer-tools" | "design-tools";
+export type ToolPriority = "high" | "medium" | "normal";
 
 export interface ToolMeta {
   slug: string;
@@ -9,6 +10,7 @@ export interface ToolMeta {
   category: ToolCategory;
   keywords: string[];
   emoji: string;
+  priority?: ToolPriority;
   featured?: boolean;
   popular?: boolean;
   isNew?: boolean;
@@ -33,22 +35,24 @@ export const categories: CategoryMeta[] = [
   { slug: "design-tools", title: "Design Tools", description: "Gradients, palettes, and color utilities", icon: Palette, colorClass: "text-cat-design", bgClass: "bg-cat-design/10" },
 ];
 
+const priorityOrder: Record<ToolPriority, number> = { high: 0, medium: 1, normal: 2 };
+
 export const tools: ToolMeta[] = [
   // Calculators
-  { slug: "percentage-calculator", title: "Percentage Calculator", description: "Calculate percentages, increases, decreases, and ratios easily.", category: "calculators", keywords: ["percentage", "percent", "ratio"], emoji: "📊", featured: true, popular: true },
+  { slug: "basic-calculator", title: "Basic Calculator", description: "A simple calculator for addition, subtraction, multiplication, and division.", category: "calculators", keywords: ["basic", "calculator", "math", "arithmetic"], emoji: "🧮", priority: "high", popular: true },
+  { slug: "scientific-calculator", title: "Scientific Calculator", description: "Full scientific calculator with trigonometry, logarithms, powers, and roots.", category: "calculators", keywords: ["scientific", "trig", "sin", "cos", "log"], emoji: "🔬", priority: "high", featured: true, popular: true },
+  { slug: "percentage-calculator", title: "Percentage Calculator", description: "Calculate percentages, increases, decreases, and ratios easily.", category: "calculators", keywords: ["percentage", "percent", "ratio"], emoji: "📊", priority: "high", featured: true, popular: true },
+  { slug: "loan-emi-calculator", title: "Loan EMI Calculator", description: "Calculate monthly EMI for loans with principal, rate, and tenure.", category: "calculators", keywords: ["loan", "emi", "mortgage"], emoji: "🏦", priority: "high", featured: true },
+  { slug: "bmi-calculator", title: "BMI Calculator", description: "Calculate your Body Mass Index and find your health category.", category: "calculators", keywords: ["bmi", "body", "mass", "health", "weight"], emoji: "⚖️", priority: "high", popular: true },
+  { slug: "simple-interest-calculator", title: "Simple Interest Calculator", description: "Calculate simple interest on principal over time.", category: "calculators", keywords: ["interest", "simple", "finance"], emoji: "💰", priority: "medium" },
+  { slug: "compound-interest-calculator", title: "Compound Interest Calculator", description: "Calculate compound interest with different compounding periods.", category: "calculators", keywords: ["compound", "interest", "investment"], emoji: "📈", priority: "medium" },
+  { slug: "logarithm-calculator", title: "Logarithm Calculator", description: "Calculate logarithms with any base including natural log and log base 10.", category: "calculators", keywords: ["log", "logarithm", "ln", "math"], emoji: "📐", priority: "medium", isNew: true },
+  { slug: "trigonometry-calculator", title: "Trigonometry Calculator", description: "Calculate sin, cos, tan, and their inverses in degrees or radians.", category: "calculators", keywords: ["trigonometry", "sin", "cos", "tan"], emoji: "📏", priority: "medium", isNew: true },
   { slug: "age-calculator", title: "Age Calculator", description: "Calculate exact age from date of birth in years, months, and days.", category: "calculators", keywords: ["age", "birthday", "dob"], emoji: "🎂", popular: true },
   { slug: "discount-calculator", title: "Discount Calculator", description: "Calculate sale prices after applying discount percentages.", category: "calculators", keywords: ["discount", "sale", "price"], emoji: "🏷️", popular: true },
   { slug: "profit-loss-calculator", title: "Profit & Loss Calculator", description: "Calculate profit or loss amount and percentage.", category: "calculators", keywords: ["profit", "loss", "business"], emoji: "💹" },
-  { slug: "loan-emi-calculator", title: "Loan EMI Calculator", description: "Calculate monthly EMI for loans with principal, rate, and tenure.", category: "calculators", keywords: ["loan", "emi", "mortgage"], emoji: "🏦", featured: true },
-  { slug: "simple-interest-calculator", title: "Simple Interest Calculator", description: "Calculate simple interest on principal over time.", category: "calculators", keywords: ["interest", "simple", "finance"], emoji: "💰" },
-  { slug: "compound-interest-calculator", title: "Compound Interest Calculator", description: "Calculate compound interest with different compounding periods.", category: "calculators", keywords: ["compound", "interest", "investment"], emoji: "📈" },
   { slug: "gpa-calculator", title: "GPA Calculator", description: "Calculate your Grade Point Average from course grades and credits.", category: "calculators", keywords: ["gpa", "grades", "college"], emoji: "🎓" },
-  { slug: "basic-calculator", title: "Basic Calculator", description: "A simple calculator for addition, subtraction, multiplication, and division.", category: "calculators", keywords: ["basic", "calculator", "math", "arithmetic"], emoji: "🧮", popular: true },
-  { slug: "scientific-calculator", title: "Scientific Calculator", description: "Full scientific calculator with trigonometry, logarithms, powers, and roots.", category: "calculators", keywords: ["scientific", "trig", "sin", "cos", "log"], emoji: "🔬", featured: true, popular: true },
-  { slug: "logarithm-calculator", title: "Logarithm Calculator", description: "Calculate logarithms with any base including natural log and log base 10.", category: "calculators", keywords: ["log", "logarithm", "ln", "math"], emoji: "📐", isNew: true },
-  { slug: "trigonometry-calculator", title: "Trigonometry Calculator", description: "Calculate sin, cos, tan, and their inverses in degrees or radians.", category: "calculators", keywords: ["trigonometry", "sin", "cos", "tan"], emoji: "📏", isNew: true },
   { slug: "fraction-calculator", title: "Fraction Calculator", description: "Add, subtract, multiply, and divide fractions with step-by-step results.", category: "calculators", keywords: ["fraction", "math", "divide"], emoji: "➗" },
-  { slug: "bmi-calculator", title: "BMI Calculator", description: "Calculate your Body Mass Index and find your health category.", category: "calculators", keywords: ["bmi", "body", "mass", "health", "weight"], emoji: "⚖️", popular: true },
   { slug: "area-calculator", title: "Area Calculator", description: "Calculate the area of rectangles, circles, triangles, and more shapes.", category: "calculators", keywords: ["area", "shape", "geometry", "square"], emoji: "📐" },
   { slug: "speed-calculator", title: "Speed Calculator", description: "Calculate speed, distance, or time from any two known values.", category: "calculators", keywords: ["speed", "distance", "time", "velocity"], emoji: "🏎️" },
   { slug: "average-calculator", title: "Average Calculator", description: "Calculate mean, median, and mode from a set of numbers.", category: "calculators", keywords: ["average", "mean", "median", "mode"], emoji: "📉" },
@@ -70,29 +74,35 @@ export const tools: ToolMeta[] = [
   { slug: "ratio-calculator", title: "Ratio Calculator", description: "Solve ratios, scale values, and find missing ratio terms.", category: "calculators", keywords: ["ratio", "proportion", "scale"], emoji: "⚖️", isNew: true },
 
   // Converters
-  { slug: "length-converter", title: "Length Converter", description: "Convert between meters, feet, inches, kilometers, miles, and more.", category: "converters", keywords: ["length", "distance", "meters", "feet"], emoji: "📏", popular: true },
-  { slug: "weight-converter", title: "Weight Converter", description: "Convert between kilograms, pounds, ounces, grams, and more.", category: "converters", keywords: ["weight", "mass", "kg", "pounds"], emoji: "⚖️", popular: true },
-  { slug: "temperature-converter", title: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, and Kelvin.", category: "converters", keywords: ["temperature", "celsius", "fahrenheit"], emoji: "🌡️", featured: true },
+  { slug: "currency-converter", title: "Currency Converter", description: "Convert between 10 major world currencies with static exchange rates.", category: "converters", keywords: ["currency", "exchange", "money", "convert"], emoji: "💱", priority: "high", popular: true, isNew: true },
+  { slug: "length-converter", title: "Length Converter", description: "Convert between meters, feet, inches, kilometers, miles, and more.", category: "converters", keywords: ["length", "distance", "meters", "feet"], emoji: "📏", priority: "high", popular: true },
+  { slug: "weight-converter", title: "Weight Converter", description: "Convert between kilograms, pounds, ounces, grams, and more.", category: "converters", keywords: ["weight", "mass", "kg", "pounds"], emoji: "⚖️", priority: "high", popular: true },
+  { slug: "temperature-converter", title: "Temperature Converter", description: "Convert between Celsius, Fahrenheit, and Kelvin.", category: "converters", keywords: ["temperature", "celsius", "fahrenheit"], emoji: "🌡️", priority: "high", featured: true },
+  { slug: "volume-converter", title: "Volume Converter", description: "Convert between liters, gallons, cups, milliliters, and more.", category: "converters", keywords: ["volume", "liters", "gallons", "cups"], emoji: "🧪", priority: "high", isNew: true },
+  { slug: "angle-converter", title: "Angle Converter", description: "Convert between degrees, radians, gradians, and turns.", category: "converters", keywords: ["angle", "degree", "radian", "gradian"], emoji: "🔄", priority: "medium", isNew: true },
+  { slug: "speed-converter", title: "Speed Converter", description: "Convert between km/h, mph, m/s, knots, and more speed units.", category: "converters", keywords: ["speed", "kmh", "mph", "velocity"], emoji: "💨", priority: "medium", isNew: true },
+  { slug: "energy-converter", title: "Energy Converter", description: "Convert between joules, calories, kilowatt-hours, and BTU.", category: "converters", keywords: ["energy", "joules", "calories", "kwh"], emoji: "⚡", priority: "medium", isNew: true },
+  { slug: "pressure-converter", title: "Pressure Converter", description: "Convert between Pascal, bar, PSI, atm, and mmHg.", category: "converters", keywords: ["pressure", "pascal", "bar", "psi", "atm"], emoji: "🔧", priority: "medium", isNew: true },
   { slug: "time-converter", title: "Time Converter", description: "Convert between seconds, minutes, hours, days, and more.", category: "converters", keywords: ["time", "hours", "minutes"], emoji: "⏱️" },
   { slug: "binary-to-decimal", title: "Binary to Decimal Converter", description: "Convert binary numbers to decimal format.", category: "converters", keywords: ["binary", "decimal", "number system"], emoji: "🔢" },
   { slug: "decimal-to-binary", title: "Decimal to Binary Converter", description: "Convert decimal numbers to binary format.", category: "converters", keywords: ["decimal", "binary", "number system"], emoji: "💻" },
   { slug: "roman-numeral-converter", title: "Roman Numeral Converter", description: "Convert between Roman numerals and decimal numbers.", category: "converters", keywords: ["roman", "numeral", "convert"], emoji: "🏛️" },
   { slug: "bytes-converter", title: "Bytes / KB / MB / GB Converter", description: "Convert between bytes, kilobytes, megabytes, gigabytes, and terabytes.", category: "converters", keywords: ["bytes", "kb", "mb", "gb", "storage"], emoji: "💾" },
-  { slug: "angle-converter", title: "Angle Converter", description: "Convert between degrees, radians, gradians, and turns.", category: "converters", keywords: ["angle", "degree", "radian", "gradian"], emoji: "🔄", isNew: true },
-  { slug: "speed-converter", title: "Speed Converter", description: "Convert between km/h, mph, m/s, knots, and more speed units.", category: "converters", keywords: ["speed", "kmh", "mph", "velocity"], emoji: "💨", isNew: true },
-  { slug: "energy-converter", title: "Energy Converter", description: "Convert between joules, calories, kilowatt-hours, and BTU.", category: "converters", keywords: ["energy", "joules", "calories", "kwh"], emoji: "⚡", isNew: true },
-  { slug: "pressure-converter", title: "Pressure Converter", description: "Convert between Pascal, bar, PSI, atm, and mmHg.", category: "converters", keywords: ["pressure", "pascal", "bar", "psi", "atm"], emoji: "🔧", isNew: true },
-  { slug: "volume-converter", title: "Volume Converter", description: "Convert between liters, gallons, cups, milliliters, and more.", category: "converters", keywords: ["volume", "liters", "gallons", "cups"], emoji: "🧪", isNew: true },
   { slug: "number-base-converter", title: "Number Base Converter", description: "Convert numbers between binary, octal, decimal, and hexadecimal.", category: "converters", keywords: ["base", "binary", "hex", "octal"], emoji: "🔣", isNew: true },
   { slug: "color-converter", title: "Color Converter", description: "Convert colors between HEX, RGB, and HSL formats.", category: "converters", keywords: ["color", "hex", "rgb", "hsl"], emoji: "🎨", isNew: true },
   { slug: "currency-formatter", title: "Currency Formatter", description: "Format numbers in multiple currency styles like USD, EUR, GBP.", category: "converters", keywords: ["currency", "format", "money", "dollar"], emoji: "💵" },
   { slug: "frequency-converter", title: "Frequency Converter", description: "Convert between Hz, kHz, MHz, GHz, and RPM.", category: "converters", keywords: ["frequency", "hertz", "mhz", "ghz"], emoji: "📡", isNew: true },
   { slug: "data-transfer-rate-converter", title: "Data Rate Converter", description: "Convert between bps, Kbps, Mbps, Gbps, and bytes per second.", category: "converters", keywords: ["data", "rate", "mbps", "bandwidth"], emoji: "📶", isNew: true },
+  { slug: "area-converter", title: "Area Converter", description: "Convert between sq meters, sq feet, acres, hectares, and sq miles.", category: "converters", keywords: ["area", "square", "feet", "meters", "acres"], emoji: "📐", isNew: true },
+  { slug: "power-converter", title: "Power Converter", description: "Convert between watts, kilowatts, megawatts, horsepower, and BTU/h.", category: "converters", keywords: ["power", "watts", "kilowatts", "horsepower"], emoji: "🔌", isNew: true },
+  { slug: "fuel-efficiency-converter", title: "Fuel Efficiency Converter", description: "Convert between km/L, mpg (US), mpg (UK), and L/100km.", category: "converters", keywords: ["fuel", "mpg", "efficiency", "mileage"], emoji: "⛽", isNew: true },
+  { slug: "density-converter", title: "Density Converter", description: "Convert between kg/m³, g/cm³, lb/ft³, and other density units.", category: "converters", keywords: ["density", "mass", "volume", "kg"], emoji: "🧊", isNew: true },
+  { slug: "illuminance-converter", title: "Illuminance Converter", description: "Convert between lux, foot-candle, phot, and kilolux.", category: "converters", keywords: ["illuminance", "lux", "light", "foot-candle"], emoji: "💡", isNew: true },
 
   // Text Tools
-  { slug: "word-counter", title: "Word Counter", description: "Count words, characters, sentences, and paragraphs in text.", category: "text-tools", keywords: ["word", "count", "character"], emoji: "📝", featured: true, popular: true },
-  { slug: "character-counter", title: "Character Counter", description: "Count characters with and without spaces in your text.", category: "text-tools", keywords: ["character", "count", "length"], emoji: "🔤" },
-  { slug: "text-case-converter", title: "Text Case Converter", description: "Convert text to uppercase, lowercase, title case, and more.", category: "text-tools", keywords: ["uppercase", "lowercase", "case"], emoji: "🔠", popular: true },
+  { slug: "word-counter", title: "Word Counter", description: "Count words, characters, sentences, and paragraphs in text.", category: "text-tools", keywords: ["word", "count", "character"], emoji: "📝", priority: "high", featured: true, popular: true },
+  { slug: "character-counter", title: "Character Counter", description: "Count characters with and without spaces in your text.", category: "text-tools", keywords: ["character", "count", "length"], emoji: "🔤", priority: "high" },
+  { slug: "text-case-converter", title: "Text Case Converter", description: "Convert text to uppercase, lowercase, title case, and more.", category: "text-tools", keywords: ["uppercase", "lowercase", "case"], emoji: "🔠", priority: "high", popular: true },
   { slug: "remove-extra-spaces", title: "Remove Extra Spaces", description: "Clean up text by removing extra whitespace and blank lines.", category: "text-tools", keywords: ["spaces", "whitespace", "clean"], emoji: "🧹" },
   { slug: "reverse-text", title: "Reverse Text", description: "Reverse any text string character by character.", category: "text-tools", keywords: ["reverse", "backwards", "mirror"], emoji: "🔃" },
   { slug: "sort-text", title: "Sort Text Alphabetically", description: "Sort lines of text in alphabetical or reverse order.", category: "text-tools", keywords: ["sort", "alphabetical", "order"], emoji: "🔡" },
@@ -112,8 +122,8 @@ export const tools: ToolMeta[] = [
   { slug: "text-to-morse-code", title: "Morse Code Translator", description: "Convert text to Morse code and Morse code back to text.", category: "text-tools", keywords: ["morse", "code", "translate", "dots"], emoji: "📡", isNew: true },
 
   // Generators
-  { slug: "password-generator", title: "Password Generator", description: "Generate strong, secure passwords with customizable options.", category: "generators", keywords: ["password", "security", "random"], emoji: "🔑", featured: true, popular: true },
-  { slug: "random-number-generator", title: "Random Number Generator", description: "Generate random numbers within a specified range.", category: "generators", keywords: ["random", "number", "dice"], emoji: "🎲" },
+  { slug: "password-generator", title: "Password Generator", description: "Generate strong, secure passwords with customizable options.", category: "generators", keywords: ["password", "security", "random"], emoji: "🔑", priority: "high", featured: true, popular: true },
+  { slug: "random-number-generator", title: "Random Number Generator", description: "Generate random numbers within a specified range.", category: "generators", keywords: ["random", "number", "dice"], emoji: "🎲", priority: "high" },
   { slug: "random-color-generator", title: "Random Color Generator", description: "Generate random colors in HEX, RGB, and HSL formats.", category: "generators", keywords: ["color", "hex", "rgb"], emoji: "🌈" },
   { slug: "username-generator", title: "Username Generator", description: "Generate creative and unique usernames for any platform.", category: "generators", keywords: ["username", "name", "handle"], emoji: "👤" },
   { slug: "business-name-generator", title: "Business Name Generator", description: "Generate creative business name ideas for your startup.", category: "generators", keywords: ["business", "name", "startup"], emoji: "🏢" },
@@ -124,12 +134,12 @@ export const tools: ToolMeta[] = [
   { slug: "password-strength-checker", title: "Password Strength Checker", description: "Check how strong your password is with detailed analysis.", category: "generators", keywords: ["password", "strength", "security", "check"], emoji: "🛡️", isNew: true },
 
   // Student Tools
-  { slug: "pomodoro-timer", title: "Pomodoro Study Timer", description: "Stay focused with the Pomodoro technique – 25 min work, 5 min break.", category: "student-tools", keywords: ["pomodoro", "timer", "study", "focus"], emoji: "🍅", featured: true, popular: true },
+  { slug: "pomodoro-timer", title: "Pomodoro Study Timer", description: "Stay focused with the Pomodoro technique – 25 min work, 5 min break.", category: "student-tools", keywords: ["pomodoro", "timer", "study", "focus"], emoji: "🍅", priority: "high", featured: true, popular: true },
+  { slug: "date-difference-calculator", title: "Date Difference", description: "Calculate the difference between two dates in days, weeks, months.", category: "student-tools", keywords: ["date", "difference", "days", "between"], emoji: "📅", priority: "high", isNew: true },
+  { slug: "countdown-timer", title: "Countdown Timer", description: "Set a custom countdown timer with hours, minutes, and seconds.", category: "student-tools", keywords: ["countdown", "timer", "alarm"], emoji: "⏳", priority: "high", isNew: true },
   { slug: "random-question-picker", title: "Random Question Picker", description: "Pick random questions from a list for quizzes and study sessions.", category: "student-tools", keywords: ["question", "random", "quiz", "study"], emoji: "❓" },
   { slug: "unit-circle-helper", title: "Unit Circle Helper", description: "Interactive unit circle reference with angles, radians, and coordinates.", category: "student-tools", keywords: ["unit circle", "trigonometry", "angles", "radians"], emoji: "⭕", isNew: true },
-  { slug: "countdown-timer", title: "Countdown Timer", description: "Set a custom countdown timer with hours, minutes, and seconds.", category: "student-tools", keywords: ["countdown", "timer", "alarm"], emoji: "⏳", isNew: true },
   { slug: "stopwatch", title: "Stopwatch", description: "Precise stopwatch with lap tracking and centisecond accuracy.", category: "student-tools", keywords: ["stopwatch", "timer", "lap", "time"], emoji: "⏱️", isNew: true },
-  { slug: "date-difference-calculator", title: "Date Difference", description: "Calculate the difference between two dates in days, weeks, months.", category: "student-tools", keywords: ["date", "difference", "days", "between"], emoji: "📅", isNew: true },
   { slug: "cgpa-to-percentage", title: "CGPA to Percentage", description: "Convert CGPA to percentage using standard formulas.", category: "student-tools", keywords: ["cgpa", "percentage", "grades", "college"], emoji: "🎓", isNew: true },
   { slug: "days-until-date", title: "Days Until Date", description: "Calculate how many days remain until a selected future date.", category: "student-tools", keywords: ["days", "until", "countdown", "future"], emoji: "📆", isNew: true },
   { slug: "business-days-calculator", title: "Business Days Calculator", description: "Calculate business days between two dates excluding weekends.", category: "student-tools", keywords: ["business", "working", "days", "weekends"], emoji: "🗓️", isNew: true, popular: true },
@@ -156,7 +166,11 @@ export const tools: ToolMeta[] = [
   { slug: "box-shadow-generator", title: "Box Shadow Generator", description: "Generate CSS box-shadow with live preview and copy code.", category: "design-tools", keywords: ["shadow", "css", "box-shadow", "design"], emoji: "🖼️", isNew: true, popular: true },
 ];
 
-export const getToolsByCategory = (cat: ToolCategory) => tools.filter(t => t.category === cat);
+export const getToolsByCategory = (cat: ToolCategory) =>
+  tools
+    .filter(t => t.category === cat)
+    .sort((a, b) => priorityOrder[a.priority || "normal"] - priorityOrder[b.priority || "normal"]);
+
 export const getFeaturedTools = () => tools.filter(t => t.featured);
 export const getPopularTools = () => tools.filter(t => t.popular);
 export const getNewTools = () => tools.filter(t => t.isNew);

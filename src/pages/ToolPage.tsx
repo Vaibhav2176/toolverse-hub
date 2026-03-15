@@ -70,37 +70,31 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "json-formatter": lazy(() => import("@/tools/JsonFormatter")),
   "base64-encoder-decoder": lazy(() => import("@/tools/Base64EncoderDecoder")),
   "url-encoder-decoder": lazy(() => import("@/tools/UrlEncoderDecoder")),
-  // Date & Time
   "days-until-date": lazy(() => import("@/tools/DaysUntilDate")),
   "business-days-calculator": lazy(() => import("@/tools/BusinessDaysCalculator")),
   "workdays-calculator": lazy(() => import("@/tools/WorkdaysCalculator")),
   "week-number-calculator": lazy(() => import("@/tools/WeekNumberCalculator")),
   "unix-timestamp-converter": lazy(() => import("@/tools/UnixTimestampConverter")),
-  // Math
   "lcm-calculator": lazy(() => import("@/tools/LcmCalculator")),
   "gcd-calculator": lazy(() => import("@/tools/GcdCalculator")),
   "prime-factorization": lazy(() => import("@/tools/PrimeFactorization")),
   "matrix-calculator": lazy(() => import("@/tools/MatrixCalculator")),
   "determinant-calculator": lazy(() => import("@/tools/DeterminantCalculator")),
-  // Finance
   "gst-calculator": lazy(() => import("@/tools/GstCalculator")),
   "savings-calculator": lazy(() => import("@/tools/SavingsCalculator")),
   "investment-calculator": lazy(() => import("@/tools/InvestmentCalculator")),
   "inflation-calculator": lazy(() => import("@/tools/InflationCalculator")),
   "sales-tax-calculator": lazy(() => import("@/tools/SalesTaxCalculator")),
-  // Developer
   "json-to-csv": lazy(() => import("@/tools/JsonToCsv")),
   "csv-to-json": lazy(() => import("@/tools/CsvToJson")),
   "uuid-generator": lazy(() => import("@/tools/UuidGenerator")),
   "jwt-decoder": lazy(() => import("@/tools/JwtDecoder")),
   "regex-tester": lazy(() => import("@/tools/RegexTester")),
-  // Design
   "gradient-generator": lazy(() => import("@/tools/GradientGenerator")),
   "color-palette-generator": lazy(() => import("@/tools/ColorPaletteGenerator")),
   "contrast-checker": lazy(() => import("@/tools/ContrastChecker")),
   "rgb-to-cmyk": lazy(() => import("@/tools/RgbToCmyk")),
   "image-color-picker": lazy(() => import("@/tools/ImageColorPicker")),
-  // Additional tools 100+
   "electricity-cost-calculator": lazy(() => import("@/tools/ElectricityCostCalculator")),
   "square-root-calculator": lazy(() => import("@/tools/SquareRootCalculator")),
   "exponent-calculator": lazy(() => import("@/tools/ExponentCalculator")),
@@ -116,6 +110,13 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "chmod-calculator": lazy(() => import("@/tools/ChmodCalculator")),
   "css-unit-converter": lazy(() => import("@/tools/CssUnitConverter")),
   "box-shadow-generator": lazy(() => import("@/tools/BoxShadowGenerator")),
+  // New converters
+  "currency-converter": lazy(() => import("@/tools/CurrencyConverter")),
+  "area-converter": lazy(() => import("@/tools/AreaConverter")),
+  "power-converter": lazy(() => import("@/tools/PowerConverter")),
+  "fuel-efficiency-converter": lazy(() => import("@/tools/FuelEfficiencyConverter")),
+  "density-converter": lazy(() => import("@/tools/DensityConverter")),
+  "illuminance-converter": lazy(() => import("@/tools/IlluminanceConverter")),
 };
 
 const ToolPage = () => {

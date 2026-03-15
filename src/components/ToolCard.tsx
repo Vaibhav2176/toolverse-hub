@@ -7,11 +7,7 @@ const ToolCard = ({ tool }: { tool: ToolMeta }) => {
   return (
     <Link to={`/tools/${tool.slug}`} className="tool-card group block gradient-border">
       <div className="flex items-center gap-2 mb-3">
-        {cat && (
-          <div className={`h-8 w-8 rounded-lg ${cat.bgClass} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shrink-0`}>
-            <cat.icon className={`h-4 w-4 ${cat.colorClass}`} />
-          </div>
-        )}
+        <span className="text-2xl shrink-0 group-hover:scale-110 transition-transform duration-300" role="img">{tool.emoji}</span>
         <span className={`category-badge ${cat?.bgClass} ${cat?.colorClass}`}>{cat?.title}</span>
         {tool.isNew && (
           <span className="category-badge bg-gradient-to-r from-primary/10 to-accent/10 text-primary font-semibold ml-auto">

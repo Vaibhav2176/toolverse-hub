@@ -10,6 +10,9 @@ export interface SeoContent {
 const seo: Record<string, SeoContent> = {
   "basic-calculator": {
     whatIs: "The Basic Calculator is a simple yet powerful online arithmetic tool that performs addition, subtraction, multiplication, and division instantly in your browser. Whether you are a student solving homework problems, a professional handling quick financial estimates, or anyone needing fast math, this calculator provides accurate results without the hassle of finding a physical device. It supports chained operations, decimal numbers, and follows standard mathematical order. Perfect for day-to-day calculations, this free tool replaces your desk calculator with a clean, responsive interface available on any device.",
+    extraSeo: "This tool is commonly used by students, office workers, and anyone who needs quick arithmetic results without searching for a physical calculator. It runs entirely in your browser with zero downloads required.",
+    example: "For example, to calculate 245 + 378 × 2:\n\n245 + 378 × 2 = 245 + 756 = 1,001\n\nThe calculator follows BODMAS order automatically.",
+    formula: "Basic operations:\nAddition: a + b\nSubtraction: a − b\nMultiplication: a × b\nDivision: a ÷ b",
     applications: [
       "Quick everyday arithmetic like grocery bills and splitting expenses",
       "Student homework and exam preparation",
@@ -26,6 +29,9 @@ const seo: Record<string, SeoContent> = {
   },
   "scientific-calculator": {
     whatIs: "The Scientific Calculator is an advanced online tool designed for students, engineers, and scientists who need to perform complex mathematical operations. It supports trigonometric functions like sine, cosine, and tangent, logarithmic calculations, exponentiation, square roots, and factorial computations. Unlike basic calculators, this tool handles parentheses and nested expressions with ease. Whether you are solving physics equations, engineering formulas, or advanced algebra problems, this browser-based scientific calculator offers the same functionality as expensive handheld models — completely free.",
+    extraSeo: "Ideal for students preparing for competitive exams, engineers working on complex formulas, and researchers who need quick trigonometric or logarithmic computations — all without installing any software.",
+    example: "To calculate sin(30°) + log(100):\n\nsin(30°) = 0.5\nlog(100) = 2\nResult = 0.5 + 2 = 2.5",
+    formula: "Common formulas:\nsin²θ + cos²θ = 1\nlog(a×b) = log(a) + log(b)\nn! = n × (n-1) × ... × 1",
     applications: [
       "Solving trigonometry and calculus problems in school or university",
       "Engineering computations involving powers and logarithms",
@@ -42,6 +48,9 @@ const seo: Record<string, SeoContent> = {
   },
   "percentage-calculator": {
     whatIs: "The Percentage Calculator is an essential online tool for computing percentages quickly and accurately. It helps you find what percentage one number is of another, calculate percentage increases or decreases, and determine values after applying a percentage. Used extensively in finance, shopping, academics, and business reporting, percentages are one of the most common mathematical operations in daily life. This tool removes the guesswork and manual calculation, giving you instant, precise results for discounts, tax rates, grade calculations, and statistical analysis.",
+    extraSeo: "Whether you're calculating exam scores, shopping discounts, or business margins, this percentage calculator delivers instant and accurate results for students, shoppers, and professionals.",
+    example: "If you want to find 20% of 500:\n\n20% of 500 = (20/100) × 500 = 100",
+    formula: "Percentage = (Value / Total) × 100\nValue = (Percentage / 100) × Total\n% Change = ((New − Old) / Old) × 100",
     applications: [
       "Calculating discounts during shopping and sales",
       "Determining tax amounts on purchases",
@@ -58,6 +67,9 @@ const seo: Record<string, SeoContent> = {
   },
   "loan-emi-calculator": {
     whatIs: "The Loan EMI Calculator helps you estimate your Equated Monthly Installment for any loan — home, car, personal, or education. By entering the loan principal, annual interest rate, and tenure, you get an instant breakdown of your monthly payment, total interest payable, and total amount. Understanding EMI before taking a loan is crucial for financial planning. Banks and financial institutions use this same formula (reducing balance method) to compute loan repayments. This free tool empowers borrowers to compare loan offers and budget their monthly expenses wisely.",
+    extraSeo: "Before applying for a home loan, car loan, or personal loan, use this EMI calculator to understand your monthly financial commitment. Trusted by borrowers and financial advisors to compare loan offers.",
+    example: "For a loan of ₹1,00,000 at 10% annual interest for 12 months:\n\nMonthly EMI ≈ ₹8,791\nTotal Interest ≈ ₹5,496\nTotal Payment ≈ ₹1,05,496",
+    formula: "EMI = P × r × (1+r)^n / ((1+r)^n − 1)\n\nWhere P = Principal, r = Monthly interest rate, n = Total months",
     applications: [
       "Planning monthly budgets before taking a home or car loan",
       "Comparing different loan offers from banks and lenders",
@@ -74,6 +86,9 @@ const seo: Record<string, SeoContent> = {
   },
   "bmi-calculator": {
     whatIs: "The Body Mass Index (BMI) Calculator is a health assessment tool that evaluates whether a person has a healthy body weight relative to their height. Widely used by doctors, nutritionists, fitness trainers, and individuals worldwide, BMI provides a quick screening metric to categorize weight status as underweight, normal weight, overweight, or obese. While BMI does not directly measure body fat, it serves as a useful indicator for identifying potential weight-related health risks. This tool calculates BMI instantly using your height and weight in metric or imperial units.",
+    extraSeo: "Widely used by health-conscious individuals, fitness trainers, and medical professionals for quick body weight assessments. Provides instant BMI classification without requiring any registration.",
+    example: "If a person weighs 70 kg and is 170 cm tall:\n\nBMI = 70 / (1.7 × 1.7) = 70 / 2.89 = 24.22\n\nThis falls within the 'Normal weight' category (18.5–24.9).",
+    formula: "BMI = Weight (kg) / Height² (m²)\n\nCategories: Underweight < 18.5 | Normal 18.5–24.9 | Overweight 25–29.9 | Obese ≥ 30",
     applications: [
       "Personal health and fitness tracking",
       "Medical assessments and clinical screenings",
@@ -90,6 +105,9 @@ const seo: Record<string, SeoContent> = {
   },
   "simple-interest-calculator": {
     whatIs: "The Simple Interest Calculator computes interest earned or owed on a principal amount over a specific period at a fixed rate. Unlike compound interest, simple interest is calculated only on the original principal, making it straightforward and predictable. It is commonly used for short-term loans, car financing, treasury bills, and basic savings products. Understanding simple interest helps you evaluate loan costs, compare investment options, and make informed financial decisions. This tool instantly shows you the interest amount and total value for any combination of principal, rate, and time.",
+    extraSeo: "Essential for students learning finance basics and individuals calculating returns on fixed deposits, savings accounts, or short-term loans.",
+    example: "Principal = ₹10,000, Rate = 8%/year, Time = 3 years:\n\nSI = (10000 × 8 × 3) / 100 = ₹2,400\nTotal Amount = ₹12,400",
+    formula: "SI = (P × R × T) / 100\n\nWhere P = Principal, R = Rate of interest per year, T = Time in years",
     applications: [
       "Calculating interest on short-term personal loans",
       "Estimating returns on fixed deposits and savings",
@@ -106,6 +124,9 @@ const seo: Record<string, SeoContent> = {
   },
   "compound-interest-calculator": {
     whatIs: "The Compound Interest Calculator shows how your money grows when interest is earned on both the principal and previously accumulated interest. This powerful financial concept, often called the 'eighth wonder of the world,' is the foundation of long-term wealth building. Banks, investment firms, and retirement planners all rely on compound interest calculations. This tool lets you specify the principal, annual rate, compounding frequency (monthly, quarterly, yearly), and time period to see exactly how your investment grows over time — helping you make smarter saving and investing decisions.",
+    extraSeo: "Perfect for investors, savers, and financial planners who want to understand how their money grows over time with the power of compounding.",
+    example: "Principal = $5,000, Rate = 6%, Time = 5 years (annually):\n\nA = 5000 × (1 + 0.06)^5 = $6,691.13\nCompound Interest = $1,691.13",
+    formula: "A = P × (1 + r/n)^(n×t)\n\nWhere P = Principal, r = Annual rate, n = Compounding frequency, t = Years",
     applications: [
       "Retirement planning and long-term savings projections",
       "Comparing investment options with different compounding frequencies",
@@ -122,6 +143,9 @@ const seo: Record<string, SeoContent> = {
   },
   "logarithm-calculator": {
     whatIs: "The Logarithm Calculator helps you compute logarithmic values for any positive number with any base. Logarithms are the inverse of exponentiation and are fundamental in mathematics, science, and engineering. They are used to solve exponential equations, analyze signal strength in decibels, measure earthquake intensity on the Richter scale, and calculate pH levels in chemistry. This tool supports common log (base 10), natural log (base e), binary log (base 2), and custom bases — making it invaluable for students, scientists, and engineers.",
+    extraSeo: "Useful for math students, scientists, and engineers who work with exponential scales, sound levels (decibels), pH values, and Richter scale calculations.",
+    example: "Calculate log₁₀(1000):\n\nlog₁₀(1000) = 3 (because 10³ = 1000)\n\nCalculate ln(e²) = 2",
+    formula: "log_b(x) = y means b^y = x\n\nlog(a×b) = log(a) + log(b)\nlog(a/b) = log(a) − log(b)\nlog(a^n) = n × log(a)",
     applications: [
       "Solving exponential equations in algebra and calculus",
       "Signal processing and decibel calculations in electronics",
@@ -138,6 +162,9 @@ const seo: Record<string, SeoContent> = {
   },
   "trigonometry-calculator": {
     whatIs: "The Trigonometry Calculator computes sine, cosine, tangent, and their inverse functions for any angle in degrees or radians. Trigonometric functions are essential in mathematics, physics, engineering, architecture, and computer graphics. Whether you are calculating the height of a building using angles of elevation, designing structural supports, or working with wave equations, this tool delivers instant, precise results. It eliminates the need for trig tables and simplifies complex angular calculations for students and professionals alike.",
+    extraSeo: "A must-have for high school and college students studying trigonometry, as well as engineers and architects working with angles and measurements.",
+    example: "sin(45°) = √2/2 ≈ 0.7071\ntan(60°) = √3 ≈ 1.7321",
+    formula: "sin(θ) = Opposite / Hypotenuse\ncos(θ) = Adjacent / Hypotenuse\ntan(θ) = Opposite / Adjacent\nsin²θ + cos²θ = 1",
     applications: [
       "Solving triangle problems in geometry and surveying",
       "Physics calculations involving waves, forces, and projectile motion",
@@ -154,6 +181,8 @@ const seo: Record<string, SeoContent> = {
   },
   "age-calculator": {
     whatIs: "The Age Calculator determines your exact age from your date of birth in years, months, and days. It accounts for leap years and varying month lengths to give precise results. This tool is useful for filling out official forms, verifying age eligibility for programs, calculating retirement timelines, and satisfying personal curiosity. Whether you need to know your age for a visa application, insurance policy, or birthday countdown, this calculator provides an instant and accurate answer down to the day.",
+    extraSeo: "Commonly used for filling official forms, calculating insurance eligibility, determining retirement dates, or simply finding your exact age down to the day.",
+    example: "Date of birth: January 15, 1995 | Today: April 2, 2026\n\nAge = 31 years, 2 months, and 18 days",
     applications: [
       "Official document filling and age verification",
       "Insurance and retirement age calculations",
@@ -170,6 +199,9 @@ const seo: Record<string, SeoContent> = {
   },
   "discount-calculator": {
     whatIs: "The Discount Calculator helps you quickly find the final price of a product after applying a percentage discount. Shopping during sales, comparing promotional offers, or budgeting purchases becomes effortless with this tool. Enter the original price and discount percentage to instantly see the discount amount and final price in your preferred currency. It is widely used by shoppers, retailers, and accountants to verify pricing, calculate markdowns, and ensure billing accuracy. Never overpay again — check every deal before you buy.",
+    extraSeo: "Perfect for bargain hunters, retail shoppers, and business owners who need to quickly determine sale prices and savings on any purchase.",
+    example: "Original price = $200, Discount = 25%:\n\nDiscount Amount = $50\nFinal Price = $150",
+    formula: "Discount = Original Price × (Discount % / 100)\nFinal Price = Original Price − Discount Amount",
     applications: [
       "Shopping during sales and promotional events",
       "Retail pricing and markdown calculations",
@@ -186,6 +218,9 @@ const seo: Record<string, SeoContent> = {
   },
   "profit-loss-calculator": {
     whatIs: "The Profit & Loss Calculator determines whether a transaction resulted in profit or loss by comparing the cost price and selling price. It calculates the absolute difference and the percentage gain or loss, formatted in your chosen currency. Essential for business owners, traders, freelancers, and students studying commerce, this tool simplifies financial analysis. Understanding profit margins helps with pricing strategies, inventory management, and business viability assessment. Get instant clarity on any buy-sell transaction with accurate results.",
+    extraSeo: "Used by business owners, traders, and students to quickly determine profit or loss on transactions with clear percentage breakdowns.",
+    example: "Cost Price = ₹800, Selling Price = ₹1,000:\n\nProfit = ₹200\nProfit % = (200/800) × 100 = 25%",
+    formula: "Profit = SP − CP\nLoss = CP − SP\nProfit % = (Profit / CP) × 100\nLoss % = (Loss / CP) × 100",
     applications: [
       "Small business transaction analysis",
       "Stock and investment return calculations",
@@ -202,6 +237,9 @@ const seo: Record<string, SeoContent> = {
   },
   "gpa-calculator": {
     whatIs: "The GPA Calculator computes your Grade Point Average by taking course grades and credit hours. It supports standard 4.0 scale grading and helps students track academic performance across semesters. Whether you are applying for scholarships, graduate school, or simply monitoring your academic standing, knowing your exact GPA is essential. This tool handles multiple courses simultaneously, weighs grades by credit hours, and delivers an accurate cumulative GPA instantly. Save time and reduce calculation errors with this free, easy-to-use academic tool.",
+    extraSeo: "Trusted by college students and academic advisors for calculating cumulative GPA across semesters with credit-weighted calculations.",
+    example: "Math (A, 4 credits), English (B+, 3 credits), Science (A-, 3 credits):\n\nGPA = (4.0×4 + 3.3×3 + 3.7×3) / 10 = 3.70",
+    formula: "GPA = Σ(Grade Points × Credit Hours) / Σ(Credit Hours)",
     applications: [
       "Tracking semester and cumulative academic performance",
       "Graduate school and scholarship application preparation",
@@ -218,6 +256,9 @@ const seo: Record<string, SeoContent> = {
   },
   "fraction-calculator": {
     whatIs: "The Fraction Calculator performs addition, subtraction, multiplication, and division on fractions with ease. It handles proper fractions, improper fractions, and mixed numbers, displaying results in simplified form. Fractions are fundamental in mathematics, cooking, construction, and everyday measurements. This tool eliminates the tedious process of finding common denominators and simplifying results manually. Whether you are a student learning fractions or a professional working with measurements, this calculator ensures fast and accurate results every time.",
+    extraSeo: "Helps students and professionals work with fractions effortlessly with step-by-step solutions and automatic simplification.",
+    example: "Calculate 3/4 + 2/5:\n\nLCD = 20\n15/20 + 8/20 = 23/20 = 1 3/20",
+    formula: "a/b + c/d = (a×d + c×b) / (b×d)\na/b × c/d = (a×c) / (b×d)\na/b ÷ c/d = (a×d) / (b×c)",
     applications: [
       "Math homework and exam preparation",
       "Cooking and recipe scaling with fractional measurements",
@@ -234,6 +275,9 @@ const seo: Record<string, SeoContent> = {
   },
   "area-calculator": {
     whatIs: "The Area Calculator computes the area of common geometric shapes including rectangles, circles, triangles, trapezoids, and more. Area measurement is essential in real estate, construction, landscaping, interior design, and mathematics. Whether you need to calculate floor space for tiles, garden area for planting, or surface area for painting, this tool gives instant results with the appropriate formulas. Simply select the shape, enter the dimensions, and get the area calculated with full precision.",
+    extraSeo: "Essential for students studying geometry, architects planning spaces, and homeowners calculating room sizes or garden areas.",
+    example: "Rectangle: 10m × 5m = 50 m²\nCircle: radius 7m → A = π × 49 = 153.94 m²",
+    formula: "Rectangle: A = l × w\nTriangle: A = ½ × b × h\nCircle: A = π × r²\nTrapezoid: A = ½ × (a+b) × h",
     applications: [
       "Real estate and property area measurement",
       "Construction planning for flooring, painting, and roofing",
@@ -250,6 +294,9 @@ const seo: Record<string, SeoContent> = {
   },
   "speed-calculator": {
     whatIs: "The Speed Calculator helps you determine speed, distance, or time when you know any two of the three values. Based on the fundamental formula Speed = Distance / Time, this tool is invaluable for travel planning, physics problems, fitness tracking, and logistics. Whether you are calculating your running pace, estimating travel time for a road trip, or solving physics homework, this calculator delivers instant and accurate results. It supports multiple units and makes distance-rate-time problems effortless.",
+    extraSeo: "Useful for physics students, drivers calculating travel times, and athletes tracking performance metrics.",
+    example: "Distance = 150 km, Time = 2.5 hours:\n\nSpeed = 150 / 2.5 = 60 km/h",
+    formula: "Speed = Distance / Time\nDistance = Speed × Time\nTime = Distance / Speed",
     applications: [
       "Road trip and travel time estimation",
       "Physics homework on motion and velocity",
@@ -266,6 +313,9 @@ const seo: Record<string, SeoContent> = {
   },
   "average-calculator": {
     whatIs: "The Average Calculator computes mean, median, and mode from any set of numbers. These statistical measures are fundamental in data analysis, academic grading, financial reporting, and scientific research. The arithmetic mean gives the central tendency, the median provides the middle value unaffected by outliers, and the mode identifies the most frequent value. This tool handles large datasets efficiently and is perfect for students, researchers, teachers, and anyone working with numerical data who needs quick statistical summaries.",
+    extraSeo: "A versatile statistics tool for grade calculations, data analysis, and quick central tendency measures from any dataset.",
+    example: "Numbers: 10, 15, 20, 25, 30\n\nMean = 20\nMedian = 20\nMode = No mode",
+    formula: "Mean = Σx / n\nMedian = Middle value when sorted\nMode = Most frequent value",
     applications: [
       "Academic grade averaging and performance analysis",
       "Statistical research and data analysis",
@@ -282,6 +332,9 @@ const seo: Record<string, SeoContent> = {
   },
   "tip-calculator": {
     whatIs: "The Tip Calculator helps you quickly determine how much to tip at restaurants, salons, and other service establishments. Enter your bill amount, select a tip percentage, and optionally split the bill between multiple people. It displays the tip amount, total bill, and per-person share in your preferred currency format. Tipping customs vary worldwide, but this tool makes the math effortless whether you are at a casual diner or a fine-dining restaurant. Never feel awkward calculating tips at the table again.",
+    extraSeo: "An everyday essential for dining out — quickly calculate the right tip, see your total bill, and split it evenly among friends.",
+    example: "Bill = $85, Tip = 18%, Split 3 ways:\n\nTip = $15.30\nTotal = $100.30\nPer Person = $33.43",
+    formula: "Tip = Bill × (Tip % / 100)\nTotal = Bill + Tip\nPer Person = Total / People",
     applications: [
       "Restaurant dining with friends or family",
       "Hair salon and spa service tipping",
@@ -298,6 +351,9 @@ const seo: Record<string, SeoContent> = {
   },
   "percentage-change-calculator": {
     whatIs: "The Percentage Change Calculator determines the percentage increase or decrease between two values. This is essential for tracking price changes, stock performance, population growth, sales trends, and academic scores over time. Simply enter the original and new values to instantly see the percentage change and absolute difference. The tool clearly indicates whether the change is an increase (positive) or decrease (negative), making trend analysis intuitive and straightforward for business analysts, students, and everyday users.",
+    extraSeo: "Widely used in business reporting, financial analysis, and academic research to measure growth or decline between two values.",
+    example: "Old = 200, New = 250:\n\n% Change = ((250−200) / 200) × 100 = 25% increase",
+    formula: "% Change = ((New − Old) / |Old|) × 100",
     applications: [
       "Stock price and investment performance tracking",
       "Sales and revenue growth analysis",
@@ -314,6 +370,9 @@ const seo: Record<string, SeoContent> = {
   },
   "lcm-calculator": {
     whatIs: "The LCM (Least Common Multiple) Calculator finds the smallest positive number that is evenly divisible by all given numbers. LCM is essential in fraction arithmetic, scheduling problems, and number theory. Whether you are finding common denominators for adding fractions, determining when periodic events coincide, or solving mathematical puzzles, this tool handles multiple numbers simultaneously and delivers instant results. It uses the efficient GCD-based algorithm to compute LCM accurately for any set of positive integers.",
+    extraSeo: "Helpful for math students solving problems involving multiples, scheduling recurring events, or finding common denominators for fractions.",
+    example: "LCM of 12 and 18:\n\n12 = 2² × 3, 18 = 2 × 3²\nLCM = 2² × 3² = 36",
+    formula: "LCM(a, b) = |a × b| / GCD(a, b)",
     applications: [
       "Finding common denominators for fraction addition",
       "Scheduling recurring events that need to synchronize",
@@ -330,6 +389,9 @@ const seo: Record<string, SeoContent> = {
   },
   "gcd-calculator": {
     whatIs: "The GCD (Greatest Common Divisor) Calculator finds the largest positive integer that divides all given numbers without a remainder. Also known as the Greatest Common Factor (GCF) or Highest Common Factor (HCF), this concept is fundamental in simplifying fractions, solving Diophantine equations, and cryptography. The tool uses the efficient Euclidean algorithm to compute GCD instantly for any set of numbers. Whether you are simplifying fractions in math class or working with modular arithmetic in programming, this calculator has you covered.",
+    extraSeo: "Essential for simplifying fractions, solving number theory problems, and understanding fundamental mathematical concepts.",
+    example: "GCD of 48 and 36:\n\n48 = 36×1 + 12\n36 = 12×3 + 0\nGCD = 12",
+    formula: "Euclidean Algorithm:\nGCD(a, b) = GCD(b, a mod b)\nGCD(a, 0) = a",
     applications: [
       "Simplifying fractions to their lowest terms",
       "Cryptography and RSA key generation algorithms",
@@ -346,6 +408,8 @@ const seo: Record<string, SeoContent> = {
   },
   "prime-factorization": {
     whatIs: "The Prime Factorization tool breaks down any positive integer into its prime factors — the building blocks of all whole numbers. Every integer greater than 1 can be uniquely expressed as a product of prime numbers, a principle known as the Fundamental Theorem of Arithmetic. This tool is essential for number theory, simplifying fractions, finding LCM and GCD, and understanding divisibility. Students, mathematicians, and puzzle enthusiasts use prime factorization regularly for academic work, competitive math, and cryptographic analysis.",
+    extraSeo: "A foundational math tool for number theory, cryptography education, and simplifying fractions by breaking numbers into prime building blocks.",
+    example: "360 = 2³ × 3² × 5 = 2 × 2 × 2 × 3 × 3 × 5",
     applications: [
       "Simplifying fractions using common prime factors",
       "Finding LCM and GCD through prime factorization method",
@@ -362,6 +426,9 @@ const seo: Record<string, SeoContent> = {
   },
   "matrix-calculator": {
     whatIs: "The Matrix Calculator performs essential matrix operations including addition, subtraction, and multiplication. Matrices are fundamental in linear algebra, computer graphics, machine learning, physics simulations, and data science. This tool handles 2×2 and 3×3 matrices with real number entries, displaying results in a clean, formatted layout. Whether you are a student solving linear algebra problems or a developer working with transformation matrices, this calculator simplifies complex matrix arithmetic and verifies your manual computations.",
+    extraSeo: "Used by engineering and math students for linear algebra operations including addition, subtraction, and multiplication of matrices.",
+    example: "A = [[1,2],[3,4]], B = [[5,6],[7,8]]:\n\nA + B = [[6,8],[10,12]]\nA × B = [[19,22],[43,50]]",
+    formula: "Addition: C[i][j] = A[i][j] + B[i][j]\nMultiplication: C[i][j] = Σ(A[i][k] × B[k][j])",
     applications: [
       "Linear algebra coursework and exam preparation",
       "Computer graphics transformation calculations",
@@ -378,6 +445,9 @@ const seo: Record<string, SeoContent> = {
   },
   "determinant-calculator": {
     whatIs: "The Determinant Calculator computes the determinant of 2×2 and 3×3 matrices, a scalar value that reveals important properties of a matrix. The determinant tells you whether a matrix is invertible, the scaling factor of a linear transformation, and the volume of a parallelepiped formed by the matrix's column vectors. It is extensively used in linear algebra, computer graphics, physics, and engineering. This tool performs the calculation instantly, saving you from error-prone manual expansion of cofactors.",
+    extraSeo: "Critical for linear algebra students and engineers. The determinant reveals if a matrix is invertible and helps solve linear equation systems.",
+    example: "Matrix [[3,8],[4,6]]:\n\nDet = (3×6) − (8×4) = 18 − 32 = −14",
+    formula: "2×2: det = ad − bc\n3×3: det = a(ei−fh) − b(di−fg) + c(dh−eg)",
     applications: [
       "Checking matrix invertibility in linear algebra",
       "Solving systems of linear equations using Cramer's rule",
@@ -394,6 +464,9 @@ const seo: Record<string, SeoContent> = {
   },
   "gst-calculator": {
     whatIs: "The GST Calculator helps you compute Goods and Services Tax amounts for any product or service. GST is a value-added tax applied in many countries including India, Australia, Canada, and Singapore. This tool lets you calculate GST-inclusive and GST-exclusive prices, determine the tax component of a purchase, and format results in multiple currencies. Whether you are a business owner creating invoices, an accountant filing returns, or a consumer verifying charges, this calculator simplifies GST computation instantly.",
+    extraSeo: "Essential for Indian businesses, freelancers, and shoppers to calculate GST-inclusive and exclusive prices. Supports all standard GST rates.",
+    example: "Base = ₹1,000, GST = 18%:\n\nGST Amount = ₹180\nTotal = ₹1,180",
+    formula: "GST = Base Price × (Rate / 100)\nTotal = Base + GST\nBase = Total / (1 + Rate/100)",
     applications: [
       "Business invoicing and billing with GST breakdowns",
       "Consumer price verification and tax checking",
@@ -410,6 +483,9 @@ const seo: Record<string, SeoContent> = {
   },
   "savings-calculator": {
     whatIs: "The Savings Calculator projects how your money will grow through regular monthly contributions combined with compound interest. It shows your future savings balance, total deposits made, and interest earned over time. Whether you are building an emergency fund, saving for a vacation, or planning for a down payment, this tool helps you set realistic goals and understand the power of consistent saving. Visualize your wealth accumulation and adjust contributions, interest rates, and time horizons to find the optimal savings strategy.",
+    extraSeo: "Plan your financial future by projecting how regular savings grow over time with compound interest. Perfect for retirement planning and emergency fund goals.",
+    example: "Monthly = $500, Rate = 5%, Duration = 10 years:\n\nContributions = $60,000\nInterest ≈ $17,703\nFuture Value ≈ $77,703",
+    formula: "FV = PMT × [((1 + r)^n − 1) / r]\nWhere PMT = monthly payment, r = monthly rate, n = total months",
     applications: [
       "Emergency fund planning and goal setting",
       "Saving for major purchases like a car or home down payment",
@@ -426,6 +502,9 @@ const seo: Record<string, SeoContent> = {
   },
   "investment-calculator": {
     whatIs: "The Investment Calculator estimates how your initial investment and regular contributions grow over time through the power of compound interest. It is an essential financial planning tool for anyone considering stocks, mutual funds, retirement accounts, or real estate investments. By adjusting variables like initial amount, monthly contribution, expected return rate, and time horizon, you can model different investment scenarios and make informed decisions. This tool helps you understand the relationship between risk, return, and time — the three pillars of investing.",
+    extraSeo: "Estimate how investments grow with compound interest over time. Used by financial planners and anyone looking to understand long-term wealth building.",
+    example: "Initial = $10,000, Return = 8%, Period = 20 years:\n\nFuture Value = $46,609.57\nTotal Growth = $36,609.57",
+    formula: "Future Value = P × (1 + r)^t\nWhere P = initial investment, r = annual return, t = years",
     applications: [
       "Retirement portfolio growth estimation",
       "Mutual fund and SIP return projections",
@@ -442,6 +521,9 @@ const seo: Record<string, SeoContent> = {
   },
   "inflation-calculator": {
     whatIs: "The Inflation Calculator shows how inflation erodes purchasing power over time. By entering a dollar amount, inflation rate, and time period, you can see the future equivalent value of today's money — or conversely, what past money is worth today. Understanding inflation is crucial for retirement planning, salary negotiations, investment analysis, and long-term financial decisions. This tool helps you think in real (inflation-adjusted) terms rather than nominal values, ensuring your financial plans account for the silent wealth erosion caused by rising prices.",
+    extraSeo: "Understand how inflation erodes purchasing power over time. Useful for financial planning, salary negotiations, and historical price analysis.",
+    example: "$1,000 with 5% inflation over 10 years:\n\nFuture equivalent ≈ $613.91 in today's value\nPurchasing power lost ≈ 38.6%",
+    formula: "Adjusted Value = Present Value / (1 + r)^years\nReal Return = Nominal Return − Inflation Rate",
     applications: [
       "Retirement savings planning with inflation adjustment",
       "Salary negotiation using real wage calculations",
@@ -458,6 +540,9 @@ const seo: Record<string, SeoContent> = {
   },
   "sales-tax-calculator": {
     whatIs: "The Sales Tax Calculator computes the total price of a purchase including applicable sales tax. Sales tax rates vary by country, state, and even city, making manual calculation error-prone. This tool lets you enter any price and tax percentage to instantly see the tax amount and final price in your chosen currency. It is indispensable for shoppers estimating totals, business owners pricing products, and accountants preparing financial records. Always know exactly what you will pay before reaching the checkout counter.",
+    extraSeo: "Quickly calculate sales tax on any purchase. Essential for shoppers, retailers, and accountants who need pre-tax or post-tax price calculations.",
+    example: "Price = $250, Tax = 8.5%:\n\nTax Amount = $21.25\nTotal = $271.25",
+    formula: "Tax = Price × (Rate / 100)\nTotal = Price + Tax\nPre-tax = Total / (1 + Rate/100)",
     applications: [
       "Estimating total purchase costs while shopping",
       "Business product pricing with tax inclusion",
@@ -474,6 +559,9 @@ const seo: Record<string, SeoContent> = {
   },
   "electricity-cost-calculator": {
     whatIs: "The Electricity Cost Calculator estimates your electricity expenses based on appliance wattage, daily usage hours, and your local electricity rate. Understanding energy consumption is key to managing utility bills and reducing waste. This tool helps you identify which appliances cost the most to run, compare energy-efficient alternatives, and budget for monthly electricity expenses. Simply enter the power rating of any device, how many hours you use it daily, and your rate per kilowatt-hour to see daily, monthly, and yearly costs.",
+    extraSeo: "Estimate electricity bills by entering appliance wattage and usage hours. Helps homeowners and businesses identify high-consumption devices.",
+    example: "1500W heater, 4 hours/day, $0.12/kWh:\n\nDaily = (1500×4)/1000 × $0.12 = $0.72\nMonthly = $21.60",
+    formula: "Energy (kWh) = Watts × Hours / 1000\nCost = kWh × Rate",
     applications: [
       "Monthly electricity bill estimation and budgeting",
       "Comparing energy costs of different appliances",
@@ -490,6 +578,9 @@ const seo: Record<string, SeoContent> = {
   },
   "square-root-calculator": {
     whatIs: "The Square Root Calculator computes the square root and nth root of any positive number with high precision. Square roots appear throughout mathematics, physics, engineering, and finance — from the Pythagorean theorem to standard deviation calculations. This tool handles perfect squares (like √16 = 4) and irrational results (like √2 ≈ 1.414) with equal ease. Whether you are solving geometry problems, working with quadratic formulas, or calculating distances, this calculator provides instant, accurate root values.",
+    extraSeo: "A quick math utility for finding square roots and nth roots of any number. Perfect for geometry, algebra, and engineering calculations.",
+    example: "√144 = 12\n∛27 = 3\n√2 ≈ 1.4142",
+    formula: "√x = x^(1/2)\nⁿ√x = x^(1/n)",
     applications: [
       "Geometry and Pythagorean theorem calculations",
       "Quadratic equation solving in algebra",
@@ -506,6 +597,9 @@ const seo: Record<string, SeoContent> = {
   },
   "exponent-calculator": {
     whatIs: "The Exponent Calculator computes any base raised to any power, including fractional and negative exponents. Exponentiation is a fundamental mathematical operation used in compound interest formulas, scientific notation, computer science algorithms, and physics equations. Whether you need to calculate 2¹⁰ for binary computing, understand exponential growth models, or solve power equations in algebra, this tool delivers instant, precise results. It supports integer exponents, decimal exponents, and even negative powers for reciprocal calculations.",
+    extraSeo: "Calculate powers and exponents quickly for math, scientific computations, and financial growth projections.",
+    example: "2^10 = 1,024\n5^3 = 125\n10^(-2) = 0.01",
+    formula: "a^n = a × a × ... (n times)\na^0 = 1\na^(-n) = 1/a^n",
     applications: [
       "Computing powers for algebra and calculus problems",
       "Scientific notation and large number calculations",
@@ -522,6 +616,9 @@ const seo: Record<string, SeoContent> = {
   },
   "ratio-calculator": {
     whatIs: "The Ratio Calculator helps you solve proportions, simplify ratios, and find missing values in ratio equations. Ratios are used extensively in cooking, map reading, architecture, photography, finance, and science. Whether you need to scale a recipe, determine map distances, calculate aspect ratios for images, or solve proportion problems in math class, this tool makes ratio arithmetic effortless. Enter any ratio and instantly get simplified forms, equivalent ratios, and solutions to missing-value problems.",
+    extraSeo: "Used in cooking, construction, design, and academics to scale proportions, solve missing terms, and simplify ratios.",
+    example: "Ratio 3:5, total = 160:\n\nFirst part = (3/8) × 160 = 60\nSecond part = (5/8) × 160 = 100",
+    formula: "If a:b = c:d then a×d = b×c\nSimplify: divide both by GCD(a,b)",
     applications: [
       "Scaling recipes for different serving sizes",
       "Map and architectural scale calculations",
@@ -538,6 +635,8 @@ const seo: Record<string, SeoContent> = {
   },
   "currency-converter": {
     whatIs: "The Currency Converter allows you to convert between major world currencies using approximate exchange rates. Whether you are planning international travel, comparing prices across countries, or sending money abroad, this tool gives you a quick estimate of currency values. It supports 10 major currencies including USD, EUR, GBP, INR, JPY, AUD, CAD, CHF, CNY, and SGD. While rates are static approximations, they provide useful ballpark figures for everyday conversion needs without requiring an internet API call.",
+    extraSeo: "Convert between major world currencies instantly. Great for travelers, online shoppers, and businesses dealing with international transactions.",
+    example: "Convert $100 USD to EUR:\n\nRate: 1 USD = 0.92 EUR\n$100 × 0.92 = €92.00",
     applications: [
       "International travel budget planning",
       "Cross-border shopping price comparisons",
@@ -554,6 +653,9 @@ const seo: Record<string, SeoContent> = {
   },
   "length-converter": {
     whatIs: "The Length Converter transforms measurements between metric and imperial length units including meters, kilometers, centimeters, millimeters, miles, yards, feet, and inches. Length conversion is one of the most common unit conversions needed in daily life, construction, travel, and science. Whether you are converting your height from centimeters to feet, calculating distances for a trip, or working on a construction project with mixed unit specifications, this tool delivers instant, accurate conversions.",
+    extraSeo: "A go-to tool for travelers, engineers, and students converting between metric and imperial length units instantly.",
+    example: "5 miles to km:\n5 × 1.60934 = 8.047 km",
+    formula: "1 inch = 2.54 cm | 1 foot = 0.3048 m | 1 mile = 1.60934 km",
     applications: [
       "Converting height between metric and imperial systems",
       "Construction and home improvement measurements",
@@ -570,6 +672,9 @@ const seo: Record<string, SeoContent> = {
   },
   "weight-converter": {
     whatIs: "The Weight Converter transforms mass measurements between kilograms, pounds, ounces, grams, milligrams, metric tons, and other common units. Weight conversion is essential for international shipping, cooking, fitness tracking, medical dosages, and scientific research. Whether you are converting your body weight for a medical form, measuring ingredients for an international recipe, or calculating shipping costs, this tool handles all common weight units with precision and speed.",
+    extraSeo: "Essential for cooking, fitness tracking, shipping, and international trade. Convert between metric and imperial weight units instantly.",
+    example: "150 pounds to kg:\n150 × 0.453592 = 68.04 kg",
+    formula: "1 kg = 2.20462 lb | 1 lb = 453.592 g | 1 oz = 28.3495 g",
     applications: [
       "Body weight conversion between kg and lbs",
       "Cooking and baking ingredient measurements",
@@ -586,6 +691,9 @@ const seo: Record<string, SeoContent> = {
   },
   "temperature-converter": {
     whatIs: "The Temperature Converter instantly transforms temperatures between Celsius, Fahrenheit, and Kelvin scales. Temperature conversion is essential for cooking, weather interpretation, scientific experiments, and international travel. Celsius is used in most countries, Fahrenheit in the United States, and Kelvin in scientific contexts. This tool eliminates the need to memorize complex conversion formulas, giving you accurate results for any temperature value — from cooking temperatures to absolute zero.",
+    extraSeo: "Perfect for travelers, cooks, scientists, and students who need instant temperature conversions between major scales.",
+    example: "98.6°F to Celsius:\n°C = (98.6 − 32) × 5/9 = 37°C",
+    formula: "°F = (°C × 9/5) + 32\n°C = (°F − 32) × 5/9\nK = °C + 273.15",
     applications: [
       "Cooking and baking temperature conversions",
       "Weather temperature interpretation while traveling",
@@ -602,6 +710,9 @@ const seo: Record<string, SeoContent> = {
   },
   "volume-converter": {
     whatIs: "The Volume Converter transforms measurements between liters, milliliters, gallons, cups, fluid ounces, pints, quarts, and cubic meters. Volume conversions are essential in cooking, beverage manufacturing, chemistry, fuel measurement, and swimming pool maintenance. Different countries use different volume units, making conversion necessary for following recipes, understanding fuel economy, and interpreting product labels. This tool handles both metric and imperial volume units with precision.",
+    extraSeo: "Used in cooking, chemistry, and engineering to convert between metric and imperial volume measurements.",
+    example: "2 gallons to liters:\n2 × 3.78541 = 7.571 liters",
+    formula: "1 gallon = 3.78541 L | 1 L = 1000 ml | 1 cup = 236.588 ml",
     applications: [
       "Cooking and baking recipe conversions",
       "Fuel tank and consumption measurements",
@@ -618,6 +729,9 @@ const seo: Record<string, SeoContent> = {
   },
   "angle-converter": {
     whatIs: "The Angle Converter transforms angular measurements between degrees, radians, gradians, and turns. Angles are fundamental in geometry, trigonometry, navigation, engineering, and computer graphics. Degrees are most commonly used in everyday life, radians in mathematics and physics, gradians in surveying, and turns in specific engineering applications. This tool handles all four systems instantly, making it indispensable for students, engineers, and anyone working with angular measurements across different conventions.",
+    extraSeo: "Useful for math students, engineers, and navigators converting between different angular measurement systems.",
+    example: "180° to radians:\n180 × (π/180) = π ≈ 3.14159 radians",
+    formula: "Radians = Degrees × π/180\n1 turn = 360° = 2π rad = 400 grad",
     applications: [
       "Mathematics and physics angle calculations",
       "Surveying and land measurement",
@@ -634,6 +748,9 @@ const seo: Record<string, SeoContent> = {
   },
   "speed-converter": {
     whatIs: "The Speed Converter transforms velocity measurements between km/h, mph, m/s, ft/s, and knots. Speed conversion is essential for travel, aviation, maritime navigation, sports, and physics. Different countries and industries use different speed units — highway signs show km/h or mph, scientists use m/s, and sailors use knots. This tool eliminates confusion by providing instant conversions between all common speed units, helping you interpret speed limits, calculate travel times, and solve physics problems.",
+    extraSeo: "Convert between speed units used in transportation, aviation, maritime, and physics applications worldwide.",
+    example: "100 km/h to mph:\n100 ÷ 1.60934 = 62.14 mph",
+    formula: "1 km/h = 0.621371 mph | 1 m/s = 3.6 km/h | 1 knot = 1.852 km/h",
     applications: [
       "Interpreting speed limits while driving abroad",
       "Aviation and maritime speed calculations",
@@ -650,6 +767,9 @@ const seo: Record<string, SeoContent> = {
   },
   "energy-converter": {
     whatIs: "The Energy Converter transforms measurements between joules, kilojoules, calories, kilocalories, watt-hours, kilowatt-hours, and BTU. Energy conversion is critical in physics, nutrition, electrical engineering, and environmental science. Whether you are calculating food energy content, comparing fuel types, analyzing electricity consumption, or solving thermodynamics problems, this tool provides instant and accurate conversions across all common energy units.",
+    extraSeo: "Convert between energy units used in physics, nutrition, and engineering for science students and professionals.",
+    example: "500 calories to joules:\n500 × 4.184 = 2,092 J",
+    formula: "1 cal = 4.184 J | 1 kWh = 3,600,000 J | 1 BTU = 1,055.06 J",
     applications: [
       "Nutritional calorie and kilojoule conversions",
       "Electricity billing and energy consumption analysis",
@@ -666,6 +786,9 @@ const seo: Record<string, SeoContent> = {
   },
   "pressure-converter": {
     whatIs: "The Pressure Converter transforms measurements between Pascal, kilopascal, bar, PSI, atmosphere, and mmHg (Torr). Pressure conversion is essential in meteorology, engineering, automotive maintenance, scuba diving, and medical applications. Different fields use different pressure units — weather reports use millibars, tire gauges show PSI, blood pressure is measured in mmHg, and scientists use Pascals. This tool bridges all these conventions with instant, accurate conversions.",
+    extraSeo: "Used by engineers, meteorologists, and medical professionals for pressure unit conversions across measurement systems.",
+    example: "1 atm to PSI:\n1 atm = 14.696 PSI",
+    formula: "1 atm = 101,325 Pa = 14.696 PSI = 1.01325 bar = 760 mmHg",
     applications: [
       "Tire pressure conversion between PSI and bar",
       "Blood pressure readings and medical measurements",
@@ -682,6 +805,9 @@ const seo: Record<string, SeoContent> = {
   },
   "time-converter": {
     whatIs: "The Time Converter transforms durations between seconds, minutes, hours, days, weeks, months, and years. Time conversion is needed for project planning, scientific calculations, travel scheduling, and everyday time management. Whether you are converting movie runtimes, calculating project deadlines, or solving physics time problems, this tool provides instant results across all common time units. It handles both small durations (seconds to hours) and large spans (months to years) with ease.",
+    extraSeo: "Convert between time units from milliseconds to years for project planning, scientific calculations, and everyday use.",
+    example: "3.5 hours to minutes:\n3.5 × 60 = 210 minutes",
+    formula: "1 hour = 3,600 seconds | 1 day = 24 hours | 1 year ≈ 365.25 days",
     applications: [
       "Project management and deadline calculations",
       "Travel itinerary planning across time zones",
@@ -698,6 +824,9 @@ const seo: Record<string, SeoContent> = {
   },
   "binary-to-decimal": {
     whatIs: "The Binary to Decimal Converter transforms binary numbers (base-2) into their decimal (base-10) equivalents. Binary is the fundamental language of computers, where all data is stored and processed as sequences of 0s and 1s. Understanding binary-to-decimal conversion is essential for computer science students, programmers, network engineers, and anyone working with digital systems. This tool provides instant conversion for any binary number, making it easy to interpret machine-level data in human-readable form.",
+    extraSeo: "Essential for CS students learning number systems and programmers working with low-level binary data representation.",
+    example: "Binary 11010110 to decimal:\n1×128 + 1×64 + 0×32 + 1×16 + 0×8 + 1×4 + 1×2 + 0 = 214",
+    formula: "Decimal = Σ(bit × 2^position), position from 0 at right",
     applications: [
       "Computer science education and coursework",
       "Network subnet mask and IP address calculations",
@@ -714,6 +843,9 @@ const seo: Record<string, SeoContent> = {
   },
   "decimal-to-binary": {
     whatIs: "The Decimal to Binary Converter transforms standard decimal numbers (base-10) into their binary (base-2) representation. This conversion is fundamental in computer science, digital electronics, and programming. Understanding how numbers are represented in binary helps you grasp how computers process data, manage memory, and perform calculations. Whether you are a student learning number systems or a developer working with low-level programming, this tool provides instant, accurate decimal to binary conversion.",
+    extraSeo: "A fundamental CS tool for understanding how decimal numbers are stored as binary in computer memory.",
+    example: "Decimal 42 to binary:\n42→21 R0, 21→10 R1, 10→5 R0, 5→2 R1, 2→1 R0, 1→0 R1\nResult: 101010",
+    formula: "Repeatedly divide by 2, collect remainders bottom-to-top.",
     applications: [
       "Learning computer science number systems",
       "Programming and bitwise operation planning",
@@ -730,6 +862,8 @@ const seo: Record<string, SeoContent> = {
   },
   "roman-numeral-converter": {
     whatIs: "The Roman Numeral Converter translates between Roman numerals and decimal numbers. Roman numerals use letters like I, V, X, L, C, D, and M to represent values and are still used today in clock faces, book chapters, movie sequels, Super Bowl numbering, and formal documents. This tool handles conversion in both directions — enter a Roman numeral to get the decimal value, or enter a number to get its Roman representation. It supports standard Roman numeral rules including subtractive notation.",
+    extraSeo: "Useful for history enthusiasts, students, and event planners working with traditional Roman numeral notation.",
+    example: "2024 → MMXXIV\n(M=1000, M=1000, X=10, X=10, IV=4)",
     applications: [
       "Reading and writing Roman numerals on clocks and monuments",
       "Academic formatting for outlines and chapters",
@@ -746,6 +880,9 @@ const seo: Record<string, SeoContent> = {
   },
   "bytes-converter": {
     whatIs: "The Bytes Converter transforms digital storage measurements between bytes, kilobytes (KB), megabytes (MB), gigabytes (GB), and terabytes (TB). Understanding data sizes is crucial in computing, from evaluating hard drive capacity to estimating download times and managing cloud storage. This tool uses standard binary conversion factors (1 KB = 1024 bytes) and helps you quickly understand file sizes, storage requirements, and bandwidth needs in whichever unit is most meaningful for your context.",
+    extraSeo: "Essential for understanding file sizes, storage capacity, and data transfer measurements in the digital world.",
+    example: "2.5 GB to MB:\n2.5 × 1024 = 2,560 MB",
+    formula: "1 KB = 1024 B | 1 MB = 1024 KB | 1 GB = 1024 MB | 1 TB = 1024 GB",
     applications: [
       "Evaluating storage device capacity and usage",
       "Estimating file sizes for uploads and downloads",
@@ -762,6 +899,8 @@ const seo: Record<string, SeoContent> = {
   },
   "number-base-converter": {
     whatIs: "The Number Base Converter transforms numbers between binary (base-2), octal (base-8), decimal (base-10), and hexadecimal (base-16) systems. Different number bases are used throughout computer science and digital engineering. Binary is the language of processors, octal is used in Unix permissions, decimal is our everyday system, and hexadecimal is essential for memory addresses, color codes, and low-level programming. This tool converts between all four bases instantly, making it invaluable for developers and students.",
+    extraSeo: "A versatile tool for converting numbers between binary, octal, decimal, and hexadecimal systems used in computing.",
+    example: "Decimal 255 to hex:\n255 → FF\nDecimal 255 to binary: 11111111",
     applications: [
       "Programming and debugging in different number systems",
       "Understanding hex color codes in web development",
@@ -778,6 +917,8 @@ const seo: Record<string, SeoContent> = {
   },
   "color-converter": {
     whatIs: "The Color Converter transforms color values between HEX, RGB, and HSL formats. Web developers, designers, and digital artists frequently need to convert between these formats depending on the context — CSS stylesheets, design tools, and image editors each prefer different color notations. This tool provides instant bidirectional conversion, ensuring you always have the right color format. Enter any color in one format and immediately see the equivalent in all supported formats.",
+    extraSeo: "Essential for web designers and developers converting color values between HEX, RGB, and HSL for CSS and design tools.",
+    example: "HEX #FF6B35 → RGB(255, 107, 53)",
     applications: [
       "Web development and CSS color specification",
       "Graphic design and color matching across tools",
@@ -794,6 +935,8 @@ const seo: Record<string, SeoContent> = {
   },
   "currency-formatter": {
     whatIs: "The Currency Formatter converts any number into properly formatted currency strings for multiple currencies including USD, EUR, GBP, INR, JPY, and more. Proper currency formatting includes the correct symbol, decimal places, thousands separators, and locale-specific conventions. This tool is essential for developers building financial applications, accountants preparing reports, and anyone who needs to display money values correctly. Enter any number and instantly see it formatted in multiple currency styles.",
+    extraSeo: "Format numbers in international currency styles with proper symbols, separators, and decimal places for invoices and reports.",
+    example: "1234567.89 →\nUSD: $1,234,567.89\nINR: ₹12,34,567.89\nEUR: €1.234.567,89",
     applications: [
       "Formatting prices for e-commerce applications",
       "Financial report preparation with proper currency display",
@@ -810,6 +953,9 @@ const seo: Record<string, SeoContent> = {
   },
   "frequency-converter": {
     whatIs: "The Frequency Converter transforms measurements between hertz, kilohertz, megahertz, gigahertz, and RPM. Frequency measures how often something repeats per unit of time and is fundamental in electronics, telecommunications, music, physics, and engineering. Whether you are tuning a radio, analyzing a processor clock speed, measuring motor RPM, or studying sound waves, this tool provides instant conversions between all common frequency units.",
+    extraSeo: "Convert between frequency units used in electronics, telecommunications, audio engineering, and physics.",
+    example: "2.4 GHz to MHz:\n2.4 × 1000 = 2,400 MHz",
+    formula: "1 kHz = 1,000 Hz | 1 MHz = 1,000 kHz | 1 GHz = 1,000 MHz",
     applications: [
       "Electronics and radio frequency calculations",
       "Computer processor clock speed comparisons",
@@ -826,6 +972,9 @@ const seo: Record<string, SeoContent> = {
   },
   "data-transfer-rate-converter": {
     whatIs: "The Data Transfer Rate Converter transforms between bps, Kbps, Mbps, Gbps, Tbps, and their byte-per-second equivalents. Understanding data transfer rates is essential for evaluating internet speeds, network performance, file transfer times, and streaming quality requirements. ISPs advertise speeds in Mbps, while download managers show MB/s — this tool bridges the gap and helps you compare and understand data rates across different units and contexts.",
+    extraSeo: "Compare internet speeds and data transfer rates across different units for understanding bandwidth and network capacity.",
+    example: "100 Mbps to MB/s:\n100 ÷ 8 = 12.5 MB/s",
+    formula: "1 Byte = 8 bits | 1 Mbps = 1,000 Kbps | 1 Gbps = 1,000 Mbps",
     applications: [
       "Evaluating internet service provider speed claims",
       "Estimating file download and upload times",
@@ -842,6 +991,9 @@ const seo: Record<string, SeoContent> = {
   },
   "area-converter": {
     whatIs: "The Area Converter transforms measurements between square meters, square kilometers, square feet, square inches, acres, hectares, and square miles. Area conversion is essential in real estate, agriculture, construction, land surveying, and urban planning. Different countries and industries use different area units — the US favors square feet and acres, while the metric system uses square meters and hectares. This tool bridges all conventions with instant, precise conversions.",
+    extraSeo: "Convert between area units for real estate, agriculture, construction, and land measurement in metric and imperial systems.",
+    example: "5 acres to m²:\n5 × 4,046.86 = 20,234.3 m²",
+    formula: "1 acre = 4,046.86 m² | 1 hectare = 10,000 m² | 1 sq mile = 2.59 km²",
     applications: [
       "Real estate property size comparisons",
       "Agricultural land measurement and planning",
@@ -858,6 +1010,9 @@ const seo: Record<string, SeoContent> = {
   },
   "power-converter": {
     whatIs: "The Power Converter transforms measurements between watts, kilowatts, megawatts, horsepower, BTU per hour, and foot-pounds per second. Power measures the rate of energy transfer and is critical in electrical engineering, automotive performance, HVAC systems, and industrial equipment specification. Whether you are comparing car engines, sizing generators, evaluating HVAC capacity, or solving physics problems, this tool provides instant conversions between all common power units.",
+    extraSeo: "Convert between power units for engineering, automotive, and electrical applications including motor ratings.",
+    example: "150 HP to kW:\n150 × 0.7457 = 111.85 kW",
+    formula: "1 HP = 745.7 W | 1 kW = 1,000 W | 1 BTU/h = 0.29307 W",
     applications: [
       "Automotive engine power comparisons between HP and kW",
       "Electrical generator and motor specifications",
@@ -874,6 +1029,9 @@ const seo: Record<string, SeoContent> = {
   },
   "fuel-efficiency-converter": {
     whatIs: "The Fuel Efficiency Converter transforms between km/L, miles per gallon (US), miles per gallon (UK), and liters per 100km. Fuel efficiency measurements vary by country — the US uses MPG, Europe uses L/100km, and many Asian countries use km/L. This tool makes it easy to compare vehicle fuel economy across different standards, helping you make informed decisions when buying cars, planning road trips, or comparing international vehicle specifications.",
+    extraSeo: "Compare fuel efficiency across different measurement systems used worldwide for vehicle specifications.",
+    example: "35 mpg (US) to km/L:\n35 × 0.425144 = 14.88 km/L",
+    formula: "1 mpg (US) = 0.425144 km/L\nL/100km = 235.214 / mpg",
     applications: [
       "Comparing car fuel economy across different markets",
       "Road trip fuel cost estimation",
@@ -890,6 +1048,9 @@ const seo: Record<string, SeoContent> = {
   },
   "density-converter": {
     whatIs: "The Density Converter transforms measurements between kg/m³, g/cm³, g/mL, lb/ft³, lb/in³, and other density units. Density — mass per unit volume — is a fundamental physical property used in materials science, chemistry, geology, fluid mechanics, and manufacturing. Whether you are identifying unknown materials, designing floating structures, calculating buoyancy, or comparing material specifications, this tool provides instant conversions between all common density units.",
+    extraSeo: "Convert between density units used in physics, chemistry, engineering, and material science for lab work.",
+    example: "Water: 1 g/cm³ to kg/m³:\n1 × 1000 = 1,000 kg/m³",
+    formula: "Density = Mass / Volume\n1 g/cm³ = 1,000 kg/m³ | 1 lb/ft³ = 16.0185 kg/m³",
     applications: [
       "Material identification and quality testing",
       "Engineering design for buoyancy and flotation",
@@ -906,6 +1067,9 @@ const seo: Record<string, SeoContent> = {
   },
   "illuminance-converter": {
     whatIs: "The Illuminance Converter transforms measurements between lux, foot-candle, phot, and kilolux. Illuminance measures the amount of light falling on a surface and is critical in lighting design, photography, workplace safety, agriculture, and architectural planning. Different regions and industries use different units — foot-candles in the US and lux internationally. This tool helps lighting professionals, photographers, and facility managers convert between all standard illuminance units instantly.",
+    extraSeo: "Convert between light measurement units for photography, architecture, workplace safety, and lighting design.",
+    example: "500 lux to foot-candles:\n500 × 0.0929 = 46.45 fc",
+    formula: "1 fc = 10.764 lux | 1 phot = 10,000 lux",
     applications: [
       "Office and workplace lighting design to meet standards",
       "Photography exposure and lighting calculations",
@@ -922,6 +1086,8 @@ const seo: Record<string, SeoContent> = {
   },
   "word-counter": {
     whatIs: "The Word Counter is a comprehensive text analysis tool that counts words, characters, sentences, and paragraphs in any text. It is essential for writers, students, bloggers, and content creators who need to meet specific length requirements. Whether you are writing an essay with a word limit, crafting a tweet within character restrictions, or optimizing content for SEO with target word counts, this tool provides real-time statistics as you type. It handles all languages and provides instant feedback.",
+    extraSeo: "An essential writing tool for bloggers, students, copywriters, and content creators needing accurate word count statistics.",
+    example: "'The quick brown fox jumps over the lazy dog.'\n\nWords: 9 | Characters: 44 | Sentences: 1",
     applications: [
       "Academic essay and assignment word limit compliance",
       "Blog and article content length optimization",
@@ -938,6 +1104,8 @@ const seo: Record<string, SeoContent> = {
   },
   "character-counter": {
     whatIs: "The Character Counter precisely counts every character in your text, including letters, numbers, spaces, and special characters. It also provides a count excluding spaces. This tool is critical for anyone working with character-limited platforms like Twitter (280 characters), SMS messages (160 characters), meta descriptions (155-160 characters), and database fields with fixed lengths. Writers, developers, and marketers rely on character counting to ensure their content fits within required constraints.",
+    extraSeo: "Perfect for crafting tweets, meta descriptions, SMS messages, and any content with strict character limits.",
+    example: "'Hello, World!' → 13 characters (with spaces), 12 (without spaces)",
     applications: [
       "Social media posts within character limits",
       "SEO meta description and title tag optimization",
@@ -954,6 +1122,8 @@ const seo: Record<string, SeoContent> = {
   },
   "text-case-converter": {
     whatIs: "The Text Case Converter transforms text between multiple case formats including UPPERCASE, lowercase, Title Case, Sentence case, camelCase, and more. Case conversion is frequently needed in writing, programming, data processing, and content formatting. Whether you accidentally typed in caps lock, need to format headings consistently, convert database values, or generate variable names for code, this tool handles all common text case transformations instantly and accurately.",
+    extraSeo: "Instantly convert text between uppercase, lowercase, title case, and sentence case. Saves time for writers and content managers.",
+    example: "'hello world' →\nUPPERCASE: HELLO WORLD\nTitle Case: Hello World",
     applications: [
       "Fixing accidentally capitalized text",
       "Formatting headings and titles consistently",
@@ -970,6 +1140,8 @@ const seo: Record<string, SeoContent> = {
   },
   "remove-extra-spaces": {
     whatIs: "The Remove Extra Spaces tool cleans up messy text by eliminating redundant whitespace — multiple consecutive spaces, leading and trailing spaces, and excessive blank lines. Pasted text from PDFs, web pages, or documents often contains irregular spacing that looks unprofessional. This tool normalizes whitespace while preserving intentional single spaces and paragraph breaks. It is invaluable for writers, editors, data processors, and developers who need clean, properly formatted text.",
+    extraSeo: "Clean up messy text by removing unnecessary whitespace and extra spaces between words. Ideal for reformatting pasted text.",
+    example: "'Hello    World    !' → 'Hello World !'",
     applications: [
       "Cleaning text copied from PDFs and websites",
       "Formatting data before importing into spreadsheets",
@@ -986,6 +1158,8 @@ const seo: Record<string, SeoContent> = {
   },
   "reverse-text": {
     whatIs: "The Reverse Text tool flips any text string character by character, turning 'Hello World' into 'dlroW olleH'. While seemingly simple, text reversal has practical applications in programming challenges, puzzle solving, palindrome checking, creative writing, and social media fun. This tool handles any text including Unicode characters, providing instant character-by-character reversal. It is also useful for learning about string manipulation concepts in computer science.",
+    extraSeo: "Reverse any text character by character for puzzles, coding challenges, or creative content exploration.",
+    example: "'ToolVerse' → 'esreVlooT'",
     applications: [
       "Checking if text is a palindrome",
       "Programming practice and coding challenges",
@@ -1002,6 +1176,8 @@ const seo: Record<string, SeoContent> = {
   },
   "sort-text": {
     whatIs: "The Sort Text tool arranges lines of text in alphabetical, reverse alphabetical, or numerical order. Sorting is essential for organizing lists, cleaning data, preparing directories, and processing text files. Whether you are alphabetizing a name list, sorting product entries, organizing code imports, or arranging research references, this tool handles the task instantly. It supports case-sensitive and case-insensitive sorting and handles large amounts of text efficiently.",
+    extraSeo: "Sort lines of text alphabetically in ascending or descending order for organizing lists and cleaning data.",
+    example: "Input: Banana, Apple, Cherry\nSorted: Apple, Banana, Cherry",
     applications: [
       "Alphabetizing name lists and directories",
       "Organizing data for spreadsheet import",
@@ -1018,6 +1194,8 @@ const seo: Record<string, SeoContent> = {
   },
   "remove-duplicate-lines": {
     whatIs: "The Remove Duplicate Lines tool eliminates repeated lines from text while keeping unique entries. This is invaluable when cleaning data, processing lists, deduplicating email addresses, or preparing datasets. Whether you have a list with hundreds of repeated entries from a database export, a log file with redundant messages, or a CSV file with duplicate rows, this tool strips out duplicates instantly while preserving the original order of first occurrences.",
+    extraSeo: "Remove repeated lines from text data while preserving the original order. Essential for data cleaning and list deduplication.",
+    example: "Input: Apple, Banana, Apple, Cherry, Banana\nOutput: Apple, Banana, Cherry",
     applications: [
       "Cleaning email lists and contact databases",
       "Removing duplicate entries from data exports",
@@ -1034,6 +1212,8 @@ const seo: Record<string, SeoContent> = {
   },
   "text-repeater": {
     whatIs: "The Text Repeater duplicates any text string a specified number of times with optional separators between repetitions. This is useful for generating test data, creating patterns, filling templates, and various creative applications. Whether you need to repeat a word 100 times for a visual effect, generate sample data for testing, or create repetitive patterns for design work, this tool handles it instantly. Set the repetition count and separator to get exactly the output you need.",
+    extraSeo: "Repeat text a specified number of times with optional separators for generating test data and filling content templates.",
+    example: "'Hello' × 3 with ' - ':\n'Hello - Hello - Hello'",
     applications: [
       "Generating test data for software development",
       "Creating visual text patterns and designs",
@@ -1050,6 +1230,8 @@ const seo: Record<string, SeoContent> = {
   },
   "remove-line-breaks": {
     whatIs: "The Remove Line Breaks tool joins multiple lines of text into a single continuous paragraph by removing newline characters. Text copied from emails, PDFs, formatted documents, and code often contains unwanted line breaks that disrupt reading flow. This tool cleanly merges lines while preserving spaces between words, creating a smooth, continuous text block. It is essential for content reformatting, data cleaning, and preparing text for platforms that do not support multi-line input.",
+    extraSeo: "Join multi-line text into a single continuous paragraph. Ideal for reformatting text from PDFs and emails.",
+    example: "Line 1\nLine 2\nLine 3 → 'Line 1 Line 2 Line 3'",
     applications: [
       "Cleaning text copied from PDFs and formatted documents",
       "Preparing text for single-line input fields",
@@ -1066,6 +1248,8 @@ const seo: Record<string, SeoContent> = {
   },
   "text-diff-checker": {
     whatIs: "The Text Difference Checker compares two texts side by side and highlights the differences between them. It identifies additions, deletions, and changes at the line or word level, making it invaluable for proofreading, code review, document version comparison, and quality assurance. Whether you are reviewing document revisions, comparing code changes, verifying translation accuracy, or checking data integrity, this tool provides clear visual indication of every difference between two text versions.",
+    extraSeo: "Compare two text blocks side by side with highlighted differences for code reviews and document versioning.",
+    example: "'The cat sat on the mat' vs 'The cat sat on the hat'\nDifference: 'mat' → 'hat'",
     applications: [
       "Document version comparison and proofreading",
       "Code review and change tracking",
@@ -1082,6 +1266,8 @@ const seo: Record<string, SeoContent> = {
   },
   "markdown-previewer": {
     whatIs: "The Markdown Previewer lets you write Markdown text and see a live HTML preview side by side. Markdown is a lightweight markup language widely used for documentation, README files, blog posts, and note-taking. This tool supports headings, bold, italic, inline code, lists, and other common Markdown syntax. Whether you are writing GitHub documentation, crafting a blog post, or learning Markdown for the first time, this real-time previewer makes the writing process visual and intuitive.",
+    extraSeo: "Write Markdown and see instant HTML preview side by side for README files, blogs, and documentation.",
+    example: "'# Hello\n**Bold** and *italic*' → Rendered heading with bold and italic text",
     applications: [
       "Writing and previewing GitHub README files",
       "Blog post and article drafting in Markdown",
@@ -1098,6 +1284,8 @@ const seo: Record<string, SeoContent> = {
   },
   "text-to-slug": {
     whatIs: "The Text to Slug converter transforms any text into a URL-friendly slug format. Slugs are cleaned-up versions of titles used in web addresses — lowercase, with spaces replaced by hyphens and special characters removed. Good URL slugs improve SEO, readability, and shareability of web pages. This tool is essential for bloggers, web developers, and content managers who need to create clean, consistent URLs for their pages, posts, and products.",
+    extraSeo: "Convert text into clean, URL-friendly slug format for SEO-optimized URLs and content management systems.",
+    example: "'Hello World! Test 123' → 'hello-world-test-123'",
     applications: [
       "Creating SEO-friendly URLs for blog posts",
       "Generating product page URLs for e-commerce",
@@ -1114,6 +1302,8 @@ const seo: Record<string, SeoContent> = {
   },
   "reading-time-estimator": {
     whatIs: "The Reading Time Estimator calculates how long it takes to read or speak a given text based on average reading speeds. The average adult reads about 200-250 words per minute silently and speaks about 130-150 words per minute. This tool is invaluable for bloggers estimating article reading times, speakers preparing presentations, students planning study sessions, and content creators optimizing content length. Paste any text to get instant reading and speaking time estimates.",
+    extraSeo: "Estimate reading and speaking time for any text. Used by bloggers, presenters, and content strategists to plan content length.",
+    example: "1,500-word article:\nReading ≈ 6 min (250 wpm)\nSpeaking ≈ 10 min (150 wpm)",
     applications: [
       "Blog post reading time badges for better UX",
       "Speech and presentation timing preparation",
@@ -1130,6 +1320,8 @@ const seo: Record<string, SeoContent> = {
   },
   "text-encryptor": {
     whatIs: "The Text Encryptor tool encrypts and decrypts text using the Caesar cipher, one of the oldest and simplest encryption methods. The Caesar cipher shifts each letter by a fixed number of positions in the alphabet. While not secure for real-world encryption, it is excellent for learning cryptography basics, creating simple coded messages, solving puzzles, and understanding how substitution ciphers work. Enter your text and shift value to encrypt or decrypt messages instantly.",
+    extraSeo: "Encrypt and decrypt text using Caesar cipher substitution. Great for learning cryptography and encoding messages.",
+    example: "'HELLO' with shift 3 → 'KHOOR'\n(H→K, E→H, L→O, L→O, O→R)",
     applications: [
       "Learning basic cryptography and cipher concepts",
       "Creating coded messages for games and puzzles",
@@ -1146,6 +1338,8 @@ const seo: Record<string, SeoContent> = {
   },
   "json-formatter": {
     whatIs: "The JSON Formatter beautifies, validates, and minifies JSON data with proper indentation and syntax highlighting. JSON is the standard data format for web APIs, configuration files, and data exchange. Poorly formatted JSON is hard to read and debug, while valid formatting helps identify structure, find errors, and understand data relationships. This tool is indispensable for developers working with APIs, configuration files, databases, and any system that uses JSON.",
+    extraSeo: "Format, beautify, and validate JSON data with proper indentation. Essential for debugging APIs and configuration files.",
+    example: "{\"name\":\"John\",\"age\":30} →\n{\n  \"name\": \"John\",\n  \"age\": 30\n}",
     applications: [
       "API response debugging and inspection",
       "Configuration file editing and validation",
@@ -1162,6 +1356,8 @@ const seo: Record<string, SeoContent> = {
   },
   "base64-encoder-decoder": {
     whatIs: "The Base64 Encoder/Decoder converts text to Base64 encoding and back. Base64 is a binary-to-text encoding scheme that represents binary data using 64 ASCII characters. It is widely used in web development for embedding images in CSS, encoding email attachments, handling authentication tokens, and transmitting binary data through text-only channels. This tool provides instant encoding and decoding for any text string, making it essential for developers and system administrators.",
+    extraSeo: "Encode text to Base64 or decode Base64 strings in web development, email encoding, and data transmission.",
+    example: "'Hello World' → Base64: SGVsbG8gV29ybGQ=\nDecode reverses the process.",
     applications: [
       "Embedding images as data URIs in web pages",
       "Encoding authentication credentials for HTTP headers",
@@ -1178,6 +1374,8 @@ const seo: Record<string, SeoContent> = {
   },
   "url-encoder-decoder": {
     whatIs: "The URL Encoder/Decoder converts special characters in URLs to their percent-encoded equivalents and back. URLs can only contain certain ASCII characters; special characters like spaces, ampersands, and non-English characters must be encoded. This tool is essential for web developers constructing query strings, debugging URLs, handling form submissions, and working with API endpoints that require properly encoded parameters.",
+    extraSeo: "Encode special characters in URLs or decode percent-encoded strings for web development and API work.",
+    example: "'Hello World & Friends' → 'Hello%20World%20%26%20Friends'",
     applications: [
       "Encoding query parameters for API calls",
       "Debugging malformed URLs with special characters",
@@ -1194,6 +1392,8 @@ const seo: Record<string, SeoContent> = {
   },
   "text-to-binary": {
     whatIs: "The Text to Binary converter transforms readable text into its binary representation and converts binary back to text. Each character is represented as a sequence of 8 bits (0s and 1s) based on its ASCII or Unicode value. This tool is useful for computer science education, understanding character encoding, creating binary art, and learning how computers store text data internally. It bridges the gap between human-readable text and machine-level representation.",
+    extraSeo: "Convert text to binary ASCII representation and vice versa. An educational tool for understanding digital text encoding.",
+    example: "'Hi' → 01001000 01101001\n(H=72, i=105)",
     applications: [
       "Computer science education on character encoding",
       "Understanding how computers store text",
@@ -1210,6 +1410,8 @@ const seo: Record<string, SeoContent> = {
   },
   "word-frequency-counter": {
     whatIs: "The Word Frequency Counter analyzes text to show how often each word appears, sorted by frequency. This is invaluable for content analysis, SEO keyword research, writing style improvement, and linguistic research. By seeing which words dominate your text, you can identify overused terms, check keyword density for SEO, analyze writing patterns, and ensure your vocabulary is varied. The tool processes any text and provides a clear frequency table.",
+    extraSeo: "Analyze text to find word occurrence frequency. Useful for SEO keyword density checks and content analysis.",
+    example: "'the cat and the dog and the bird'\nthe: 3, and: 2, cat: 1, dog: 1, bird: 1",
     applications: [
       "SEO keyword density analysis",
       "Writing style improvement and vocabulary diversity",
@@ -1226,6 +1428,8 @@ const seo: Record<string, SeoContent> = {
   },
   "text-to-morse-code": {
     whatIs: "The Morse Code Translator converts text to Morse code (dots and dashes) and translates Morse code back to text. Developed in the 1830s for telegraph communication, Morse code remains relevant in aviation, maritime communication, amateur radio, emergency signaling, and accessibility applications. This tool handles all letters, numbers, and common punctuation, making it useful for education, hobby radio operation, and understanding one of the most influential communication systems in history.",
+    extraSeo: "Translate text to Morse code and back. Popular for learning telecommunications history and amateur radio communication.",
+    example: "'SOS' → ... --- ...\n(S = ..., O = ---, S = ...)",
     applications: [
       "Amateur radio and ham radio operation",
       "Emergency communication and survival skills",
@@ -1242,6 +1446,8 @@ const seo: Record<string, SeoContent> = {
   },
   "password-generator": {
     whatIs: "The Password Generator creates strong, random passwords with customizable length and character options. In an era of frequent data breaches, using unique, complex passwords for every account is essential for digital security. This tool generates cryptographically random passwords that include uppercase and lowercase letters, numbers, and special characters. You control the length and complexity to meet any website's password requirements. Never reuse passwords — generate a unique one for every account.",
+    extraSeo: "Generate cryptographically secure passwords with customizable length and character types. Essential for protecting your online accounts.",
+    example: "Length 16, all character types:\nGenerated: xK9#mP2$vL7!nQ4@",
     applications: [
       "Creating strong passwords for online accounts",
       "Meeting specific password requirements for different websites",
@@ -1258,6 +1464,8 @@ const seo: Record<string, SeoContent> = {
   },
   "random-number-generator": {
     whatIs: "The Random Number Generator produces random integers or floating-point numbers within any range you specify. Randomness is essential in games, statistics, sampling, simulations, and decision-making. Whether you need to roll virtual dice, select lottery numbers, generate random samples for research, or make fair random selections, this tool provides unbiased random numbers instantly. It uses the browser's built-in random number generator for quick, reliable results.",
+    extraSeo: "Generate random numbers within any range for games, lotteries, statistical sampling, and decision making.",
+    example: "Range: 1–100\nGenerated: 47 (random, changes each time)",
     applications: [
       "Board games and dice rolling simulation",
       "Lottery number generation",
@@ -1274,6 +1482,8 @@ const seo: Record<string, SeoContent> = {
   },
   "random-color-generator": {
     whatIs: "The Random Color Generator produces random colors displayed in HEX and RGB formats. It is a fun and practical tool for designers, developers, and artists looking for color inspiration. Each click generates a completely new color, which can spark ideas for palettes, backgrounds, and design elements. Whether you are brainstorming color schemes, generating random visual elements for a project, or simply exploring the vast color spectrum, this tool delivers instant, visually appealing results.",
+    extraSeo: "Generate random colors with HEX, RGB, and HSL values for design inspiration and exploring color possibilities.",
+    example: "Generated: #3A7BD5\nRGB(58, 123, 213)\nHSL(215, 67%, 53%)",
     applications: [
       "Design inspiration and brainstorming sessions",
       "Generating random backgrounds and accents for projects",
@@ -1290,6 +1500,8 @@ const seo: Record<string, SeoContent> = {
   },
   "username-generator": {
     whatIs: "The Username Generator creates unique, creative usernames for social media, gaming, forums, and other online platforms. Finding an available username is increasingly difficult as platforms grow. This tool combines patterns, words, and random elements to generate memorable usernames that stand out. Whether you are creating a new gaming handle, professional social media presence, or anonymous forum account, this generator provides diverse options tailored to your preferences.",
+    extraSeo: "Generate creative usernames for social media, gaming, and online accounts with customizable styles.",
+    example: "Generated: SilverFox_42, CosmicWave_7, NeonTiger_88",
     applications: [
       "Creating accounts on social media platforms",
       "Gaming profiles and character names",
@@ -1306,6 +1518,8 @@ const seo: Record<string, SeoContent> = {
   },
   "business-name-generator": {
     whatIs: "The Business Name Generator creates creative and catchy business name ideas for startups, brands, and projects. A great business name is memorable, easy to pronounce, and relevant to your industry. This tool generates diverse options by combining business-related words, creative patterns, and industry terms. Whether you are launching a tech startup, opening a restaurant, or building an online brand, this generator provides inspiration and starting points for your business identity.",
+    extraSeo: "Get creative business name ideas for startups and brands with multiple options based on keywords and industry.",
+    example: "Keyword 'Tech':\nTechNova Solutions, ByteForge Labs, InnovateTech Hub",
     applications: [
       "Startup naming and brand identity development",
       "Side project and product naming brainstorming",
@@ -1322,6 +1536,8 @@ const seo: Record<string, SeoContent> = {
   },
   "lorem-ipsum-generator": {
     whatIs: "The Lorem Ipsum Generator creates placeholder text for design mockups, web development, and typography testing. Lorem Ipsum has been the printing industry's standard dummy text since the 1500s. This tool generates customizable amounts of placeholder text in paragraphs, sentences, or words. Designers and developers use it to fill layouts without the distraction of meaningful content, allowing focus on visual design, typography, and spacing decisions.",
+    extraSeo: "Generate placeholder text for website mockups, design layouts, and content templates with customizable output length.",
+    example: "Generate 2 paragraphs:\nLorem ipsum dolor sit amet, consectetur adipiscing elit...",
     applications: [
       "Web design and development placeholder content",
       "Print layout and typography testing",
@@ -1338,6 +1554,8 @@ const seo: Record<string, SeoContent> = {
   },
   "quotes-generator": {
     whatIs: "The Quotes Generator serves random inspirational, motivational, and thought-provoking quotes from famous authors, leaders, scientists, and philosophers. A well-timed quote can boost motivation, provide perspective, and spark creativity. This tool is perfect for daily inspiration, social media content, presentations, email signatures, and personal journaling. Each click reveals a new quote, giving you access to wisdom from history's greatest thinkers.",
+    extraSeo: "Get random inspirational quotes from famous people throughout history. Perfect for daily motivation and social media content.",
+    example: "\"The only way to do great work is to love what you do.\" — Steve Jobs",
     applications: [
       "Daily motivation and personal development",
       "Social media content creation",
@@ -1354,6 +1572,8 @@ const seo: Record<string, SeoContent> = {
   },
   "hash-generator": {
     whatIs: "The Hash Generator creates hash values for any input text using multiple hashing algorithms. Hash functions transform input data into fixed-size strings that act as digital fingerprints — even a tiny change in input produces a completely different hash. Hashing is fundamental in data integrity verification, password storage, digital signatures, and blockchain technology. This tool lets you generate and compare hashes instantly for any text string.",
+    extraSeo: "Generate hash values for text using multiple algorithms for data integrity verification and learning cryptography.",
+    example: "'Hello World' → DJB2: 2119740623",
     applications: [
       "Data integrity verification and checksum comparison",
       "Understanding password hashing concepts",
@@ -1370,6 +1590,8 @@ const seo: Record<string, SeoContent> = {
   },
   "qr-text-generator": {
     whatIs: "The QR Code Generator creates scannable QR codes from any text, URL, or data you provide. QR codes are two-dimensional barcodes that can be scanned by smartphone cameras to instantly access websites, contact information, WiFi credentials, and more. This tool generates QR codes directly in your browser using Canvas without any server or API dependency. They are widely used in marketing, payments, ticketing, product packaging, and contactless information sharing.",
+    extraSeo: "Generate scannable QR codes from any text or URL. Download high-quality images for sharing links and contact information.",
+    example: "Input: 'https://toolverse-hub.vercel.app'\nOutput: Scannable QR code image",
     applications: [
       "Sharing website URLs and links quickly",
       "Business card and contact information sharing",
@@ -1386,6 +1608,8 @@ const seo: Record<string, SeoContent> = {
   },
   "password-strength-checker": {
     whatIs: "The Password Strength Checker analyzes your passwords and provides a detailed security assessment. It evaluates length, character variety, common patterns, and overall entropy to rate your password's resistance to cracking. In an age of data breaches and automated hacking tools, understanding password strength is crucial. This tool helps you identify weak passwords before using them, providing specific recommendations for improvement without transmitting your password anywhere.",
+    extraSeo: "Analyze password strength with detailed feedback on length, complexity, and estimated crack time. Improve your security instantly.",
+    example: "'MyP@ss123' → Strength: Medium\nFeedback: Add more length and unique characters.",
     applications: [
       "Evaluating existing passwords for security",
       "Learning what makes passwords strong or weak",
@@ -1402,6 +1626,8 @@ const seo: Record<string, SeoContent> = {
   },
   "pomodoro-timer": {
     whatIs: "The Pomodoro Study Timer implements the Pomodoro Technique, a time management method that alternates focused work sessions with short breaks. Developed by Francesco Cirillo in the late 1980s, this technique uses 25-minute work intervals (called 'pomodoros') followed by 5-minute breaks, with longer breaks after four cycles. Research shows that structured work-break patterns improve concentration, reduce mental fatigue, and increase productivity. This timer handles the timing automatically so you can focus on your work.",
+    extraSeo: "Boost productivity using the Pomodoro Technique with focused 25-minute intervals and short breaks to avoid burnout.",
+    example: "Work: 25 min → Break: 5 min → Work: 25 min → Long break: 15 min (after 4 sessions)",
     applications: [
       "Student study sessions and exam preparation",
       "Remote work productivity and focus management",
@@ -1418,6 +1644,8 @@ const seo: Record<string, SeoContent> = {
   },
   "date-difference-calculator": {
     whatIs: "The Date Difference Calculator computes the exact duration between any two dates in days, weeks, months, and years. Whether you need to know how many days until a deadline, the duration of a project, or the time between historical events, this tool provides precise calculations accounting for varying month lengths and leap years. It is essential for project management, event planning, legal proceedings, and personal milestones tracking.",
+    extraSeo: "Calculate exact days, weeks, months, and years between any two dates for project planning and event countdown.",
+    example: "Jan 1, 2024 → Dec 31, 2024:\n365 days = 52 weeks 1 day = 12 months",
     applications: [
       "Project timeline and deadline management",
       "Event planning and countdown tracking",
@@ -1434,6 +1662,8 @@ const seo: Record<string, SeoContent> = {
   },
   "countdown-timer": {
     whatIs: "The Countdown Timer lets you set a custom countdown with hours, minutes, and seconds. It is perfect for timing presentations, cooking, workouts, exams, and any activity that requires precise time management. The timer displays remaining time clearly and alerts you when the countdown reaches zero. Unlike a stopwatch that counts up, the countdown timer counts down from your specified duration, creating urgency and helping you stay on track.",
+    extraSeo: "Set custom countdown timers for cooking, workouts, presentations, or any timed activity with audio alerts.",
+    example: "Set 25 minutes: 24:59... 24:58... → 00:00 (alarm sounds!)",
     applications: [
       "Presentation and meeting time management",
       "Cooking and baking timer",
@@ -1450,6 +1680,8 @@ const seo: Record<string, SeoContent> = {
   },
   "random-question-picker": {
     whatIs: "The Random Question Picker selects random questions from a list you provide, making it perfect for quizzes, study sessions, ice-breakers, and classroom activities. Enter your questions, and the tool will randomly choose one for you. This eliminates bias in question selection, makes study sessions more engaging, and adds an element of surprise to group activities. Teachers, students, and meeting facilitators all benefit from truly random selection.",
+    extraSeo: "Randomly select questions from a custom list for quizzes, study sessions, and classroom activities with fair selection.",
+    example: "10 questions → Randomly picked #7: 'What is the capital of France?'",
     applications: [
       "Classroom quiz and test question selection",
       "Study group flashcard-style practice",
@@ -1466,6 +1698,8 @@ const seo: Record<string, SeoContent> = {
   },
   "unit-circle-helper": {
     whatIs: "The Unit Circle Helper provides an interactive visual reference for the trigonometric unit circle, displaying standard angles with their radian measures, degree values, and exact (sin, cos) coordinate pairs. The unit circle is a cornerstone concept in trigonometry and calculus, and memorizing its values is essential for students. This tool makes learning and referencing unit circle values easy, visual, and interactive — far more effective than staring at static textbook diagrams.",
+    extraSeo: "Interactive unit circle showing all standard angles with radian measures, sine, cosine, and tangent values for trig students.",
+    example: "At 30° (π/6):\nsin = 0.5, cos = √3/2 ≈ 0.866, tan ≈ 0.577",
     applications: [
       "Trigonometry study and memorization",
       "Quick reference during math homework",
@@ -1482,6 +1716,8 @@ const seo: Record<string, SeoContent> = {
   },
   "stopwatch": {
     whatIs: "The Stopwatch provides precise time measurement with centisecond accuracy and lap tracking capability. Whether you are timing athletic events, experiments, cooking, or any activity requiring accurate elapsed time measurement, this tool delivers reliable results. Start, stop, lap, and reset controls make it easy to track multiple intervals. The lap feature is especially useful for comparing split times in races, workouts, or sequential tasks.",
+    extraSeo: "A precise digital stopwatch with lap tracking and centisecond accuracy for timing exercises, experiments, and sports.",
+    example: "Lap 1: 00:15.42\nLap 2: 00:14.87\nTotal: 00:30.29",
     applications: [
       "Athletic training and race timing",
       "Science experiments requiring precise timing",
@@ -1498,6 +1734,9 @@ const seo: Record<string, SeoContent> = {
   },
   "cgpa-to-percentage": {
     whatIs: "The CGPA to Percentage converter transforms Cumulative Grade Point Average into percentage equivalents using standard formulas. Different universities and countries use different conversion methods — the most common multiplies CGPA by 9.5 (as recommended by CBSE in India). This tool helps students convert their grades for job applications, higher education admissions, and scholarship applications that require specific formats. Understanding the relationship between CGPA and percentage is essential for academic and career planning.",
+    extraSeo: "Convert CGPA to percentage using standard university conversion formulas for job applications and higher studies.",
+    example: "CGPA 8.5 (10-point scale):\nPercentage = 8.5 × 9.5 = 80.75%",
+    formula: "Percentage = CGPA × 9.5 (standard)\nSome use: (CGPA − 0.75) × 10",
     applications: [
       "Job applications requiring percentage marks",
       "Graduate school admission forms and applications",
@@ -1514,6 +1753,8 @@ const seo: Record<string, SeoContent> = {
   },
   "days-until-date": {
     whatIs: "The Days Until Date calculator shows exactly how many days remain between today and any future date you select. It is perfect for tracking countdowns to holidays, birthdays, vacations, deadlines, product launches, and other important events. The tool automatically updates based on the current date, giving you a real-time countdown that helps with planning and anticipation. Never lose track of important dates again.",
+    extraSeo: "Find how many days remain until any future date for tracking deadlines, planning events, or counting down to special occasions.",
+    example: "Today: Apr 2, 2026 → Dec 25, 2026:\n267 days remaining",
     applications: [
       "Countdown to holidays and vacations",
       "Deadline tracking for projects and assignments",
@@ -1530,6 +1771,8 @@ const seo: Record<string, SeoContent> = {
   },
   "business-days-calculator": {
     whatIs: "The Business Days Calculator computes the number of working days between two dates, excluding weekends (Saturday and Sunday). This is essential for project management, delivery time estimation, legal deadlines, HR processes, and financial calculations. Many business processes are measured in business days rather than calendar days — shipping estimates, payment terms, notice periods, and contractual obligations all frequently use business day counting.",
+    extraSeo: "Calculate business (working) days between two dates excluding weekends for project management and delivery estimates.",
+    example: "Mon Apr 1 → Fri Apr 30:\n22 business days (excluding 8 weekend days)",
     applications: [
       "Project management and sprint planning",
       "Shipping and delivery time estimation",
@@ -1546,6 +1789,8 @@ const seo: Record<string, SeoContent> = {
   },
   "workdays-calculator": {
     whatIs: "The Workdays Calculator determines the total number of working days between any two dates. Similar to the Business Days Calculator but focused on total working day counts, this tool is invaluable for payroll processing, project billing, employee attendance tracking, and capacity planning. Whether you are calculating billable hours for a client engagement, determining pay periods, or planning resource allocation, accurate working day counts are essential for business operations.",
+    extraSeo: "Calculate total working days between any two dates. Can be customized for different work schedules.",
+    example: "Jan 1 → Mar 31, 2026:\nTotal workdays: 63 days",
     applications: [
       "Payroll and salary calculations for employees",
       "Client billing and project cost estimation",
@@ -1562,6 +1807,8 @@ const seo: Record<string, SeoContent> = {
   },
   "week-number-calculator": {
     whatIs: "The Week Number Calculator determines the ISO week number for any date. ISO week numbering is used internationally in business, project management, manufacturing, and scheduling systems. It provides a standardized way to reference specific weeks of the year, avoiding confusion between different calendar conventions. Whether you are scheduling production runs, planning sprints, or referencing dates in international business communication, knowing the ISO week number is essential.",
+    extraSeo: "Find the ISO week number for any date, used in business reporting, project planning, and scheduling.",
+    example: "April 2, 2026:\nISO Week Number: 14, Thursday",
     applications: [
       "Project management sprint and milestone planning",
       "Manufacturing production scheduling",
@@ -1578,6 +1825,8 @@ const seo: Record<string, SeoContent> = {
   },
   "unix-timestamp-converter": {
     whatIs: "The Unix Timestamp Converter translates between Unix timestamps (seconds since January 1, 1970) and human-readable dates. Unix timestamps are the standard time representation in computing, used in databases, APIs, log files, and programming. While computers work efficiently with timestamps, humans need readable dates. This bidirectional converter bridges that gap, making it essential for developers, system administrators, and data analysts working with time-based data.",
+    extraSeo: "Convert Unix timestamps to readable dates and vice versa. Essential for debugging logs, APIs, and database records.",
+    example: "1714600000 → May 1, 2024, 11:06:40 PM UTC",
     applications: [
       "Debugging API responses with timestamp fields",
       "Database date field interpretation and conversion",
@@ -1594,6 +1843,8 @@ const seo: Record<string, SeoContent> = {
   },
   "json-to-csv": {
     whatIs: "The JSON to CSV Converter transforms structured JSON data into tabular CSV format for use in spreadsheets, databases, and data analysis tools. JSON is the standard format for web APIs and data exchange, while CSV is universally compatible with Excel, Google Sheets, and database import tools. This converter handles arrays of objects, flattening nested structures into clean, importable CSV format with proper header rows and escaped values.",
+    extraSeo: "Convert JSON arrays into downloadable CSV format for spreadsheets, simplifying data export from APIs and databases.",
+    example: "[{name:'Alice',age:30},{name:'Bob',age:25}]\n→ name,age\nAlice,30\nBob,25",
     applications: [
       "Exporting API data to spreadsheets for analysis",
       "Database data migration between formats",
@@ -1610,6 +1861,8 @@ const seo: Record<string, SeoContent> = {
   },
   "csv-to-json": {
     whatIs: "The CSV to JSON Converter transforms tabular CSV data into structured JSON format for use in web applications, APIs, and modern data systems. CSV is the simplest tabular format, but JSON is the standard for web development and data interchange. This converter reads CSV headers as keys and rows as objects, producing clean, properly formatted JSON arrays ready for use in applications, databases, and APIs.",
+    extraSeo: "Convert CSV data into structured JSON format for APIs, web applications, and databases with automatic type detection.",
+    example: "name,age\nAlice,30\n→ [{\"name\":\"Alice\",\"age\":\"30\"}]",
     applications: [
       "Importing spreadsheet data into web applications",
       "Preparing data for REST API endpoints",
@@ -1626,6 +1879,8 @@ const seo: Record<string, SeoContent> = {
   },
   "uuid-generator": {
     whatIs: "The UUID Generator creates Universally Unique Identifiers (UUID v4) — 128-bit random values formatted as 32 hexadecimal digits in a specific pattern. UUIDs are used extensively in software development as database primary keys, session identifiers, API request tracking, and unique object identification. The probability of generating a duplicate UUID is astronomically small, making them perfect for distributed systems where coordination for unique ID generation is impractical.",
+    extraSeo: "Generate universally unique identifiers (UUID v4) for databases, APIs, and software development. Cryptographically random.",
+    example: "Generated: 550e8400-e29b-41d4-a716-446655440000",
     applications: [
       "Database primary key generation",
       "API request tracking and correlation",
@@ -1642,6 +1897,8 @@ const seo: Record<string, SeoContent> = {
   },
   "jwt-decoder": {
     whatIs: "The JWT Decoder parses JSON Web Tokens and displays their header, payload, and signature components in readable format. JWTs are the standard for authentication tokens in modern web applications, encoding user identity and permissions as a compact, self-contained token. This tool helps developers inspect token contents, debug authentication issues, verify claims, and understand token structure — all without needing backend access or API calls.",
+    extraSeo: "Decode JSON Web Tokens to inspect header, payload, and signature. Essential for debugging authentication and APIs.",
+    example: "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIn0.xxx\n→ Payload: {\"sub\": \"1234567890\"}",
     applications: [
       "Debugging authentication and authorization issues",
       "Inspecting token claims and expiration times",
@@ -1658,6 +1915,8 @@ const seo: Record<string, SeoContent> = {
   },
   "regex-tester": {
     whatIs: "The Regex Tester lets you write and test regular expressions against sample text with live matching and highlighting. Regular expressions are powerful pattern-matching tools used in programming, data validation, text processing, and search operations. This tool provides instant visual feedback as you type your pattern, showing all matches highlighted in the text. It supports standard JavaScript regex syntax including flags for case-insensitive and global matching.",
+    extraSeo: "Test and debug regular expressions with live matching and highlighting. Supports global, case-insensitive, and multiline flags.",
+    example: "Pattern: /\\d{3}-\\d{4}/g\nText: 'Call 555-1234 or 666-5678'\nMatches: ['555-1234', '666-5678']",
     applications: [
       "Developing and debugging regular expressions",
       "Form input validation pattern creation",
@@ -1674,6 +1933,8 @@ const seo: Record<string, SeoContent> = {
   },
   "cron-expression-parser": {
     whatIs: "The Cron Expression Parser interprets cron schedule expressions and shows their human-readable meaning along with upcoming execution times. Cron is the standard scheduling format used in Unix/Linux systems, cloud services, CI/CD pipelines, and task automation. This tool helps developers and system administrators write, verify, and debug cron expressions by translating the terse syntax into plain English descriptions and showing exactly when jobs will run next.",
+    extraSeo: "Parse cron expressions with human-readable descriptions and next run times. Essential for DevOps and system administration.",
+    example: "'0 9 * * 1-5' → At 9:00 AM, Monday through Friday",
     applications: [
       "Server job scheduling and automation",
       "CI/CD pipeline schedule configuration",
@@ -1690,6 +1951,8 @@ const seo: Record<string, SeoContent> = {
   },
   "chmod-calculator": {
     whatIs: "The Chmod Calculator converts between numeric (octal) and symbolic Unix file permission notation. File permissions in Linux and Unix systems control who can read, write, and execute files and directories. The chmod command uses either numeric codes (755) or symbolic notation (rwxr-xr-x) to set these permissions. This tool helps system administrators, developers, and DevOps engineers quickly calculate the right permission values for their security needs.",
+    extraSeo: "Calculate Unix file permissions in numeric and symbolic notation. A must-have for system administrators and developers.",
+    example: "rwxr-xr-- → 754\nOwner: rwx (7), Group: r-x (5), Others: r-- (4)",
     applications: [
       "Linux/Unix server administration and security",
       "Web server file permission configuration",
@@ -1706,6 +1969,8 @@ const seo: Record<string, SeoContent> = {
   },
   "gradient-generator": {
     whatIs: "The Gradient Generator creates beautiful CSS linear and radial gradients with a live visual preview and copyable code. Gradients add depth, vibrancy, and visual interest to web designs, replacing flat colors with smooth transitions. This tool lets you pick colors, adjust direction and stops, and instantly see the result. Whether you are designing hero sections, buttons, backgrounds, or overlays, creating the perfect gradient is effortless with real-time visual feedback and ready-to-use CSS code.",
+    extraSeo: "Create beautiful CSS gradients with live preview and one-click code copying for modern web design.",
+    example: "#667eea → #764ba2 at 135°:\nCSS: background: linear-gradient(135deg, #667eea, #764ba2);",
     applications: [
       "Website hero section and background design",
       "Button and UI element styling",
@@ -1722,6 +1987,8 @@ const seo: Record<string, SeoContent> = {
   },
   "color-palette-generator": {
     whatIs: "The Color Palette Generator creates harmonious color schemes from any base color using established color theory principles. It generates complementary, analogous, triadic, and split-complementary palettes that work together aesthetically. Professional designers use color palettes to ensure visual consistency across websites, apps, branding, and marketing materials. This tool democratizes color theory, helping anyone create professional-looking color combinations without deep design expertise.",
+    extraSeo: "Generate harmonious color palettes from any base color using color theory. Create complementary, analogous, and triadic schemes.",
+    example: "Base #3498db → Complementary: #db7734, Analogous: #34db98, #3434db",
     applications: [
       "Website and app UI color scheme design",
       "Brand identity and style guide creation",
@@ -1738,6 +2005,9 @@ const seo: Record<string, SeoContent> = {
   },
   "contrast-checker": {
     whatIs: "The Contrast Checker evaluates the color contrast ratio between foreground text and background colors according to WCAG (Web Content Accessibility Guidelines) standards. Sufficient contrast ensures that text is readable by people with visual impairments, including color blindness and low vision. This tool calculates the contrast ratio and tells you whether your color combination passes AA and AAA accessibility levels for normal and large text, helping you create inclusive, accessible designs.",
+    extraSeo: "Check color contrast ratios for WCAG accessibility compliance. Ensure readable text for all users including those with visual impairments.",
+    example: "#333333 on #FFFFFF → Ratio: 12.63:1\nWCAG AA: ✅ Pass | AAA: ✅ Pass",
+    formula: "Ratio = (L1 + 0.05) / (L2 + 0.05)\nWCAG AA: ≥ 4.5:1 (normal text)",
     applications: [
       "Website accessibility compliance testing",
       "UI design color selection for readability",
@@ -1754,6 +2024,9 @@ const seo: Record<string, SeoContent> = {
   },
   "rgb-to-cmyk": {
     whatIs: "The RGB to CMYK Converter translates screen colors (RGB) to print colors (CMYK). RGB (Red, Green, Blue) is used for digital displays, while CMYK (Cyan, Magenta, Yellow, Key/Black) is used for printing. Colors can look different on screen versus print because these systems use fundamentally different color models — RGB is additive (light-based) and CMYK is subtractive (ink-based). This tool helps designers prepare files for print by converting digital colors to their closest print equivalents.",
+    extraSeo: "Convert RGB to CMYK for print design. Essential for graphic designers preparing digital artwork for professional printing.",
+    example: "RGB(255, 99, 71) → C:0%, M:61%, Y:72%, K:0%",
+    formula: "K = 1 − max(R',G',B')\nC = (1−R'−K)/(1−K)\nM = (1−G'−K)/(1−K)\nY = (1−B'−K)/(1−K)",
     applications: [
       "Preparing digital designs for professional printing",
       "Brand color specification for print materials",
@@ -1770,6 +2043,8 @@ const seo: Record<string, SeoContent> = {
   },
   "image-color-picker": {
     whatIs: "The Image Color Picker lets you upload any image and extract colors by clicking on specific pixels. It displays the selected color in HEX and RGB formats, making it easy to identify and use colors from photographs, designs, logos, and artwork. This tool is invaluable for designers matching colors from reference images, developers implementing designs from mockups, and anyone who wants to know the exact color value of any pixel in an image.",
+    extraSeo: "Upload images and pick colors by clicking pixels. Get exact HEX and RGB values from photos, screenshots, and design mockups.",
+    example: "Click on sunset sky → #FF7F50 / RGB(255, 127, 80)",
     applications: [
       "Extracting brand colors from logos and images",
       "Matching colors from design mockups and references",
@@ -1786,6 +2061,9 @@ const seo: Record<string, SeoContent> = {
   },
   "css-unit-converter": {
     whatIs: "The CSS Unit Converter transforms values between px, rem, em, vh, vw, and other CSS length units used in web development. Understanding CSS units is essential for creating responsive, accessible designs. Pixels provide fixed sizes, rem units scale with root font size for accessibility, em units inherit from parent elements, and viewport units create fluid layouts. This tool helps developers convert between these systems and understand their relationships.",
+    extraSeo: "Convert between CSS units like px, rem, em, vh, and vw for responsive web design and accessible layouts.",
+    example: "24px to rem (base 16px):\n24 ÷ 16 = 1.5rem",
+    formula: "rem = px / root-font-size\n1vh = 1% viewport height\n1vw = 1% viewport width",
     applications: [
       "Converting pixel designs to responsive rem values",
       "Creating fluid typography with viewport units",
@@ -1802,6 +2080,8 @@ const seo: Record<string, SeoContent> = {
   },
   "box-shadow-generator": {
     whatIs: "The Box Shadow Generator creates CSS box-shadow effects with a live visual preview. Box shadows add depth, elevation, and visual hierarchy to web elements like cards, buttons, modals, and navigation bars. This tool lets you adjust horizontal and vertical offset, blur radius, spread radius, color, and opacity in real-time. See the effect immediately, then copy the generated CSS for your stylesheet. Creating professional shadow effects has never been easier.",
+    extraSeo: "Design CSS box shadows with an interactive editor. Adjust offset, blur, spread, and color with live preview and code copying.",
+    example: "X=0, Y=4px, Blur=12px, Color=rgba(0,0,0,0.1)\n→ box-shadow: 0px 4px 12px 0px rgba(0,0,0,0.1);",
     applications: [
       "Card and panel elevation effects in web design",
       "Button hover state shadow effects",

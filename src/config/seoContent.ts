@@ -1,5 +1,8 @@
 export interface SeoContent {
   whatIs: string;
+  extraSeo?: string;
+  example?: string;
+  formula?: string;
   applications: string[];
   faqs: { q: string; a: string }[];
 }

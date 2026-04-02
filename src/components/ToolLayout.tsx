@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect } from "react";
 import { motion } from "framer-motion";
 import Breadcrumb from "./Breadcrumb";
 import AdPlaceholder from "./AdPlaceholder";
@@ -24,6 +24,17 @@ const ToolLayout = ({ slug, children, howTo, example, faqs }: ToolLayoutProps) =
 
   // Merge FAQs: prefer seo FAQs if available, fall back to prop FAQs
   const mergedFaqs = seo?.faqs && seo.faqs.length > 0 ? seo.faqs : faqs;
+  // Merge example: prefer seo example, fall back to prop
+  const mergedExample = seo?.example || example;
+
+  // Dynamic SEO page title
+  useEffect(() => {
+    if (tool) {
+      const categoryLabel = cat?.title || "Tool";
+      document.title = `${tool.title} – Free Online ${categoryLabel} | ToolVerse`;
+    }
+    return () => { document.title = "ToolVerse – Free Online Tools"; };
+  }, [tool, cat]);
 
   if (!tool) return <div className="container py-12">Tool not found.</div>;
 
@@ -55,6 +66,12 @@ const ToolLayout = ({ slug, children, howTo, example, faqs }: ToolLayoutProps) =
           <div className="bg-card rounded-xl p-5 text-sm text-secondary-foreground border border-border leading-relaxed">
             {seo.whatIs}
           </div>
+          {/* Extra SEO paragraph */}
+          {seo.extraSeo && (
+            <div className="bg-card rounded-xl p-5 text-sm text-muted-foreground border border-border leading-relaxed mt-3">
+              {seo.extraSeo}
+            </div>
+          )}
         </section>
       )}
 
@@ -74,10 +91,18 @@ const ToolLayout = ({ slug, children, howTo, example, faqs }: ToolLayoutProps) =
       )}
 
       {/* Example */}
-      {example && (
+      {mergedExample && (
         <section className="mb-10">
           <h2 className="font-display text-xl font-semibold mb-4">Example of <span className="gradient-text">{tool.title}</span></h2>
-          <div className="bg-card rounded-xl p-5 text-sm text-secondary-foreground border border-border leading-relaxed">{example}</div>
+          <div className="bg-card rounded-xl p-5 text-sm text-secondary-foreground border border-border leading-relaxed whitespace-pre-line">{mergedExample}</div>
+        </section>
+      )}
+
+      {/* Formula (where applicable) */}
+      {seo?.formula && (
+        <section className="mb-10">
+          <h2 className="font-display text-xl font-semibold mb-4">Formula of <span className="gradient-text">{tool.title}</span></h2>
+          <div className="bg-card rounded-xl p-5 text-sm text-secondary-foreground border border-border leading-relaxed font-mono whitespace-pre-line">{seo.formula}</div>
         </section>
       )}
 
@@ -96,13 +121,13 @@ const ToolLayout = ({ slug, children, howTo, example, faqs }: ToolLayoutProps) =
         </section>
       )}
 
-      {/* FAQs */}
+      {/* FAQs - first one expanded by default, all content in DOM for SEO */}
       {mergedFaqs && mergedFaqs.length > 0 && (
         <section className="mb-10">
           <h2 className="font-display text-xl font-semibold mb-5">Frequently Asked <span className="gradient-text">Questions</span></h2>
           <div className="space-y-3">
             {mergedFaqs.map((f, i) => (
-              <details key={i} className="group border border-border rounded-xl bg-card overflow-hidden hover:border-primary/20 transition-colors">
+              <details key={i} open={i === 0} className="group border border-border rounded-xl bg-card overflow-hidden hover:border-primary/20 transition-colors">
                 <summary className="cursor-pointer px-5 py-4 font-medium text-sm flex items-center justify-between hover:bg-secondary/30 transition-colors">
                   {f.q}
                   <span className="text-muted-foreground group-open:rotate-180 transition-transform duration-300">▾</span>

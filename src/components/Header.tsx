@@ -118,6 +118,7 @@ const Header = () => {
               </Link>
             ))}
           </div>
+          <Link to="/blog" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>Blog</Link>
           <Link to="/about" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>About</Link>
           <Link to="/contact" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>

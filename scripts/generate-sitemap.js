@@ -67,8 +67,19 @@ for (const slug of slugs) {
 `;
 }
 
+for (const slug of blogSlugs) {
+  xml += `  <url>
+    <loc>${BASE_URL}/blog/${slug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+`;
+}
+
 xml += `</urlset>
 `;
 
+const total = staticPages.length + slugs.length + blogSlugs.length;
 writeFileSync(resolve(__dirname, '../public/sitemap.xml'), xml);
-console.log(`✅ Sitemap generated with ${staticPages.length + slugs.length} URLs (${slugs.length} tools)`);
+console.log(`✅ Sitemap generated with ${total} URLs (${slugs.length} tools, ${blogSlugs.length} blog posts)`);

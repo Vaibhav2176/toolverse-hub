@@ -64,6 +64,7 @@ const Header = () => {
               </div>
             )}
           </div>
+          <Link to="/blog" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">Blog</Link>
           <Link to="/about" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">About</Link>
           <Link to="/contact" className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-secondary/60 transition-all">Contact</Link>
         </nav>
@@ -117,6 +118,7 @@ const Header = () => {
               </Link>
             ))}
           </div>
+          <Link to="/blog" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>Blog</Link>
           <Link to="/about" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>About</Link>
           <Link to="/contact" className="block px-3 py-2.5 rounded-lg hover:bg-secondary/60 font-medium" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>

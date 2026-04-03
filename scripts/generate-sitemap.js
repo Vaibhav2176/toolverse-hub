@@ -6,13 +6,21 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const toolsFile = readFileSync(resolve(__dirname, '../src/config/tools.ts'), 'utf-8');
+const blogFile = readFileSync(resolve(__dirname, '../src/config/blogPosts.ts'), 'utf-8');
 
-// Extract all slugs from tools config
+// Extract all tool slugs
 const slugRegex = /slug:\s*"([^"]+)"/g;
 const slugs = [];
 let match;
 while ((match = slugRegex.exec(toolsFile)) !== null) {
   slugs.push(match[1]);
+}
+
+// Extract all blog slugs
+const blogSlugRegex = /slug:\s*"([^"]+)"/g;
+const blogSlugs = [];
+while ((match = blogSlugRegex.exec(blogFile)) !== null) {
+  blogSlugs.push(match[1]);
 }
 
 const BASE_URL = 'https://toolverse-hub.vercel.app';
@@ -32,6 +40,7 @@ const staticPages = [
   { loc: '/contact', priority: '0.5', changefreq: 'monthly' },
   { loc: '/privacy', priority: '0.3', changefreq: 'yearly' },
   { loc: '/terms', priority: '0.3', changefreq: 'yearly' },
+  { loc: '/blog', priority: '0.8', changefreq: 'weekly' },
 ];
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -58,8 +67,19 @@ for (const slug of slugs) {
 `;
 }
 
+for (const slug of blogSlugs) {
+  xml += `  <url>
+    <loc>${BASE_URL}/blog/${slug}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+`;
+}
+
 xml += `</urlset>
 `;
 
+const total = staticPages.length + slugs.length + blogSlugs.length;
 writeFileSync(resolve(__dirname, '../public/sitemap.xml'), xml);
-console.log(`✅ Sitemap generated with ${staticPages.length + slugs.length} URLs (${slugs.length} tools)`);
+console.log(`✅ Sitemap generated with ${total} URLs (${slugs.length} tools, ${blogSlugs.length} blog posts)`);

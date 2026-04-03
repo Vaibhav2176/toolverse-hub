@@ -231,7 +231,7 @@ const Index = () => {
             <h2 className="section-title">Recently <span className="gradient-text">Added</span></h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {getNewTools().map(t => (
+            {getNewTools().slice(0, 6).map(t => (
               <motion.div key={t.slug} variants={scaleIn}>
                 <ToolCard tool={t} />
               </motion.div>

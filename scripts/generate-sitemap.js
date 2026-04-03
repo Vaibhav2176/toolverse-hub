@@ -40,6 +40,7 @@ const staticPages = [
   { loc: '/contact', priority: '0.5', changefreq: 'monthly' },
   { loc: '/privacy', priority: '0.3', changefreq: 'yearly' },
   { loc: '/terms', priority: '0.3', changefreq: 'yearly' },
+  { loc: '/blog', priority: '0.8', changefreq: 'weekly' },
 ];
 
 let xml = `<?xml version="1.0" encoding="UTF-8"?>

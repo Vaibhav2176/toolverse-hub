@@ -6,13 +6,21 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const toolsFile = readFileSync(resolve(__dirname, '../src/config/tools.ts'), 'utf-8');
+const blogFile = readFileSync(resolve(__dirname, '../src/config/blogPosts.ts'), 'utf-8');
 
-// Extract all slugs from tools config
+// Extract all tool slugs
 const slugRegex = /slug:\s*"([^"]+)"/g;
 const slugs = [];
 let match;
 while ((match = slugRegex.exec(toolsFile)) !== null) {
   slugs.push(match[1]);
+}
+
+// Extract all blog slugs
+const blogSlugRegex = /slug:\s*"([^"]+)"/g;
+const blogSlugs = [];
+while ((match = blogSlugRegex.exec(blogFile)) !== null) {
+  blogSlugs.push(match[1]);
 }
 
 const BASE_URL = 'https://toolverse-hub.vercel.app';

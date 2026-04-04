@@ -169,6 +169,8 @@ export const tools: ToolMeta[] = [
   { slug: "regex-tester", title: "Regex Tester", description: "Test regular expressions with live matching and highlighting.", category: "developer-tools", keywords: ["regex", "regular", "expression", "test"], emoji: "🧪", isNew: true, featured: true },
   { slug: "cron-expression-parser", title: "Cron Expression Parser", description: "Parse cron expressions and see next scheduled run times.", category: "developer-tools", keywords: ["cron", "schedule", "job", "expression"], emoji: "⏰", isNew: true },
   { slug: "chmod-calculator", title: "Chmod Calculator", description: "Calculate Unix file permissions in numeric and symbolic notation.", category: "developer-tools", keywords: ["chmod", "permissions", "unix", "linux"], emoji: "🔐", isNew: true },
+  { slug: "html-entity-encoder", title: "HTML Entity Encoder", description: "Encode and decode HTML entities and special characters.", category: "developer-tools", keywords: ["html", "entity", "encode", "decode"], emoji: "🔣", isNew: true },
+  { slug: "ip-address-converter", title: "IP Address Converter", description: "Convert IPv4 addresses to binary, hexadecimal, decimal, and octal.", category: "developer-tools", keywords: ["ip", "address", "binary", "hex"], emoji: "🌐", isNew: true },
 
   // Design Tools
   { slug: "gradient-generator", title: "Gradient Generator", description: "Generate beautiful CSS gradients with live preview and copy code.", category: "design-tools", keywords: ["gradient", "css", "color", "background"], emoji: "🌈", isNew: true, featured: true, popular: true },

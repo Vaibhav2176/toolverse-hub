@@ -2095,6 +2095,215 @@ const seo: Record<string, SeoContent> = {
       { q: "How do I create a subtle, professional shadow?", a: "Use small offsets (0-4px vertical, 0-2px horizontal), moderate blur (10-20px), no spread, and low-opacity black/gray color. Example: box-shadow: 0 4px 12px rgba(0,0,0,0.1) creates an elegant, floating effect." },
       { q: "Can I add multiple shadows?", a: "Yes, separate multiple shadows with commas. Layering several subtle shadows creates more realistic depth than a single heavy shadow. This technique is used in Material Design and modern UI frameworks." }
     ]
+  },
+  "standard-deviation-calculator": {
+    whatIs: "The Standard Deviation Calculator computes the mean, variance, and standard deviation of any dataset. Standard deviation measures how spread out numbers are from the average, making it essential for statistics, data analysis, and scientific research.",
+    extraSeo: "Used by students, researchers, and data analysts to understand data variability and consistency in datasets of any size.",
+    example: "For the dataset 10, 20, 30, 40, 50:\n\nMean = 30\nVariance = 200\nStandard Deviation = √200 ≈ 14.14",
+    formula: "σ = √[(Σ(xi − μ)²) / N]\n\nWhere μ = mean, N = number of values",
+    applications: ["Statistical analysis and research", "Quality control in manufacturing", "Financial risk assessment", "Academic grading analysis", "Scientific data interpretation"],
+    faqs: [
+      { q: "What is standard deviation?", a: "Standard deviation measures the amount of variation in a dataset. A low value means data points are close to the mean, while a high value indicates they are spread out over a wider range." },
+      { q: "What is the difference between population and sample standard deviation?", a: "Population standard deviation divides by N (total count), while sample standard deviation divides by N-1 (Bessel's correction). This calculator uses population standard deviation." },
+      { q: "Why is variance useful?", a: "Variance is the square of standard deviation and is used in many statistical formulas. It gives a measure of data dispersion that is mathematically convenient for further analysis." }
+    ]
+  },
+  "pythagorean-calculator": {
+    whatIs: "The Pythagorean Theorem Calculator finds the hypotenuse or missing side of a right triangle using the formula a² + b² = c². Essential for geometry, construction, navigation, and physics.",
+    extraSeo: "Perfect for students studying geometry, builders measuring diagonals, and anyone working with right triangles in real-world applications.",
+    example: "For a right triangle with sides a = 3 and b = 4:\n\nc = √(3² + 4²) = √(9 + 16) = √25 = 5",
+    formula: "a² + b² = c²\nc = √(a² + b²)",
+    applications: ["Geometry homework and exams", "Construction and architecture", "Navigation and distance calculation", "Physics vector problems", "Computer graphics and game development"],
+    faqs: [
+      { q: "What is the Pythagorean theorem?", a: "It states that in a right triangle, the square of the hypotenuse equals the sum of squares of the other two sides: a² + b² = c²." },
+      { q: "Does it work for all triangles?", a: "No, it only works for right triangles (triangles with one 90° angle). For other triangles, use the law of cosines." }
+    ]
+  },
+  "permutation-calculator": {
+    whatIs: "The Permutation Calculator computes P(n, r) — the number of ways to arrange r items from a set of n items where order matters. Essential for probability, combinatorics, and statistics.",
+    extraSeo: "Widely used by math students, competitive exam aspirants, and probability enthusiasts for arrangement and ordering problems.",
+    example: "P(5, 3) = 5! / (5-3)! = 120 / 2 = 60\n\nThere are 60 ways to arrange 3 items from a set of 5.",
+    formula: "P(n, r) = n! / (n − r)!",
+    applications: ["Probability and statistics", "Competitive exam preparation", "Lottery and game calculations", "Seating arrangement problems", "Password combination counting"],
+    faqs: [
+      { q: "What is the difference between permutation and combination?", a: "Permutations consider order (ABC ≠ CBA), while combinations do not (ABC = CBA). Use permutations when arrangement matters." },
+      { q: "What does n! mean?", a: "n! (n factorial) means n × (n-1) × (n-2) × ... × 1. For example, 5! = 120." }
+    ]
+  },
+  "combination-calculator": {
+    whatIs: "The Combination Calculator computes C(n, r) — the number of ways to choose r items from a set of n items where order does not matter. Fundamental in probability, statistics, and discrete mathematics.",
+    extraSeo: "Used by students, statisticians, and lottery enthusiasts to calculate selection possibilities without regard to ordering.",
+    example: "C(5, 3) = 5! / (3! × 2!) = 120 / 12 = 10\n\nThere are 10 ways to choose 3 items from 5.",
+    formula: "C(n, r) = n! / (r! × (n − r)!)",
+    applications: ["Probability calculations", "Lottery odds computation", "Team selection problems", "Menu combination counting", "Statistical sampling"],
+    faqs: [
+      { q: "When should I use combinations vs permutations?", a: "Use combinations when order doesn't matter (choosing team members) and permutations when order matters (assigning ranks)." },
+      { q: "What is C(n, 0)?", a: "C(n, 0) = 1 for any n. There is exactly one way to choose nothing from a set." }
+    ]
+  },
+  "percentage-to-fraction": {
+    whatIs: "The Percentage to Fraction Converter transforms any percentage value into its simplified fraction form. It automatically finds the greatest common divisor to reduce the fraction to its simplest terms.",
+    extraSeo: "Helpful for students learning fractions, teachers preparing materials, and anyone converting between percentage and fraction representations.",
+    example: "75% = 75/100 = 3/4 (simplified)\n\n33.33% ≈ 1/3",
+    formula: "Fraction = Percentage / 100\nSimplify by dividing numerator and denominator by GCD",
+    applications: ["Math homework and exams", "Recipe scaling", "Financial calculations", "Probability expressions", "Teaching fraction concepts"],
+    faqs: [
+      { q: "How do you convert a percentage to a fraction?", a: "Divide the percentage by 100 to get a fraction, then simplify by finding the GCD of the numerator and denominator." },
+      { q: "Can it handle decimal percentages?", a: "Yes, the calculator handles decimal percentages like 12.5% = 1/8." }
+    ]
+  },
+  "number-to-words": {
+    whatIs: "The Number to Words Converter transforms numeric values into their written English word form. It supports numbers up to billions, including negative numbers, making it useful for check writing, financial documents, and educational purposes.",
+    extraSeo: "Essential for accountants writing checks, teachers creating word problems, and developers building number-to-text features.",
+    example: "12345 → twelve thousand three hundred and forty-five\n\n1000000 → one million",
+    applications: ["Writing bank checks and financial documents", "Educational word problems", "Legal document preparation", "Invoice and receipt generation", "Accessibility and screen readers"],
+    faqs: [
+      { q: "What is the maximum number supported?", a: "The converter supports numbers up to 999 billion (999,999,999,999) in both positive and negative forms." },
+      { q: "Does it support decimals?", a: "Currently it converts whole integers only. Decimal numbers are rounded to the nearest integer." }
+    ]
+  },
+  "torque-converter": {
+    whatIs: "The Torque Converter converts between Newton-meters, pound-feet, pound-inches, kilogram-centimeters, and dyne-centimeters. Essential for automotive, mechanical engineering, and physics applications.",
+    extraSeo: "Used by mechanics, engineers, and automotive enthusiasts who need to convert torque specifications between different unit systems.",
+    example: "100 N·m = 73.756 lb·ft = 885.075 lb·in",
+    formula: "1 N·m = 0.7376 lb·ft\n1 lb·ft = 1.3558 N·m",
+    applications: ["Automotive torque specifications", "Mechanical engineering calculations", "Bolt tightening specifications", "Engine performance analysis", "Physics torque problems"],
+    faqs: [
+      { q: "What is torque?", a: "Torque is the rotational force applied around an axis. It equals force multiplied by the distance from the pivot point." },
+      { q: "Why are different torque units used?", a: "N·m is the SI standard used in most countries, while lb·ft is common in the US automotive industry." }
+    ]
+  },
+  "force-converter": {
+    whatIs: "The Force Converter converts between Newton, Kilonewton, Dyne, pound-force, and kilogram-force units. Indispensable for physics, engineering, and scientific calculations involving force measurements.",
+    extraSeo: "Used by physics students, engineers, and researchers who work with force measurements across different unit systems.",
+    example: "100 N = 0.1 kN = 10,000,000 dyn = 22.481 lbf = 10.197 kgf",
+    formula: "1 N = 1 kg·m/s²\n1 lbf = 4.44822 N\n1 kgf = 9.80665 N",
+    applications: ["Physics force calculations", "Structural engineering", "Material strength testing", "Aerospace engineering", "Weight and mass conversions"],
+    faqs: [
+      { q: "What is a Newton?", a: "A Newton (N) is the SI unit of force. It is the force needed to accelerate 1 kilogram at 1 meter per second squared." },
+      { q: "What is the difference between force and weight?", a: "Weight is a specific type of force caused by gravity. Weight = mass × gravitational acceleration (F = mg)." }
+    ]
+  },
+  "text-to-html": {
+    whatIs: "The Text to HTML Converter transforms plain text into proper HTML markup. It automatically wraps text in paragraph tags and converts line breaks to <br> tags, making it easy to prepare content for web pages.",
+    extraSeo: "Useful for content writers, bloggers, and web developers who need to quickly convert plain text drafts into HTML-ready content.",
+    example: "Input:\nHello World\nThis is a test\n\nOutput:\n<p>Hello World<br>This is a test</p>",
+    applications: ["Blog content preparation", "Email HTML formatting", "CMS content migration", "Web development workflows", "Content management"],
+    faqs: [
+      { q: "Does it escape special characters?", a: "Yes, the converter escapes HTML special characters like <, >, &, and quotes to prevent rendering issues." },
+      { q: "Does it handle paragraphs?", a: "Yes, double line breaks are converted to paragraph separators (</p><p>), while single line breaks become <br> tags." }
+    ]
+  },
+  "find-and-replace": {
+    whatIs: "The Find and Replace tool lets you search for specific text within a document and replace all occurrences with new text. It supports case-sensitive and case-insensitive matching with live match counting.",
+    extraSeo: "Essential for writers, editors, and developers who need to make bulk text changes quickly and accurately without a desktop text editor.",
+    example: "Text: 'The cat sat on the mat'\nFind: 'the' → Replace: 'a'\nResult: 'a cat sat on a mat' (case-insensitive)",
+    applications: ["Bulk text editing", "Code refactoring", "Document cleanup", "Data transformation", "Content localization"],
+    faqs: [
+      { q: "Does it support regular expressions?", a: "The current version uses literal text matching with optional case sensitivity. Special regex characters are escaped automatically." },
+      { q: "Can I undo a replacement?", a: "There is no undo button, so it's recommended to copy your original text before performing replacements." }
+    ]
+  },
+  "line-counter": {
+    whatIs: "The Line Counter tool instantly counts the total number of lines in your text, distinguishing between non-empty lines and empty (blank) lines. Perfect for code analysis, data processing, and document statistics.",
+    extraSeo: "Used by programmers counting lines of code, writers tracking document length, and data analysts processing multi-line text data.",
+    example: "Input (3 lines, 1 empty):\nHello\n\nWorld\n\nResult: Total: 3, Non-empty: 2, Empty: 1",
+    applications: ["Counting lines of code", "Document length analysis", "Data file inspection", "Poetry line counting", "Log file analysis"],
+    faqs: [
+      { q: "Does it count the last line without a newline?", a: "Yes, the counter includes the last line even if it doesn't end with a newline character." },
+      { q: "What counts as an empty line?", a: "A line containing only whitespace (spaces, tabs) or nothing at all is counted as empty." }
+    ]
+  },
+  "sentence-counter": {
+    whatIs: "The Sentence Counter tool analyzes your text and counts the number of sentences, paragraphs, and words. It uses punctuation-based detection to accurately identify sentence boundaries.",
+    extraSeo: "Helpful for students meeting essay requirements, content writers optimizing readability, and editors analyzing text structure.",
+    example: "Input: 'Hello world. How are you? I am fine!'\n\nResult: 3 sentences, 1 paragraph, 8 words",
+    applications: ["Essay length verification", "Readability analysis", "Content optimization", "Academic writing requirements", "Speech preparation"],
+    faqs: [
+      { q: "How does it detect sentences?", a: "It splits text on sentence-ending punctuation marks (., !, ?) and counts the non-empty segments." },
+      { q: "Does it handle abbreviations?", a: "Common abbreviations with periods (e.g., Dr., Mr.) may be counted as sentence breaks. For best results, use clean text." }
+    ]
+  },
+  "color-blender": {
+    whatIs: "The Color Blender mixes two colors and generates a smooth gradient of intermediate colors between them. You can control the number of steps to create palettes for design, data visualization, and UI development.",
+    extraSeo: "Perfect for designers creating color transitions, developers building gradient systems, and artists exploring color mixing.",
+    example: "Blending #FF0000 (red) and #0000FF (blue) with 5 steps:\n#FF0000 → #BF003F → #7F007F → #3F00BF → #0000FF",
+    applications: ["UI gradient design", "Data visualization color scales", "Art and illustration", "Brand color exploration", "Heat map color schemes"],
+    faqs: [
+      { q: "How does color blending work?", a: "It linearly interpolates each RGB channel between the two colors, creating smooth transitions at each step." },
+      { q: "Can I copy individual colors?", a: "Yes, click any color hex code to copy it to your clipboard." }
+    ]
+  },
+  "border-radius-generator": {
+    whatIs: "The Border Radius Generator lets you visually customize CSS border-radius for each corner independently. See a live preview of the shape and copy the CSS code instantly for use in your projects.",
+    extraSeo: "Essential for web developers and designers who want to create custom rounded corners, pill shapes, and organic forms with precise CSS control.",
+    example: "Top-left: 20px, Top-right: 50px, Bottom-right: 20px, Bottom-left: 50px\nCSS: border-radius: 20px 50px 20px 50px;",
+    applications: ["UI component styling", "Button and card design", "Creating organic shapes", "Badge and tag styling", "Modern web design"],
+    faqs: [
+      { q: "What is border-radius?", a: "CSS border-radius rounds the corners of an element. You can set all corners equally or control each corner independently." },
+      { q: "How do I make a circle?", a: "Set border-radius to 50% on a square element (equal width and height) to create a perfect circle." }
+    ]
+  },
+  "text-shadow-generator": {
+    whatIs: "The Text Shadow Generator creates CSS text-shadow effects with adjustable X/Y offsets, blur radius, and color. Preview the effect in real-time on custom text and copy the CSS code.",
+    extraSeo: "Used by web designers and front-end developers to create eye-catching text effects, 3D text illusions, and glowing text styles.",
+    example: "X: 2px, Y: 2px, Blur: 4px, Color: #000000\nCSS: text-shadow: 2px 2px 4px #000000;",
+    applications: ["Heading and title styling", "3D text effects", "Neon glow text", "Embossed text design", "Logo and branding text"],
+    faqs: [
+      { q: "What is CSS text-shadow?", a: "text-shadow adds shadow behind text. The syntax is: text-shadow: offset-x offset-y blur-radius color. Multiple shadows can be comma-separated." },
+      { q: "Can I create a glow effect?", a: "Yes, use 0 offset, high blur, and a bright color (e.g., text-shadow: 0 0 10px #00ff00) to create a glowing effect." }
+    ]
+  },
+  "aspect-ratio-calculator": {
+    whatIs: "The Aspect Ratio Calculator computes and simplifies the aspect ratio of any resolution or dimensions. Enter width and height to get the simplified ratio, useful for screens, images, and video formats.",
+    extraSeo: "Essential for photographers, videographers, and web designers who need to maintain correct proportions across different display sizes.",
+    example: "1920 × 1080 → 16:9\n1080 × 1080 → 1:1\n2560 × 1080 → 64:27",
+    applications: ["Image and photo cropping", "Video resolution planning", "Responsive web design", "Monitor and TV comparisons", "Print layout design"],
+    faqs: [
+      { q: "What is aspect ratio?", a: "Aspect ratio is the proportional relationship between width and height. Common ratios include 16:9 (widescreen), 4:3 (standard), and 1:1 (square)." },
+      { q: "Why is aspect ratio important?", a: "Maintaining correct aspect ratios prevents images and videos from appearing stretched or distorted on different displays." }
+    ]
+  },
+  "html-entity-encoder": {
+    whatIs: "The HTML Entity Encoder converts special characters to their HTML entity equivalents and vice versa. It handles all Unicode characters, angle brackets, ampersands, and quotation marks for safe HTML embedding.",
+    extraSeo: "Critical for web developers embedding user-generated content, preventing XSS attacks, and displaying code snippets safely in HTML pages.",
+    example: "Encode: <p>Hello \"World\"</p>\nResult: &#60;p&#62;Hello &#34;World&#34;&#60;/p&#62;",
+    applications: ["XSS prevention in web apps", "Code snippet display", "Email HTML preparation", "CMS content sanitization", "Documentation formatting"],
+    faqs: [
+      { q: "Why encode HTML entities?", a: "Encoding prevents browsers from interpreting special characters as HTML markup, avoiding rendering errors and security vulnerabilities like XSS attacks." },
+      { q: "What characters need encoding?", a: "At minimum: < (less than), > (greater than), & (ampersand), \" (double quote), and ' (single quote)." }
+    ]
+  },
+  "ip-address-converter": {
+    whatIs: "The IP Address Converter transforms IPv4 addresses between dotted decimal, binary, hexadecimal, octal, and integer formats. Useful for networking, security analysis, and system administration.",
+    extraSeo: "Used by network engineers, cybersecurity professionals, and system administrators who work with IP addresses in various formats.",
+    example: "192.168.1.1 →\nDecimal: 3232235777\nBinary: 11000000.10101000.00000001.00000001\nHex: C0.A8.01.01",
+    applications: ["Network troubleshooting", "Firewall rule configuration", "Security analysis", "Subnet calculations", "System administration"],
+    faqs: [
+      { q: "What is an IPv4 address?", a: "An IPv4 address is a 32-bit number written as four octets (0-255) separated by dots, like 192.168.1.1. It uniquely identifies a device on a network." },
+      { q: "Why convert IP to binary?", a: "Binary format is essential for understanding subnet masks, CIDR notation, and how routing works at the network level." }
+    ]
+  },
+  "flashcard-maker": {
+    whatIs: "The Flashcard Maker lets you create custom question-answer flashcards and study them with a flip-to-reveal interface. Perfect for memorization, exam preparation, and self-testing across any subject.",
+    extraSeo: "Ideal for students preparing for exams, language learners memorizing vocabulary, and professionals studying for certifications.",
+    example: "Front: What is the capital of France?\nBack: Paris\n\nCreate multiple cards and review them in study mode.",
+    applications: ["Exam preparation and revision", "Language vocabulary learning", "Medical terminology study", "History dates memorization", "Professional certification prep"],
+    faqs: [
+      { q: "How many flashcards can I create?", a: "There is no limit. You can create as many flashcards as needed for your study session." },
+      { q: "Are flashcards saved?", a: "Flashcards exist during your current session. For permanent storage, note down your cards before closing the page." }
+    ]
+  },
+  "grade-calculator": {
+    whatIs: "The Grade Calculator computes your overall percentage and letter grade from subject-wise marks. Add multiple subjects with marks obtained and total marks to see your aggregate performance at a glance.",
+    extraSeo: "Essential for students calculating term results, parents tracking academic progress, and teachers computing class averages.",
+    example: "Math: 85/100, Science: 78/100, English: 92/100\nTotal: 255/300\nPercentage: 85%\nGrade: A",
+    formula: "Percentage = (Total Marks Obtained / Total Possible Marks) × 100",
+    applications: ["Semester result calculation", "Academic performance tracking", "College admission eligibility", "Scholarship qualification check", "Self-assessment and goal setting"],
+    faqs: [
+      { q: "What grading scale is used?", a: "A+ (90%+), A (80-89%), B (70-79%), C (60-69%), D (50-59%), F (below 50%). This follows a common academic grading scale." },
+      { q: "Can I add more subjects?", a: "Yes, click '+ Add Subject' to add as many subjects as needed. You can also remove subjects you don't need." }
+    ]
   }
 };
 

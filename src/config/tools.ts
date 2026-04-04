@@ -72,6 +72,12 @@ export const tools: ToolMeta[] = [
   { slug: "square-root-calculator", title: "Square Root Calculator", description: "Calculate square roots and nth roots of any number.", category: "calculators", keywords: ["square", "root", "math", "sqrt"], emoji: "√", isNew: true },
   { slug: "exponent-calculator", title: "Exponent Calculator", description: "Calculate powers and exponents of any base number.", category: "calculators", keywords: ["exponent", "power", "math"], emoji: "🔺", isNew: true },
   { slug: "ratio-calculator", title: "Ratio Calculator", description: "Solve ratios, scale values, and find missing ratio terms.", category: "calculators", keywords: ["ratio", "proportion", "scale"], emoji: "⚖️", isNew: true },
+  { slug: "standard-deviation-calculator", title: "Standard Deviation", description: "Calculate mean, variance, and standard deviation from a dataset.", category: "calculators", keywords: ["standard", "deviation", "variance", "statistics"], emoji: "📊", isNew: true },
+  { slug: "pythagorean-calculator", title: "Pythagorean Theorem", description: "Calculate the hypotenuse or side of a right triangle.", category: "calculators", keywords: ["pythagorean", "triangle", "hypotenuse", "geometry"], emoji: "📐", isNew: true },
+  { slug: "permutation-calculator", title: "Permutation Calculator", description: "Calculate permutations P(n, r) for arrangements.", category: "calculators", keywords: ["permutation", "arrangement", "nPr", "math"], emoji: "🔢", isNew: true },
+  { slug: "combination-calculator", title: "Combination Calculator", description: "Calculate combinations C(n, r) for selections.", category: "calculators", keywords: ["combination", "selection", "nCr", "math"], emoji: "🎯", isNew: true },
+  { slug: "percentage-to-fraction", title: "Percentage to Fraction", description: "Convert any percentage to its simplified fraction form.", category: "calculators", keywords: ["percentage", "fraction", "convert", "simplify"], emoji: "🔄", isNew: true },
+  { slug: "number-to-words", title: "Number to Words", description: "Convert numbers into their written English word form.", category: "calculators", keywords: ["number", "words", "english", "spell"], emoji: "🔤", isNew: true },
 
   // Converters
   { slug: "currency-converter", title: "Currency Converter", description: "Convert between 10 major world currencies with static exchange rates.", category: "converters", keywords: ["currency", "exchange", "money", "convert"], emoji: "💱", priority: "high", popular: true, isNew: true },

@@ -117,6 +117,27 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "fuel-efficiency-converter": lazy(() => import("@/tools/FuelEfficiencyConverter")),
   "density-converter": lazy(() => import("@/tools/DensityConverter")),
   "illuminance-converter": lazy(() => import("@/tools/IlluminanceConverter")),
+  // Batch 5 — 20 new tools
+  "standard-deviation-calculator": lazy(() => import("@/tools/StandardDeviationCalculator")),
+  "pythagorean-calculator": lazy(() => import("@/tools/PythagoreanCalculator")),
+  "permutation-calculator": lazy(() => import("@/tools/PermutationCalculator")),
+  "combination-calculator": lazy(() => import("@/tools/CombinationCalculator")),
+  "percentage-to-fraction": lazy(() => import("@/tools/PercentageToFraction")),
+  "number-to-words": lazy(() => import("@/tools/NumberToWords")),
+  "torque-converter": lazy(() => import("@/tools/TorqueConverter")),
+  "force-converter": lazy(() => import("@/tools/ForceConverter")),
+  "text-to-html": lazy(() => import("@/tools/TextToHtml")),
+  "find-and-replace": lazy(() => import("@/tools/FindAndReplace")),
+  "line-counter": lazy(() => import("@/tools/LineCounter")),
+  "sentence-counter": lazy(() => import("@/tools/SentenceCounter")),
+  "color-blender": lazy(() => import("@/tools/ColorBlender")),
+  "border-radius-generator": lazy(() => import("@/tools/BorderRadiusGenerator")),
+  "text-shadow-generator": lazy(() => import("@/tools/TextShadowGenerator")),
+  "aspect-ratio-calculator": lazy(() => import("@/tools/AspectRatioCalculator")),
+  "html-entity-encoder": lazy(() => import("@/tools/HtmlEntityEncoder")),
+  "ip-address-converter": lazy(() => import("@/tools/IpAddressConverter")),
+  "flashcard-maker": lazy(() => import("@/tools/FlashcardMaker")),
+  "grade-calculator": lazy(() => import("@/tools/GradeCalculator")),
 };
 
 const ToolPage = () => {

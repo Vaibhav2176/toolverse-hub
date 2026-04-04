@@ -128,6 +128,10 @@ export const tools: ToolMeta[] = [
   { slug: "text-to-binary", title: "Text to Binary", description: "Convert text to binary representation and binary back to text.", category: "text-tools", keywords: ["text", "binary", "ascii", "convert"], emoji: "🔟", isNew: true },
   { slug: "word-frequency-counter", title: "Word Frequency Counter", description: "Count how often each word appears in your text.", category: "text-tools", keywords: ["word", "frequency", "count", "analysis"], emoji: "📊", isNew: true },
   { slug: "text-to-morse-code", title: "Morse Code Translator", description: "Convert text to Morse code and Morse code back to text.", category: "text-tools", keywords: ["morse", "code", "translate", "dots"], emoji: "📡", isNew: true },
+  { slug: "text-to-html", title: "Text to HTML", description: "Convert plain text to HTML with paragraph and line break tags.", category: "text-tools", keywords: ["text", "html", "convert", "paragraph"], emoji: "🌐", isNew: true },
+  { slug: "find-and-replace", title: "Find and Replace", description: "Find and replace text with case-sensitive matching and counts.", category: "text-tools", keywords: ["find", "replace", "search", "text"], emoji: "🔍", isNew: true },
+  { slug: "line-counter", title: "Line Counter", description: "Count total, non-empty, and empty lines in your text.", category: "text-tools", keywords: ["line", "count", "empty", "text"], emoji: "📏", isNew: true },
+  { slug: "sentence-counter", title: "Sentence Counter", description: "Count sentences, paragraphs, and words in your text.", category: "text-tools", keywords: ["sentence", "paragraph", "count"], emoji: "📝", isNew: true },
 
   // Generators
   { slug: "password-generator", title: "Password Generator", description: "Generate strong, secure passwords with customizable options.", category: "generators", keywords: ["password", "security", "random"], emoji: "🔑", priority: "high", featured: true, popular: true },

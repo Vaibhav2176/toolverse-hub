@@ -180,6 +180,10 @@ export const tools: ToolMeta[] = [
   { slug: "image-color-picker", title: "Image Color Picker", description: "Pick colors from uploaded images and get HEX, RGB values.", category: "design-tools", keywords: ["image", "color", "picker", "eyedropper"], emoji: "🔍", isNew: true },
   { slug: "css-unit-converter", title: "CSS Unit Converter", description: "Convert between px, rem, em, vh, vw, and other CSS units.", category: "design-tools", keywords: ["css", "px", "rem", "em", "unit"], emoji: "📐", isNew: true },
   { slug: "box-shadow-generator", title: "Box Shadow Generator", description: "Generate CSS box-shadow with live preview and copy code.", category: "design-tools", keywords: ["shadow", "css", "box-shadow", "design"], emoji: "🖼️", isNew: true, popular: true },
+  { slug: "color-blender", title: "Color Blender", description: "Blend two colors and generate smooth color gradients between them.", category: "design-tools", keywords: ["color", "blend", "mix", "gradient"], emoji: "🎨", isNew: true },
+  { slug: "border-radius-generator", title: "Border Radius Generator", description: "Generate CSS border-radius with visual preview for all corners.", category: "design-tools", keywords: ["border", "radius", "css", "rounded"], emoji: "⬜", isNew: true },
+  { slug: "text-shadow-generator", title: "Text Shadow Generator", description: "Generate CSS text-shadow with live preview and copy code.", category: "design-tools", keywords: ["text", "shadow", "css", "effect"], emoji: "✨", isNew: true },
+  { slug: "aspect-ratio-calculator", title: "Aspect Ratio Calculator", description: "Calculate and simplify aspect ratios for images and screens.", category: "design-tools", keywords: ["aspect", "ratio", "screen", "image"], emoji: "📺", isNew: true },
 ];
 
 export const getToolsByCategory = (cat: ToolCategory) =>

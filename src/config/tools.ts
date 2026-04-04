@@ -158,6 +158,8 @@ export const tools: ToolMeta[] = [
   { slug: "workdays-calculator", title: "Workdays Calculator", description: "Calculate total working days between two dates.", category: "student-tools", keywords: ["workdays", "working", "business"], emoji: "💼", isNew: true },
   { slug: "week-number-calculator", title: "Week Number Calculator", description: "Find the ISO week number for any date.", category: "student-tools", keywords: ["week", "number", "iso", "date"], emoji: "📅", isNew: true },
   { slug: "unix-timestamp-converter", title: "Unix Timestamp Converter", description: "Convert Unix timestamps to readable dates and vice versa.", category: "student-tools", keywords: ["unix", "timestamp", "epoch", "date"], emoji: "🕐", isNew: true, popular: true },
+  { slug: "flashcard-maker", title: "Flashcard Maker", description: "Create and study flashcards with flip-to-reveal answers.", category: "student-tools", keywords: ["flashcard", "study", "quiz", "memorize"], emoji: "🃏", isNew: true },
+  { slug: "grade-calculator", title: "Grade Calculator", description: "Calculate overall percentage and grade from subject marks.", category: "student-tools", keywords: ["grade", "marks", "percentage", "result"], emoji: "📝", isNew: true },
 
   // Developer Tools
   { slug: "json-to-csv", title: "JSON to CSV Converter", description: "Convert JSON data into downloadable CSV format.", category: "developer-tools", keywords: ["json", "csv", "convert", "data"], emoji: "📊", isNew: true, featured: true },

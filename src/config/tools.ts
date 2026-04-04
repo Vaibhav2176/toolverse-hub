@@ -104,6 +104,8 @@ export const tools: ToolMeta[] = [
   { slug: "fuel-efficiency-converter", title: "Fuel Efficiency Converter", description: "Convert between km/L, mpg (US), mpg (UK), and L/100km.", category: "converters", keywords: ["fuel", "mpg", "efficiency", "mileage"], emoji: "⛽", isNew: true },
   { slug: "density-converter", title: "Density Converter", description: "Convert between kg/m³, g/cm³, lb/ft³, and other density units.", category: "converters", keywords: ["density", "mass", "volume", "kg"], emoji: "🧊", isNew: true },
   { slug: "illuminance-converter", title: "Illuminance Converter", description: "Convert between lux, foot-candle, phot, and kilolux.", category: "converters", keywords: ["illuminance", "lux", "light", "foot-candle"], emoji: "💡", isNew: true },
+  { slug: "torque-converter", title: "Torque Converter", description: "Convert between N·m, lb·ft, lb·in, kg·cm, and dyn·cm.", category: "converters", keywords: ["torque", "newton", "meter", "pound", "foot"], emoji: "🔧", isNew: true },
+  { slug: "force-converter", title: "Force Converter", description: "Convert between Newton, Kilonewton, Dyne, lbf, and kgf.", category: "converters", keywords: ["force", "newton", "dyne", "pound"], emoji: "💪", isNew: true },
 
   // Text Tools
   { slug: "word-counter", title: "Word Counter", description: "Count words, characters, sentences, and paragraphs in text.", category: "text-tools", keywords: ["word", "count", "character"], emoji: "📝", priority: "high", featured: true, popular: true },

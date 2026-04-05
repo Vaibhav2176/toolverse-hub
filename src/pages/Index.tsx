@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-import { Search, ArrowRight, Sparkles, TrendingUp, Clock, Zap, Shield, Globe, CheckCircle, Star, MousePointerClick } from "lucide-react";
-import { useState } from "react";
+import { Search, ArrowRight, Sparkles, TrendingUp, Clock, Zap, Shield, Globe, CheckCircle, Star, MousePointerClick, BookOpen, Users, BarChart3 } from "lucide-react";
+import { useState, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import ToolCard from "@/components/ToolCard";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import { tools, categories, getFeaturedTools, getPopularTools, getNewTools } from "@/config/tools";
+import { blogPosts } from "@/config/blogPosts";
 import heroImg from "@/assets/hero-illustration.png";
 
 const fadeUp = {
@@ -31,19 +32,26 @@ const Index = () => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
   const filtered = query.length > 1 ? tools.filter(t => t.title.toLowerCase().includes(query.toLowerCase())).slice(0, 6) : [];
-  const popularTools = getPopularTools().filter(t => t.title.length <= 20).slice(0, 12);
+  const quickAccessTools = getPopularTools().filter(t => t.title.length <= 20).slice(0, 8);
+
+  // Get 3 random blog posts (stable per render)
+  const randomBlogs = useMemo(() => {
+    const shuffled = [...blogPosts].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 3);
+  }, []);
+
+  // Recently added = last 6 tools with isNew flag
+  const recentTools = getNewTools().slice(-6).reverse();
 
   return (
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="hero-gradient-2 animate-gradient py-4 md:py-8 px-4 relative">
-          {/* Animated blobs */}
           <div className="absolute top-10 left-[10%] w-80 h-80 bg-primary-foreground/10 rounded-full blur-[100px] animate-float" />
           <div className="absolute bottom-0 right-[5%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-foreground/5 rounded-full blur-[150px]" />
 
-          {/* Floating dots */}
           <div className="absolute top-20 right-[20%] w-3 h-3 bg-primary-foreground/30 rounded-full animate-float" style={{ animationDelay: "1s" }} />
           <div className="absolute top-40 left-[15%] w-2 h-2 bg-accent/40 rounded-full animate-float" style={{ animationDelay: "3s" }} />
           <div className="absolute bottom-32 right-[30%] w-4 h-4 bg-primary-foreground/20 rounded-full animate-float" style={{ animationDelay: "2.5s" }} />
@@ -65,7 +73,6 @@ const Index = () => {
                   Fast, private calculators, converters, text tools, and generators — all running in your browser.
                 </motion.p>
 
-                {/* BIG Search Bar */}
                 <motion.div custom={3} variants={fadeUp} className="relative max-w-xl mx-auto lg:mx-0">
                   <Search className="absolute left-6 top-1/2 -translate-y-1/2 h-6 w-6 text-muted-foreground/70" />
                   <input
@@ -109,7 +116,7 @@ const Index = () => {
         <div className="container py-3">
             <div className="flex items-center gap-2 overflow-x-auto no-scrollbar">
               <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider shrink-0 mr-1">Quick Access</span>
-              {popularTools.map((t, i) => (
+              {quickAccessTools.map((t, i) => (
                 <motion.div key={t.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 + i * 0.06 }} className="shrink-0">
                   <Link to={`/tools/${t.slug}`} className="inline-flex items-center justify-center rounded-full border border-border bg-card/80 backdrop-blur-sm px-5 py-2 text-xs font-medium text-foreground transition-all duration-200 hover:border-primary/40 hover:shadow-md hover:bg-card whitespace-nowrap">
                     {t.title}
@@ -122,7 +129,7 @@ const Index = () => {
 
       <AdPlaceholder label="Banner Ad Space" />
 
-      {/* Value Props — replaces old stats bar */}
+      {/* Value Props */}
       <section className="container py-20">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <motion.div variants={scaleIn} className="text-center mb-12">
@@ -193,7 +200,7 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Popular */}
+      {/* Popular — reduced to 6 */}
       <section className="gradient-glow py-14 rounded-3xl mx-4 my-4">
         <div className="container">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
@@ -209,7 +216,7 @@ const Index = () => {
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {getPopularTools().map(t => (
+              {getPopularTools().slice(0, 6).map(t => (
                 <motion.div key={t.slug} variants={scaleIn}>
                   <ToolCard tool={t} />
                 </motion.div>
@@ -221,7 +228,7 @@ const Index = () => {
 
       <AdPlaceholder label="Mid-Page Ad Space" />
 
-      {/* New */}
+      {/* Recently Added */}
       <section className="container py-14">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <div className="flex items-center gap-3 mb-8">
@@ -231,9 +238,67 @@ const Index = () => {
             <h2 className="section-title">Recently <span className="gradient-text">Added</span></h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {getNewTools().slice(0, 6).map(t => (
+            {recentTools.map(t => (
               <motion.div key={t.slug} variants={scaleIn}>
                 <ToolCard tool={t} />
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Blog Section */}
+      <section className="container py-14">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                <BookOpen className="h-5 w-5 text-primary" />
+              </div>
+              <h2 className="section-title">From the <span className="gradient-text">Blog</span></h2>
+            </div>
+            <Link to="/blog" className="text-sm text-primary font-semibold hover:underline flex items-center gap-1 group">
+              All posts <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {randomBlogs.map(post => (
+              <motion.div key={post.slug} variants={scaleIn}>
+                <Link to={`/blog/${post.slug}`} className="tool-card group block gradient-border h-full">
+                  <span className="category-badge bg-primary/10 text-primary mb-3 inline-block">{post.category}</span>
+                  <h3 className="font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors text-[15px] leading-snug">{post.title}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed mb-3">{post.description}</p>
+                  <div className="flex items-center justify-between text-xs text-muted-foreground">
+                    <span>{post.readTime}</span>
+                    <span className="inline-flex items-center gap-1 text-primary font-semibold opacity-0 group-hover:opacity-100 transition-all">
+                      Read More <ArrowRight className="h-3 w-3" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Trust / Stats Section — NEW SEO component */}
+      <section className="container py-14">
+        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
+          <motion.div variants={scaleIn} className="text-center mb-10">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3 tracking-tight">Trusted by <span className="gradient-text">Thousands</span></h2>
+            <p className="text-muted-foreground text-lg max-w-lg mx-auto">Students, developers, and professionals use ToolVerse every day.</p>
+          </motion.div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            {[
+              { icon: Zap, value: `${tools.length}+`, label: "Free Tools", color: "text-primary" },
+              { icon: BarChart3, value: "7", label: "Categories", color: "text-cat-convert" },
+              { icon: Users, value: "50K+", label: "Monthly Users", color: "text-cat-student" },
+              { icon: Star, value: "100%", label: "Free Forever", color: "text-accent" },
+            ].map(({ icon: Icon, value, label, color }) => (
+              <motion.div key={label} variants={scaleIn} className="glass-card p-6 text-center group hover:-translate-y-1 transition-all duration-300">
+                <Icon className={`h-8 w-8 ${color} mx-auto mb-3`} />
+                <div className="font-display text-3xl font-bold mb-1">{value}</div>
+                <div className="text-sm text-muted-foreground">{label}</div>
               </motion.div>
             ))}
           </div>

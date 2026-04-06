@@ -334,6 +334,7 @@ Use the free <a href="/tools/compound-interest-calculator" class="text-primary h
     category: "Security",
     readTime: "4 min read",
     date: "2026-04-05",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80",
     content: `In 2026, the average person has over 100 online accounts. Yet most people still use weak, reused passwords that can be cracked in seconds. Here's how to fix that.
 
 ## Why Password Security Matters

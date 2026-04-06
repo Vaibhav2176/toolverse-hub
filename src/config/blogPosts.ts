@@ -21,6 +21,7 @@ export const blogPosts: BlogPost[] = [
     category: "Productivity",
     readTime: "5 min read",
     date: "2026-04-01",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
     content: `Students today need quick, reliable tools that work right in the browser without downloads or sign-ups. Whether you're preparing for exams, managing assignments, or tracking your fitness, ToolVerse has you covered. Here are the top 10 free online tools every student should bookmark in 2026.
 
 ## 1. Percentage Calculator

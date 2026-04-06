@@ -77,6 +77,7 @@ All these tools are completely free, require no downloads, and work on any devic
     category: "Calculators",
     readTime: "4 min read",
     date: "2026-03-28",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
     content: `Percentages are everywhere — from exam scores to shopping discounts to bank interest rates. Understanding how to calculate them is a fundamental skill that saves time and avoids errors. This guide breaks it down with simple steps and real examples.
 
 ## What is a Percentage?

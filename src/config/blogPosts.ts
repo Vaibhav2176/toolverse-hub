@@ -264,6 +264,7 @@ All these tools run directly in your browser — no installs, no accounts, no li
     category: "Finance",
     readTime: "5 min read",
     date: "2026-04-04",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
     content: `Albert Einstein reportedly called compound interest "the eighth wonder of the world." Whether or not he actually said it, the math backs it up — compound interest is the single most powerful force in personal finance. Let's break it down.
 
 ## What is Compound Interest?

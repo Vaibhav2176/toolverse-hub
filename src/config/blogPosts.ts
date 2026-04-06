@@ -7,6 +7,7 @@ export interface BlogPost {
   category: string;
   readTime: string;
   date: string;
+  image: string;
   content: string;
 }
 
@@ -20,6 +21,7 @@ export const blogPosts: BlogPost[] = [
     category: "Productivity",
     readTime: "5 min read",
     date: "2026-04-01",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
     content: `Students today need quick, reliable tools that work right in the browser without downloads or sign-ups. Whether you're preparing for exams, managing assignments, or tracking your fitness, ToolVerse has you covered. Here are the top 10 free online tools every student should bookmark in 2026.
 
 ## 1. Percentage Calculator
@@ -75,6 +77,7 @@ All these tools are completely free, require no downloads, and work on any devic
     category: "Calculators",
     readTime: "4 min read",
     date: "2026-03-28",
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&q=80",
     content: `Percentages are everywhere — from exam scores to shopping discounts to bank interest rates. Understanding how to calculate them is a fundamental skill that saves time and avoids errors. This guide breaks it down with simple steps and real examples.
 
 ## What is a Percentage?
@@ -142,6 +145,7 @@ Use our free <a href="/tools/percentage-calculator" class="text-primary hover:un
     category: "Health",
     readTime: "4 min read",
     date: "2026-03-25",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
     content: `Body Mass Index, commonly known as BMI, is one of the most widely used methods to assess whether a person has a healthy body weight relative to their height. It's used by doctors, fitness professionals, and health organizations worldwide as a quick screening tool.
 
 ## What is BMI?
@@ -216,6 +220,7 @@ Use our free <a href="/tools/bmi-calculator" class="text-primary hover:underline
     category: "Development",
     readTime: "5 min read",
     date: "2026-04-03",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
     content: `CSS is powerful but writing visual styles from scratch is tedious. Whether you're tweaking a box shadow, building a color palette, or checking accessibility contrast — having the right tools makes all the difference. Here are 7 must-have CSS tools every developer should bookmark.
 
 ## 1. Gradient Generator
@@ -259,6 +264,7 @@ All these tools run directly in your browser — no installs, no accounts, no li
     category: "Finance",
     readTime: "5 min read",
     date: "2026-04-04",
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
     content: `Albert Einstein reportedly called compound interest "the eighth wonder of the world." Whether or not he actually said it, the math backs it up — compound interest is the single most powerful force in personal finance. Let's break it down.
 
 ## What is Compound Interest?
@@ -328,6 +334,7 @@ Use the free <a href="/tools/compound-interest-calculator" class="text-primary h
     category: "Security",
     readTime: "4 min read",
     date: "2026-04-05",
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80",
     content: `In 2026, the average person has over 100 online accounts. Yet most people still use weak, reused passwords that can be cracked in seconds. Here's how to fix that.
 
 ## Why Password Security Matters

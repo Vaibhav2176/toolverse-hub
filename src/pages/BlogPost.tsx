@@ -35,6 +35,8 @@ const BlogPost = () => {
             <ArrowLeft className="h-4 w-4" /> Back to Blog
           </Link>
 
+          <img src={post.image} alt={post.title} className="w-full h-56 md:h-72 object-cover rounded-2xl mb-6" loading="lazy" />
+
           <div className="flex items-center gap-3 mb-4">
             <span className="inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary">
               <Tag className="h-3 w-3" />
@@ -68,9 +70,12 @@ const BlogPost = () => {
             <h2 className="text-lg font-semibold text-foreground mb-4">More from ToolVerse Blog</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {blogPosts.filter(p => p.slug !== slug).slice(0, 2).map(p => (
-                <Link key={p.slug} to={`/blog/${p.slug}`} className="rounded-lg border border-border p-4 hover:border-primary/30 hover:shadow-md transition-all">
-                  <h3 className="font-medium text-foreground mb-1 line-clamp-2">{p.title}</h3>
-                  <p className="text-xs text-muted-foreground">{p.readTime}</p>
+                <Link key={p.slug} to={`/blog/${p.slug}`} className="rounded-lg border border-border overflow-hidden hover:border-primary/30 hover:shadow-md transition-all">
+                  <img src={p.image} alt={p.title} className="w-full h-32 object-cover" loading="lazy" />
+                  <div className="p-4">
+                    <h3 className="font-medium text-foreground mb-1 line-clamp-2">{p.title}</h3>
+                    <p className="text-xs text-muted-foreground">{p.readTime}</p>
+                  </div>
                 </Link>
               ))}
             </div>

@@ -27,27 +27,30 @@ const Blog = () => {
               <Link
                 key={post.slug}
                 to={`/blog/${post.slug}`}
-                className="group rounded-xl border border-border bg-card p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
+                className="group rounded-xl border border-border bg-card overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300"
               >
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary">
-                    <Tag className="h-3 w-3" />
-                    {post.category}
-                  </span>
-                  <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                    <Clock className="h-3 w-3" />
-                    {post.readTime}
+                <img src={post.image} alt={post.title} className="w-full h-44 object-cover" loading="lazy" />
+                <div className="p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary">
+                      <Tag className="h-3 w-3" />
+                      {post.category}
+                    </span>
+                    <span className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <Clock className="h-3 w-3" />
+                      {post.readTime}
+                    </span>
+                  </div>
+                  <h2 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
+                    {post.title}
+                  </h2>
+                  <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+                    {post.description}
+                  </p>
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
+                    Read More <ArrowRight className="h-4 w-4" />
                   </span>
                 </div>
-                <h2 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                  {post.title}
-                </h2>
-                <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-                  {post.description}
-                </p>
-                <span className="inline-flex items-center gap-1 text-sm font-medium text-primary group-hover:gap-2 transition-all">
-                  Read More <ArrowRight className="h-4 w-4" />
-                </span>
               </Link>
             ))}
           </div>

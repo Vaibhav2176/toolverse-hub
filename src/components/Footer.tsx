@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { Zap, Github, Twitter, Linkedin, Mail, Heart } from "lucide-react";
 import { categories, getPopularTools } from "@/config/tools";
+import { blogPosts } from "@/config/blogPosts";
 
 const Footer = () => {
   const popularTools = getPopularTools().slice(0, 6);
+  const recentBlogs = [...blogPosts].sort((a, b) => b.date.localeCompare(a.date)).slice(0, 4);
 
   return (
     <footer className="border-t border-border mt-16 relative overflow-hidden">
@@ -11,7 +13,7 @@ const Footer = () => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       
       <div className="container py-16 relative">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-10">
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
               <div className="h-9 w-9 flex items-center justify-center">
@@ -24,7 +26,7 @@ const Footer = () => {
               <span className="font-display font-bold text-lg text-foreground">Tool<span className="gradient-text">Verse</span></span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed mb-5">
-              Free, fast, and private online tools for everyday tasks. No signup, no tracking.
+              145+ free, instant online calculators, converters & generators — 100% private, no signup required.
             </p>
             <div className="flex items-center gap-2">
               {[
@@ -55,6 +57,16 @@ const Footer = () => {
               {popularTools.map(t => (
                 <li key={t.slug}><Link to={`/tools/${t.slug}`} className="hover:text-primary transition-colors">{t.title}</Link></li>
               ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display font-semibold text-sm mb-4 text-foreground">Blog</h4>
+            <ul className="space-y-2.5 text-sm text-muted-foreground">
+              {recentBlogs.map(b => (
+                <li key={b.slug}><Link to={`/blog/${b.slug}`} className="hover:text-primary transition-colors line-clamp-1">{b.title}</Link></li>
+              ))}
+              <li><Link to="/blog" className="hover:text-primary transition-colors font-medium">View All →</Link></li>
             </ul>
           </div>
 

@@ -2,12 +2,13 @@ import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Shield, Eye, Cookie, Globe, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { tools } from "@/config/tools";
 
 const sections = [
   {
     icon: Eye,
     title: "Data Collection",
-    content: "ToolVerse does not collect, store, or transmit any personal data. All 65+ tools run entirely in your browser — your inputs and results never leave your device."
+    content: `ToolVerse does not collect, store, or transmit any personal data. All ${tools.length}+ tools run entirely in your browser — your inputs and results never leave your device.`
   },
   {
     icon: Cookie,
@@ -43,7 +44,7 @@ const Privacy = () => (
         <h1 className="text-4xl md:text-5xl font-display font-bold mb-3">
           Privacy <span className="gradient-text">Policy</span>
         </h1>
-        <p className="text-muted-foreground">Last updated: March 2026</p>
+        <p className="text-muted-foreground">Last updated: April 2026</p>
       </motion.div>
 
       <div className="space-y-5">

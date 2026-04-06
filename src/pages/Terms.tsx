@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { FileText, CheckCircle, AlertTriangle, RefreshCw, Scale } from "lucide-react";
 import { motion } from "framer-motion";
+import { tools } from "@/config/tools";
 
 const sections = [
   {
@@ -12,7 +13,7 @@ const sections = [
   {
     icon: Scale,
     title: "Use of Tools",
-    content: "All 65+ tools on ToolVerse are provided free of charge for informational and educational purposes. They are offered \"as is\" without warranties of any kind. While we strive for accuracy, we do not guarantee results for critical or professional calculations."
+    content: `All ${tools.length}+ tools on ToolVerse are provided free of charge for informational and educational purposes. They are offered "as is" without warranties of any kind. While we strive for accuracy, we do not guarantee results for critical or professional calculations.`
   },
   {
     icon: AlertTriangle,
@@ -38,7 +39,7 @@ const Terms = () => (
         <h1 className="text-4xl md:text-5xl font-display font-bold mb-3">
           Terms of <span className="gradient-text">Service</span>
         </h1>
-        <p className="text-muted-foreground">Last updated: March 2026</p>
+        <p className="text-muted-foreground">Last updated: April 2026</p>
       </motion.div>
 
       <div className="space-y-5">

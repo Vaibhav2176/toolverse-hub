@@ -2,9 +2,10 @@ import Layout from "@/components/Layout";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Zap, Shield, Smartphone, Gauge, Globe, Heart, Wrench, Users } from "lucide-react";
 import { motion } from "framer-motion";
+import { tools } from "@/config/tools";
 
 const features = [
-  { icon: Wrench, title: "65+ Free Tools", desc: "Calculators, converters, text tools, generators & more — always growing." },
+  { icon: Wrench, title: `${145}+ Free Tools`, desc: "Calculators, converters, text tools, generators & more — always growing." },
   { icon: Shield, title: "100% Private", desc: "Everything runs in your browser. No data ever leaves your device." },
   { icon: Gauge, title: "Blazing Fast", desc: "Lightweight, no bloat. Tools load instantly with zero wait time." },
   { icon: Smartphone, title: "Mobile Friendly", desc: "Fully responsive design that works beautifully on any screen size." },
@@ -31,7 +32,7 @@ const About = () => (
           Your Go-To <span className="gradient-text">Toolbox</span> for Everything
         </h1>
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-          ToolVerse is a growing collection of <strong>65+ free, browser-based tools</strong> designed to help you with everyday calculations, conversions, text manipulation, coding utilities, and more — all without ever leaving your browser.
+          ToolVerse is a growing collection of <strong>{tools.length}+ free, browser-based tools</strong> designed to help you with everyday calculations, conversions, text manipulation, coding utilities, and more — all without ever leaving your browser.
         </p>
       </motion.div>
 

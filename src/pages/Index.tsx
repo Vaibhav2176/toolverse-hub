@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Search, ArrowRight, Sparkles, TrendingUp, Clock, Zap, Shield, Globe, CheckCircle, Star, MousePointerClick, BookOpen, Users, BarChart3 } from "lucide-react";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
@@ -28,6 +28,48 @@ const scaleIn = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
+// Animated counter hook
+const useCounter = (end: number, duration = 2000) => {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const hasAnimated = useRef(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true;
+          const startTime = performance.now();
+          const animate = (now: number) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(eased * end));
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [end, duration]);
+
+  return { count, ref };
+};
+
+const CounterStat = ({ icon: Icon, value, suffix, label, color }: { icon: any; value: number; suffix: string; label: string; color: string }) => {
+  const { count, ref } = useCounter(value);
+  return (
+    <motion.div ref={ref} variants={scaleIn} className="glass-card p-6 text-center group hover:-translate-y-1 transition-all duration-300">
+      <Icon className={`h-8 w-8 ${color} mx-auto mb-3`} />
+      <div className="font-display text-3xl font-bold mb-1">{count}{suffix}</div>
+      <div className="text-sm text-muted-foreground">{label}</div>
+    </motion.div>
+  );
+};
+
 const Index = () => {
   const [query, setQuery] = useState("");
   const navigate = useNavigate();
@@ -52,6 +94,9 @@ const Index = () => {
           <div className="absolute bottom-0 right-[5%] w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] animate-float" style={{ animationDelay: "2s" }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-foreground/5 rounded-full blur-[150px]" />
 
+          {/* Dark mode mesh overlay */}
+          <div className="absolute inset-0 dark:bg-[radial-gradient(ellipse_at_top_left,hsl(280_70%_30%/0.4),transparent_50%),radial-gradient(ellipse_at_bottom_right,hsl(200_80%_25%/0.3),transparent_50%)] bg-transparent pointer-events-none" />
+
           <div className="absolute top-20 right-[20%] w-3 h-3 bg-primary-foreground/30 rounded-full animate-float" style={{ animationDelay: "1s" }} />
           <div className="absolute top-40 left-[15%] w-2 h-2 bg-accent/40 rounded-full animate-float" style={{ animationDelay: "3s" }} />
           <div className="absolute bottom-32 right-[30%] w-4 h-4 bg-primary-foreground/20 rounded-full animate-float" style={{ animationDelay: "2.5s" }} />
@@ -70,7 +115,7 @@ const Index = () => {
                   </span>
                 </motion.h1>
                 <motion.p custom={2} variants={fadeUp} className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-light">
-                  Fast, private calculators, converters, text tools, and generators — all running in your browser.
+                  {tools.length}+ free browser-based calculators, unit converters, text editors, code utilities & generators — instant results, zero signups, 100% private.
                 </motion.p>
 
                 <motion.div custom={3} variants={fadeUp} className="relative max-w-xl mx-auto lg:mx-0">
@@ -200,7 +245,7 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Popular — reduced to 6 */}
+      {/* Popular — 9 items */}
       <section className="gradient-glow py-14 rounded-3xl mx-4 my-4">
         <div className="container">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
@@ -216,7 +261,7 @@ const Index = () => {
               </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-              {getPopularTools().slice(0, 6).map(t => (
+              {getPopularTools().slice(0, 9).map(t => (
                 <motion.div key={t.slug} variants={scaleIn}>
                   <ToolCard tool={t} />
                 </motion.div>
@@ -265,6 +310,7 @@ const Index = () => {
             {randomBlogs.map(post => (
               <motion.div key={post.slug} variants={scaleIn}>
                 <Link to={`/blog/${post.slug}`} className="tool-card group block gradient-border h-full">
+                  <img src={post.image} alt={post.title} className="w-full h-40 object-cover rounded-xl mb-4" loading="lazy" />
                   <span className="category-badge bg-primary/10 text-primary mb-3 inline-block">{post.category}</span>
                   <h3 className="font-display font-semibold text-foreground mb-2 group-hover:text-primary transition-colors text-[15px] leading-snug">{post.title}</h3>
                   <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed mb-3">{post.description}</p>
@@ -281,7 +327,7 @@ const Index = () => {
         </motion.div>
       </section>
 
-      {/* Trust / Stats Section — NEW SEO component */}
+      {/* Trust / Stats Section with animated counters */}
       <section className="container py-14">
         <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
           <motion.div variants={scaleIn} className="text-center mb-10">
@@ -289,18 +335,10 @@ const Index = () => {
             <p className="text-muted-foreground text-lg max-w-lg mx-auto">Students, developers, and professionals use ToolVerse every day.</p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-            {[
-              { icon: Zap, value: `${tools.length}+`, label: "Free Tools", color: "text-primary" },
-              { icon: BarChart3, value: "7", label: "Categories", color: "text-cat-convert" },
-              { icon: Users, value: "50K+", label: "Monthly Users", color: "text-cat-student" },
-              { icon: Star, value: "100%", label: "Free Forever", color: "text-accent" },
-            ].map(({ icon: Icon, value, label, color }) => (
-              <motion.div key={label} variants={scaleIn} className="glass-card p-6 text-center group hover:-translate-y-1 transition-all duration-300">
-                <Icon className={`h-8 w-8 ${color} mx-auto mb-3`} />
-                <div className="font-display text-3xl font-bold mb-1">{value}</div>
-                <div className="text-sm text-muted-foreground">{label}</div>
-              </motion.div>
-            ))}
+            <CounterStat icon={Zap} value={tools.length} suffix="+" label="Free Tools" color="text-primary" />
+            <CounterStat icon={BarChart3} value={7} suffix="" label="Categories" color="text-cat-convert" />
+            <CounterStat icon={Users} value={50} suffix="K+" label="Monthly Users" color="text-cat-student" />
+            <CounterStat icon={Star} value={100} suffix="%" label="Free Forever" color="text-accent" />
           </div>
         </motion.div>
       </section>

@@ -145,6 +145,7 @@ Use our free <a href="/tools/percentage-calculator" class="text-primary hover:un
     category: "Health",
     readTime: "4 min read",
     date: "2026-03-25",
+    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80",
     content: `Body Mass Index, commonly known as BMI, is one of the most widely used methods to assess whether a person has a healthy body weight relative to their height. It's used by doctors, fitness professionals, and health organizations worldwide as a quick screening tool.
 
 ## What is BMI?

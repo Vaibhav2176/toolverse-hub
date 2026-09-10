@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import { blogPosts } from "@/config/blogPosts";
 import { Clock, ArrowRight, Tag } from "lucide-react";
@@ -7,12 +6,6 @@ import Seo from "@/components/Seo";
 import { breadcrumbSchema, SITE_URL } from "@/config/toolSeo";
 
 const Blog = () => {
-  useEffect(() => {
-    document.title = "ToolVerse Blog – Guides, Tips & Resources | ToolVerse";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Read guides, tips, and useful resources on calculators, converters, and productivity tools. ToolVerse Blog helps students, developers, and everyday users.");
-  }, []);
-
   return (
     <Layout>
       <Seo

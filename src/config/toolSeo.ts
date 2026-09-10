@@ -1,6 +1,8 @@
 import { getToolMeta, getCategoryMeta, type ToolMeta } from "@/config/tools";
 import { SITE_URL, SITE_NAME } from "@/components/Seo";
 
+export { SITE_URL, SITE_NAME };
+
 /**
  * Hand-written titles/descriptions for the highest-demand tools.
  * Everything else falls back to a natural, intent-based generator so

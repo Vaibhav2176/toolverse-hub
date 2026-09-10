@@ -6,6 +6,8 @@ import ToolCard from "@/components/ToolCard";
 import { tools, categories } from "@/config/tools";
 import type { ToolCategory } from "@/config/tools";
 import { Search, LayoutGrid } from "lucide-react";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema, itemListSchema } from "@/config/toolSeo";
 
 const scaleIn = {
   hidden: { opacity: 0, scale: 0.95 },
@@ -23,6 +25,12 @@ const AllTools = () => {
 
   return (
     <Layout>
+      <Seo
+  title={`All ${tools.length}+ Free Online Tools – Browse Every Tool | ToolVerse`}
+  description={`Browse all ${tools.length}+ free online tools on ToolVerse: calculators, unit converters, text tools, generators, student tools, developer utilities and design helpers. No signup needed.`}
+  path="/tools"
+  schema={[breadcrumbSchema([{ name: "All Tools", path: "/tools" }]), itemListSchema("All ToolVerse tools", tools)]}
+/>
       <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} className="container py-8 max-w-5xl">
         <Breadcrumb items={[{ label: "All Tools" }]} />
         <div className="flex items-center gap-3 mb-2">

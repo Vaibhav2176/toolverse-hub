@@ -3,6 +3,8 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { FileText, CheckCircle, AlertTriangle, RefreshCw, Scale } from "lucide-react";
 import { motion } from "framer-motion";
 import { tools } from "@/config/tools";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema } from "@/config/toolSeo";
 
 const sections = [
   {
@@ -29,6 +31,12 @@ const sections = [
 
 const Terms = () => (
   <Layout>
+    <Seo
+  title="Terms of Service – Using ToolVerse Tools"
+  description="The terms that apply when you use ToolVerse's free online tools, including accuracy disclaimers, acceptable use and limitation of liability."
+  path="/terms"
+  schema={breadcrumbSchema([{ name: "Terms of Service", path: "/terms" }])}
+/>
     <div className="container py-10 max-w-3xl">
       <Breadcrumb items={[{ label: "Terms of Service" }]} />
 

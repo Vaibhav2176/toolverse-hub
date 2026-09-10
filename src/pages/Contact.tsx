@@ -4,6 +4,8 @@ import { Mail, MessageSquare, Bug, Lightbulb } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema } from "@/config/toolSeo";
 
 const reasons = [
   { icon: MessageSquare, label: "General Inquiry", color: "text-primary" },
@@ -22,6 +24,12 @@ const Contact = () => {
 
   return (
     <Layout>
+      <Seo
+  title="Contact ToolVerse – Feedback, Bugs & Tool Requests"
+  description="Get in touch with the ToolVerse team to report a bug, request a new tool, or send feedback about an existing calculator or converter."
+  path="/contact"
+  schema={breadcrumbSchema([{ name: "Contact", path: "/contact" }])}
+/>
       <div className="container py-10 max-w-4xl">
         <Breadcrumb items={[{ label: "Contact" }]} />
 

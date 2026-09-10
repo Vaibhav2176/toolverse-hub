@@ -3,6 +3,8 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { Shield, Eye, Cookie, Globe, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import { tools } from "@/config/tools";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema } from "@/config/toolSeo";
 
 const sections = [
   {
@@ -34,6 +36,12 @@ const sections = [
 
 const Privacy = () => (
   <Layout>
+    <Seo
+  title="Privacy Policy – How ToolVerse Handles Your Data"
+  description="ToolVerse processes everything in your browser. Read how we handle cookies, analytics and advertising, and why your tool inputs never reach our servers."
+  path="/privacy"
+  schema={breadcrumbSchema([{ name: "Privacy Policy", path: "/privacy" }])}
+/>
     <div className="container py-10 max-w-3xl">
       <Breadcrumb items={[{ label: "Privacy Policy" }]} />
 

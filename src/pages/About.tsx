@@ -7,7 +7,7 @@ import Seo from "@/components/Seo";
 import { breadcrumbSchema } from "@/config/toolSeo";
 
 const features = [
-  { icon: Wrench, title: `${145}+ Free Tools`, desc: "Calculators, converters, text tools, generators & more — always growing." },
+  { icon: Wrench, title: `${tools.length}+ Free Tools`, desc: "Calculators, converters, text tools, generators & more — always growing." },
   { icon: Shield, title: "100% Private", desc: "Everything runs in your browser. No data ever leaves your device." },
   { icon: Gauge, title: "Blazing Fast", desc: "Lightweight, no bloat. Tools load instantly with zero wait time." },
   { icon: Smartphone, title: "Mobile Friendly", desc: "Fully responsive design that works beautifully on any screen size." },

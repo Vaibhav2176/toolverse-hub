@@ -29,19 +29,21 @@ const ToolLayout = ({ slug, children, howTo, example, faqs }: ToolLayoutProps) =
   // Merge example: prefer seo example, fall back to prop
   const mergedExample = seo?.example || example;
 
-  // Dynamic SEO page title
-  useEffect(() => {
-    if (tool) {
-      const categoryLabel = cat?.title || "Tool";
-      document.title = `${tool.title} – Free Online ${categoryLabel} | ToolVerse`;
-    }
-    return () => { document.title = "ToolVerse – Free Online Tools"; };
-  }, [tool, cat]);
-
   if (!tool) return <div className="container py-12">Tool not found.</div>;
+
+  const meta = getToolSeo(slug);
+  const schema: Record<string, unknown>[] = [
+    toolAppSchema(tool),
+    breadcrumbSchema([
+      { name: cat?.title || "Tools", path: `/${tool.category}` },
+      { name: tool.title, path: `/tools/${slug}` },
+    ]),
+  ];
+  if (mergedFaqs && mergedFaqs.length > 0) schema.push(faqSchema(mergedFaqs));
 
   return (
     <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} className="container py-8 max-w-5xl">
+      {meta && <Seo title={meta.title} description={meta.description} path={meta.path} schema={schema} />}
       <Breadcrumb items={[
         { label: cat?.title || "", to: `/${tool.category}` },
         { label: tool.title },

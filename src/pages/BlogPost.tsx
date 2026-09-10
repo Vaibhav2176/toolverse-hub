@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
-import { useEffect } from "react";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema, SITE_URL } from "@/config/toolSeo";
 import { blogPosts } from "@/config/blogPosts";
 import { Clock, ArrowLeft, Tag } from "lucide-react";
 
@@ -8,17 +9,10 @@ const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPosts.find(p => p.slug === slug);
 
-  useEffect(() => {
-    if (post) {
-      document.title = post.metaTitle;
-      const meta = document.querySelector('meta[name="description"]');
-      if (meta) meta.setAttribute("content", post.metaDescription);
-    }
-  }, [post]);
-
   if (!post) {
     return (
       <Layout>
+        <Seo title="Post Not Found | ToolVerse Blog" description="This blog post could not be found. Browse all ToolVerse guides instead." path="/blog" noindex />
         <div className="container py-20 text-center">
           <h1 className="text-2xl font-bold text-foreground mb-4">Post Not Found</h1>
           <Link to="/blog" className="text-primary hover:underline">← Back to Blog</Link>
@@ -29,13 +23,36 @@ const BlogPost = () => {
 
   return (
     <Layout>
+      <Seo
+        title={post.metaTitle}
+        description={post.metaDescription}
+        path={`/blog/${post.slug}`}
+        type="article"
+        image={post.image}
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            description: post.metaDescription,
+            image: post.image,
+            datePublished: post.date,
+            dateModified: post.date,
+            articleSection: post.category,
+            mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+            author: { "@type": "Organization", name: "ToolVerse", url: SITE_URL },
+            publisher: { "@type": "Organization", name: "ToolVerse", url: SITE_URL },
+          },
+          breadcrumbSchema([{ name: "Blog", path: "/blog" }, { name: post.title, path: `/blog/${post.slug}` }]),
+        ]}
+      />
       <article className="py-10 md:py-14">
         <div className="container max-w-3xl">
           <Link to="/blog" className="inline-flex items-center gap-1 text-sm text-muted-foreground hover:text-primary transition-colors mb-6">
             <ArrowLeft className="h-4 w-4" /> Back to Blog
           </Link>
 
-          <img src={post.image} alt={post.title} className="w-full h-56 md:h-72 object-cover rounded-2xl mb-6" loading="lazy" />
+          <img src={post.image} alt={post.title} width={1200} height={630} className="w-full h-56 md:h-72 object-cover rounded-2xl mb-6" fetchPriority="high" />
 
           <div className="flex items-center gap-3 mb-4">
             <span className="inline-flex items-center gap-1 text-xs font-medium px-2.5 py-1 rounded-full bg-primary/10 text-primary">

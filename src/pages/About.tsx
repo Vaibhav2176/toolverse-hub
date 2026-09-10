@@ -3,9 +3,11 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { Zap, Shield, Smartphone, Gauge, Globe, Heart, Wrench, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import { tools } from "@/config/tools";
+import Seo from "@/components/Seo";
+import { breadcrumbSchema } from "@/config/toolSeo";
 
 const features = [
-  { icon: Wrench, title: `${145}+ Free Tools`, desc: "Calculators, converters, text tools, generators & more — always growing." },
+  { icon: Wrench, title: `${tools.length}+ Free Tools`, desc: "Calculators, converters, text tools, generators & more — always growing." },
   { icon: Shield, title: "100% Private", desc: "Everything runs in your browser. No data ever leaves your device." },
   { icon: Gauge, title: "Blazing Fast", desc: "Lightweight, no bloat. Tools load instantly with zero wait time." },
   { icon: Smartphone, title: "Mobile Friendly", desc: "Fully responsive design that works beautifully on any screen size." },
@@ -20,6 +22,12 @@ const fadeUp = {
 
 const About = () => (
   <Layout>
+    <Seo
+  title="About ToolVerse – Free, Private, Browser-Based Tools"
+  description={`Learn how ToolVerse works: ${tools.length}+ free online calculators, converters and utilities that run entirely in your browser with no accounts and no data collection.`}
+  path="/about"
+  schema={breadcrumbSchema([{ name: "About", path: "/about" }])}
+/>
     <div className="container py-10 max-w-4xl">
       <Breadcrumb items={[{ label: "About" }]} />
 

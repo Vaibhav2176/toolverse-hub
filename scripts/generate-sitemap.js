@@ -8,12 +8,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const toolsFile = readFileSync(resolve(__dirname, '../src/config/tools.ts'), 'utf-8');
 const blogFile = readFileSync(resolve(__dirname, '../src/config/blogPosts.ts'), 'utf-8');
 
-// Extract all tool slugs
+// Extract tool slugs ONLY from the `tools` array (category slugs live in a
+// separate array and are NOT valid /tools/:slug routes).
+const toolsArray = toolsFile.slice(toolsFile.indexOf('export const tools'));
 const slugRegex = /slug:\s*"([^"]+)"/g;
 const slugs = [];
 let match;
-while ((match = slugRegex.exec(toolsFile)) !== null) {
-  slugs.push(match[1]);
+while ((match = slugRegex.exec(toolsArray)) !== null) {
+  if (!slugs.includes(match[1])) slugs.push(match[1]);
 }
 
 // Extract all blog slugs
@@ -23,8 +25,14 @@ while ((match = blogSlugRegex.exec(blogFile)) !== null) {
   blogSlugs.push(match[1]);
 }
 
+// Authoritative publish dates for blog posts (used as <lastmod>)
+const blogDates = [];
+const dateRegex = /date:\s*"([^"]+)"/g;
+while ((match = dateRegex.exec(blogFile)) !== null) {
+  blogDates.push(match[1]);
+}
+
 const BASE_URL = 'https://toolverse-hub.vercel.app';
-const today = new Date().toISOString().split('T')[0];
 
 const staticPages = [
   { loc: '/', priority: '1.0', changefreq: 'weekly' },
@@ -50,7 +58,6 @@ let xml = `<?xml version="1.0" encoding="UTF-8"?>
 for (const page of staticPages) {
   xml += `  <url>
     <loc>${BASE_URL}${page.loc}</loc>
-    <lastmod>${today}</lastmod>
     <changefreq>${page.changefreq}</changefreq>
     <priority>${page.priority}</priority>
   </url>
@@ -60,18 +67,16 @@ for (const page of staticPages) {
 for (const slug of slugs) {
   xml += `  <url>
     <loc>${BASE_URL}/tools/${slug}</loc>
-    <lastmod>${today}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 `;
 }
 
-for (const slug of blogSlugs) {
+for (const [i, slug] of blogSlugs.entries()) {
   xml += `  <url>
     <loc>${BASE_URL}/blog/${slug}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>monthly</changefreq>
+${blogDates[i] ? `    <lastmod>${blogDates[i]}</lastmod>\n` : ''}    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 `;

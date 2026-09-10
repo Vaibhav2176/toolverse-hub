@@ -4,6 +4,8 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
+import Seo from "@/components/Seo";
+import { SITE_URL, itemListSchema } from "@/config/toolSeo";
 import ToolCard from "@/components/ToolCard";
 import AdPlaceholder from "@/components/AdPlaceholder";
 import { tools, categories, getFeaturedTools, getPopularTools, getNewTools } from "@/config/tools";
@@ -87,6 +89,16 @@ const Index = () => {
 
   return (
     <Layout>
+      <Seo
+        title={`${tools.length}+ Free Online Tools – Calculators & Converters | ToolVerse`}
+        description={`ToolVerse gives you ${tools.length}+ free online tools — percentage, BMI, EMI and GPA calculators, unit and currency converters, word counters, password and UUID generators, and CSS helpers. No signup, nothing leaves your browser.`}
+        path="/"
+        schema={[
+          { "@context": "https://schema.org", "@type": "Organization", name: "ToolVerse", url: SITE_URL, description: "Free browser-based calculators, converters and utilities." },
+          { "@context": "https://schema.org", "@type": "WebSite", name: "ToolVerse", url: SITE_URL, potentialAction: { "@type": "SearchAction", target: { "@type": "EntryPoint", urlTemplate: `${SITE_URL}/tools?q={search_term_string}` }, "query-input": "required name=search_term_string" } },
+          itemListSchema("Popular tools on ToolVerse", getPopularTools().slice(0, 12)),
+        ]}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="hero-gradient-2 animate-gradient py-4 md:py-8 px-4 relative">

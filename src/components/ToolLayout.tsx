@@ -1,10 +1,12 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import Breadcrumb from "./Breadcrumb";
+import Seo from "./Seo";
 import AdPlaceholder from "./AdPlaceholder";
 import ToolCard from "./ToolCard";
 import { getRelatedTools, getToolMeta, getCategoryMeta } from "@/config/tools";
 import { getSeoContent } from "@/config/seoContent";
+import { getToolSeo, breadcrumbSchema, toolAppSchema, faqSchema } from "@/config/toolSeo";
 
 interface FAQ { q: string; a: string; }
 

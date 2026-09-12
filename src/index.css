@@ -59,6 +59,11 @@
     --category-student: 330 75% 55%;
     --category-dev: 160 70% 45%;
     --category-design: 280 75% 55%;
+    --category-finance: 145 60% 40%;
+    --category-datetime: 20 85% 55%;
+    --category-math: 220 80% 55%;
+    --category-productivity: 175 70% 40%;
+    --category-writing: 300 60% 50%;
 
     /* Glass tokens */
     --glass-bg: hsl(0 0% 100% / 0.75);

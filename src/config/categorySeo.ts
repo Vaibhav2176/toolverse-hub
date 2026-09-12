@@ -128,4 +128,89 @@ export const categorySeo: Record<ToolCategory, CategorySeo> = {
       { q: "Is RGB to CMYK conversion print-accurate?", a: "It gives a close approximation; exact print output depends on your printer's color profile and paper." },
     ],
   },
+  finance: {
+    title: "Finance & Business Calculators – Salary, Margin, ROI & Tax",
+    description:
+      "Free finance and business calculators for salary, hourly pay, overtime, markup, margin, break-even, ROI, VAT, GST and invoices. Formulas explained, no signup.",
+    intro:
+      "These calculators answer the money questions that come up at work: what a job offer is worth per hour, what to charge to hit a target margin, how many units cover fixed costs, and what an invoice totals once discount and tax are applied. Enter your own figures — nothing is sent anywhere — and the formula behind each result is shown so you can check the maths yourself.",
+    highlights: [
+      "Pay: salary, hourly-to-salary, salary-to-hourly, overtime and commission",
+      "Pricing and profit: markup, margin, break-even, revenue and ROI",
+      "Tax and billing: VAT, GST split, invoice totals and discount-plus-tax pricing",
+    ],
+    faqs: [
+      { q: "Do these calculators account for my country's tax rules?", a: "They use the rates you enter rather than any built-in tax table, so they work anywhere — but they are estimates, not tax advice." },
+      { q: "What is the difference between markup and margin?", a: "Markup is profit as a percentage of cost; margin is profit as a percentage of the selling price. The same money gives a higher markup figure than margin." },
+      { q: "Is anything I type saved?", a: "No. Every figure stays in your browser and is discarded when you close the page." },
+    ],
+  },
+  "date-time": {
+    title: "Date & Time Calculators – Duration, Time Zones & Weekdays",
+    description:
+      "Free date and time tools: add or subtract days from a date, measure the gap between two dates, convert time zones, find weekdays, leap years and days in a month.",
+    intro:
+      "Dates are easy to get wrong by hand — months differ in length, leap years shift things, and deadlines skip weekends. These tools do the counting for you: project a due date forward, measure an exact duration, check which weekday a date falls on, or line up a meeting across time zones using your browser's own time zone database.",
+    highlights: [
+      "Arithmetic: add or subtract days, weeks, months and years, and count business days",
+      "Durations: exact gap between two dates, age in days and day of the year",
+      "Reference: weekday lookup, leap years, days in a month and time zone conversion",
+    ],
+    faqs: [
+      { q: "How are months added when the target month is shorter?", a: "Adding one month to 31 January lands on the last day of February, since that month has no 31st. The tools state the resulting date so there is no ambiguity." },
+      { q: "Do the business-day tools know about public holidays?", a: "No. They exclude Saturdays and Sundays only, so subtract any local public holidays yourself." },
+      { q: "Where does time zone data come from?", a: "From your browser's built-in IANA time zone database, which includes current daylight-saving rules." },
+    ],
+  },
+  "math-tools": {
+    title: "Math & Engineering Calculators – Algebra, Geometry & Stats",
+    description:
+      "Free math tools: quadratic and linear equation solvers, fractions, scientific notation, significant figures, variance, z-scores, triangles, circles and 3D shapes.",
+    intro:
+      "Step-by-step maths help for homework, lab reports and engineering work. Solve an equation and see the discriminant, convert a decimal to its simplest fraction, round to the right number of significant figures, or get the volume and surface area of a shape with the formula written out. Each tool shows how the answer was reached rather than just the number.",
+    highlights: [
+      "Algebra: quadratic and linear solvers, proportions, factorials and rounding",
+      "Numbers: fractions, mixed numbers, scientific notation and significant figures",
+      "Geometry and statistics: triangles, circles, volume, surface area, variance and z-scores",
+    ],
+    faqs: [
+      { q: "Do the solvers show working?", a: "Yes. The equation solvers show the substituted formula and intermediate values, not only the final roots." },
+      { q: "What happens with complex roots?", a: "When a quadratic has a negative discriminant the solver reports the complex roots in a + bi form instead of failing." },
+      { q: "How precise are the results?", a: "Calculations use double-precision floating point, which is accurate to about 15 significant digits — far beyond most coursework needs." },
+    ],
+  },
+  productivity: {
+    title: "Productivity Tools – Time Duration, Work Hours & Decisions",
+    description:
+      "Free productivity tools: work hours and time duration calculators, sleep and wake-up timing, focus sessions, countdowns, team splitters, dice and random pickers.",
+    intro:
+      "Small tools for planning a day and settling small decisions: how many hours a shift adds up to once breaks are deducted, when to go to bed for a 6:30 alarm, how long until an event, or who goes first. They open fast, need no account, and work the same on a phone during a meeting as on a desktop.",
+    highlights: [
+      "Time planning: duration, work hours, meeting end times and focus sessions",
+      "Countdowns: birthdays, custom events and habit streaks",
+      "Random picks: decisions, teams, names, dice and coin flips",
+    ],
+    faqs: [
+      { q: "Are the sleep tools medical advice?", a: "No. They estimate timing from average 90-minute sleep cycles and are a planning aid, not clinical guidance." },
+      { q: "Is the randomness fair?", a: "The pickers and dice use your browser's random number generator, which gives an even spread across the options." },
+      { q: "Do countdowns keep running if I close the tab?", a: "No. They recalculate from the target date each time you open the page, so the remaining time is always current." },
+    ],
+  },
+  "writing-tools": {
+    title: "Writing & Content Tools – Readability, Keywords & Text Stats",
+    description:
+      "Free writing tools: Flesch reading ease and readability checkers, keyword density, text statistics, paragraph counting, and extractors for emails, URLs and numbers.",
+    intro:
+      "Tools for people who write for a living or for a deadline: check whether a draft reads at the level your audience expects, see which words you lean on too heavily, count paragraphs against a brief, or pull every email address and link out of a messy block of text. Everything is analysed locally, so unpublished drafts stay private.",
+    highlights: [
+      "Readability: Flesch reading ease, grade-level estimates and text statistics",
+      "SEO copy: keyword density, meta description and title length checks",
+      "Cleanup and extraction: punctuation, numbers, emails, URLs and CSV conversion",
+    ],
+    faqs: [
+      { q: "What is a good Flesch reading ease score?", a: "Around 60-70 suits a general audience; scores below 30 read like academic prose and above 80 like conversational writing." },
+      { q: "How is keyword density judged?", a: "It is the share of total words a term accounts for. Roughly 0.5-2% reads naturally; forcing it higher looks like stuffing to both readers and search engines." },
+      { q: "Is my draft uploaded anywhere?", a: "No. All text analysis happens in your browser and nothing is transmitted or stored." },
+    ],
+  },
 };

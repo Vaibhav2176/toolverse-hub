@@ -46,6 +46,11 @@ export default {
         "cat-student": "hsl(var(--category-student))",
         "cat-dev": "hsl(var(--category-dev))",
         "cat-design": "hsl(var(--category-design))",
+        "cat-finance": "hsl(var(--category-finance))",
+        "cat-datetime": "hsl(var(--category-datetime))",
+        "cat-math": "hsl(var(--category-math))",
+        "cat-productivity": "hsl(var(--category-productivity))",
+        "cat-writing": "hsl(var(--category-writing))",
       },
       borderRadius: {
         lg: "var(--radius)",

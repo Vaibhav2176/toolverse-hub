@@ -1,6 +1,19 @@
-import { Calculator, ArrowRightLeft, Type, Sparkles, GraduationCap, Code, Palette } from "lucide-react";
+import { Calculator, ArrowRightLeft, Type, Sparkles, GraduationCap, Code, Palette, Wallet, CalendarClock, Sigma, Timer, PenLine } from "lucide-react";
+import { expansionTools } from "@/config/expansion";
 
-export type ToolCategory = "calculators" | "converters" | "text-tools" | "generators" | "student-tools" | "developer-tools" | "design-tools";
+export type ToolCategory =
+  | "calculators"
+  | "converters"
+  | "text-tools"
+  | "generators"
+  | "student-tools"
+  | "developer-tools"
+  | "design-tools"
+  | "finance"
+  | "date-time"
+  | "math-tools"
+  | "productivity"
+  | "writing-tools";
 export type ToolPriority = "high" | "medium" | "normal";
 
 export interface ToolMeta {

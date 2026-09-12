@@ -122,6 +122,11 @@
     --category-student: 330 70% 62%;
     --category-dev: 160 65% 55%;
     --category-design: 280 70% 62%;
+    --category-finance: 145 55% 52%;
+    --category-datetime: 20 80% 62%;
+    --category-math: 220 75% 65%;
+    --category-productivity: 175 60% 52%;
+    --category-writing: 300 55% 62%;
 
     --glass-bg: hsl(250 20% 14% / 0.9);
     --glass-border: hsl(252 60% 50% / 0.15);

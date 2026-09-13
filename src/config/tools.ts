@@ -55,7 +55,7 @@ export const categories: CategoryMeta[] = [
 
 const priorityOrder: Record<ToolPriority, number> = { high: 0, medium: 1, normal: 2 };
 
-export const tools: ToolMeta[] = [
+const baseTools: ToolMeta[] = [
   // Calculators
   { slug: "basic-calculator", title: "Basic Calculator", description: "A simple calculator for addition, subtraction, multiplication, and division.", category: "calculators", keywords: ["basic", "calculator", "math", "arithmetic"], emoji: "🧮", priority: "high", popular: true },
   { slug: "scientific-calculator", title: "Scientific Calculator", description: "Full scientific calculator with trigonometry, logarithms, powers, and roots.", category: "calculators", keywords: ["scientific", "trig", "sin", "cos", "log"], emoji: "🔬", priority: "high", featured: true, popular: true },

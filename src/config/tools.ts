@@ -204,6 +204,9 @@ const baseTools: ToolMeta[] = [
   { slug: "aspect-ratio-calculator", title: "Aspect Ratio Calculator", description: "Calculate and simplify aspect ratios for images and screens.", category: "design-tools", keywords: ["aspect", "ratio", "screen", "image"], emoji: "📺" },
 ];
 
+/** Central registry: original tools plus every expansion batch. */
+export const tools: ToolMeta[] = [...baseTools, ...expansionTools];
+
 export const getToolsByCategory = (cat: ToolCategory) =>
   tools
     .filter(t => t.category === cat)

@@ -46,6 +46,11 @@ export const categories: CategoryMeta[] = [
   { slug: "student-tools", title: "Student Tools", description: "Study aids and academic tools", icon: GraduationCap, colorClass: "text-cat-student", bgClass: "bg-cat-student/10" },
   { slug: "developer-tools", title: "Developer Tools", description: "JSON, CSV, UUID, JWT, and regex utilities", icon: Code, colorClass: "text-cat-dev", bgClass: "bg-cat-dev/10" },
   { slug: "design-tools", title: "Design Tools", description: "Gradients, palettes, and color utilities", icon: Palette, colorClass: "text-cat-design", bgClass: "bg-cat-design/10" },
+  { slug: "finance", title: "Finance & Business", description: "Salary, margin, ROI, tax, and invoice calculators", icon: Wallet, colorClass: "text-cat-finance", bgClass: "bg-cat-finance/10" },
+  { slug: "date-time", title: "Date & Time", description: "Date maths, durations, time zones, and weekdays", icon: CalendarClock, colorClass: "text-cat-datetime", bgClass: "bg-cat-datetime/10" },
+  { slug: "math-tools", title: "Math & Engineering", description: "Equation solvers, geometry, and statistics", icon: Sigma, colorClass: "text-cat-math", bgClass: "bg-cat-math/10" },
+  { slug: "productivity", title: "Productivity", description: "Work hours, countdowns, and random pickers", icon: Timer, colorClass: "text-cat-productivity", bgClass: "bg-cat-productivity/10" },
+  { slug: "writing-tools", title: "Writing & Content", description: "Readability, keyword density, and text analysis", icon: PenLine, colorClass: "text-cat-writing", bgClass: "bg-cat-writing/10" },
 ];
 
 const priorityOrder: Record<ToolPriority, number> = { high: 0, medium: 1, normal: 2 };

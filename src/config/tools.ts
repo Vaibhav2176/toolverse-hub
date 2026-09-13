@@ -90,12 +90,12 @@ export const tools: ToolMeta[] = [
   { slug: "square-root-calculator", title: "Square Root Calculator", description: "Calculate square roots and nth roots of any number.", category: "calculators", keywords: ["square", "root", "math", "sqrt"], emoji: "√" },
   { slug: "exponent-calculator", title: "Exponent Calculator", description: "Calculate powers and exponents of any base number.", category: "calculators", keywords: ["exponent", "power", "math"], emoji: "🔺" },
   { slug: "ratio-calculator", title: "Ratio Calculator", description: "Solve ratios, scale values, and find missing ratio terms.", category: "calculators", keywords: ["ratio", "proportion", "scale"], emoji: "⚖️" },
-  { slug: "standard-deviation-calculator", title: "Standard Deviation", description: "Calculate mean, variance, and standard deviation from a dataset.", category: "calculators", keywords: ["standard", "deviation", "variance", "statistics"], emoji: "📊", isNew: true },
-  { slug: "pythagorean-calculator", title: "Pythagorean Theorem", description: "Calculate the hypotenuse or side of a right triangle.", category: "calculators", keywords: ["pythagorean", "triangle", "hypotenuse", "geometry"], emoji: "📐", isNew: true },
-  { slug: "permutation-calculator", title: "Permutation Calculator", description: "Calculate permutations P(n, r) for arrangements.", category: "calculators", keywords: ["permutation", "arrangement", "nPr", "math"], emoji: "🔢", isNew: true },
-  { slug: "combination-calculator", title: "Combination Calculator", description: "Calculate combinations C(n, r) for selections.", category: "calculators", keywords: ["combination", "selection", "nCr", "math"], emoji: "🎯", isNew: true },
-  { slug: "percentage-to-fraction", title: "Percentage to Fraction", description: "Convert any percentage to its simplified fraction form.", category: "calculators", keywords: ["percentage", "fraction", "convert", "simplify"], emoji: "🔄", isNew: true },
-  { slug: "number-to-words", title: "Number to Words", description: "Convert numbers into their written English word form.", category: "calculators", keywords: ["number", "words", "english", "spell"], emoji: "🔤", isNew: true },
+  { slug: "standard-deviation-calculator", title: "Standard Deviation", description: "Calculate mean, variance, and standard deviation from a dataset.", category: "calculators", keywords: ["standard", "deviation", "variance", "statistics"], emoji: "📊" },
+  { slug: "pythagorean-calculator", title: "Pythagorean Theorem", description: "Calculate the hypotenuse or side of a right triangle.", category: "calculators", keywords: ["pythagorean", "triangle", "hypotenuse", "geometry"], emoji: "📐" },
+  { slug: "permutation-calculator", title: "Permutation Calculator", description: "Calculate permutations P(n, r) for arrangements.", category: "calculators", keywords: ["permutation", "arrangement", "nPr", "math"], emoji: "🔢" },
+  { slug: "combination-calculator", title: "Combination Calculator", description: "Calculate combinations C(n, r) for selections.", category: "calculators", keywords: ["combination", "selection", "nCr", "math"], emoji: "🎯" },
+  { slug: "percentage-to-fraction", title: "Percentage to Fraction", description: "Convert any percentage to its simplified fraction form.", category: "calculators", keywords: ["percentage", "fraction", "convert", "simplify"], emoji: "🔄" },
+  { slug: "number-to-words", title: "Number to Words", description: "Convert numbers into their written English word form.", category: "calculators", keywords: ["number", "words", "english", "spell"], emoji: "🔤" },
 
   // Converters
   { slug: "currency-converter", title: "Currency Converter", description: "Convert between 10 major world currencies with static exchange rates.", category: "converters", keywords: ["currency", "exchange", "money", "convert"], emoji: "💱", priority: "high", popular: true },
@@ -122,8 +122,8 @@ export const tools: ToolMeta[] = [
   { slug: "fuel-efficiency-converter", title: "Fuel Efficiency Converter", description: "Convert between km/L, mpg (US), mpg (UK), and L/100km.", category: "converters", keywords: ["fuel", "mpg", "efficiency", "mileage"], emoji: "⛽" },
   { slug: "density-converter", title: "Density Converter", description: "Convert between kg/m³, g/cm³, lb/ft³, and other density units.", category: "converters", keywords: ["density", "mass", "volume", "kg"], emoji: "🧊" },
   { slug: "illuminance-converter", title: "Illuminance Converter", description: "Convert between lux, foot-candle, phot, and kilolux.", category: "converters", keywords: ["illuminance", "lux", "light", "foot-candle"], emoji: "💡" },
-  { slug: "torque-converter", title: "Torque Converter", description: "Convert between N·m, lb·ft, lb·in, kg·cm, and dyn·cm.", category: "converters", keywords: ["torque", "newton", "meter", "pound", "foot"], emoji: "🔧", isNew: true },
-  { slug: "force-converter", title: "Force Converter", description: "Convert between Newton, Kilonewton, Dyne, lbf, and kgf.", category: "converters", keywords: ["force", "newton", "dyne", "pound"], emoji: "💪", isNew: true },
+  { slug: "torque-converter", title: "Torque Converter", description: "Convert between N·m, lb·ft, lb·in, kg·cm, and dyn·cm.", category: "converters", keywords: ["torque", "newton", "meter", "pound", "foot"], emoji: "🔧" },
+  { slug: "force-converter", title: "Force Converter", description: "Convert between Newton, Kilonewton, Dyne, lbf, and kgf.", category: "converters", keywords: ["force", "newton", "dyne", "pound"], emoji: "💪" },
 
   // Text Tools
   { slug: "word-counter", title: "Word Counter", description: "Count words, characters, sentences, and paragraphs in text.", category: "text-tools", keywords: ["word", "count", "character"], emoji: "📝", priority: "high", featured: true, popular: true },
@@ -146,10 +146,10 @@ export const tools: ToolMeta[] = [
   { slug: "text-to-binary", title: "Text to Binary", description: "Convert text to binary representation and binary back to text.", category: "text-tools", keywords: ["text", "binary", "ascii", "convert"], emoji: "🔟" },
   { slug: "word-frequency-counter", title: "Word Frequency Counter", description: "Count how often each word appears in your text.", category: "text-tools", keywords: ["word", "frequency", "count", "analysis"], emoji: "📊" },
   { slug: "text-to-morse-code", title: "Morse Code Translator", description: "Convert text to Morse code and Morse code back to text.", category: "text-tools", keywords: ["morse", "code", "translate", "dots"], emoji: "📡" },
-  { slug: "text-to-html", title: "Text to HTML", description: "Convert plain text to HTML with paragraph and line break tags.", category: "text-tools", keywords: ["text", "html", "convert", "paragraph"], emoji: "🌐", isNew: true },
-  { slug: "find-and-replace", title: "Find and Replace", description: "Find and replace text with case-sensitive matching and counts.", category: "text-tools", keywords: ["find", "replace", "search", "text"], emoji: "🔍", isNew: true },
-  { slug: "line-counter", title: "Line Counter", description: "Count total, non-empty, and empty lines in your text.", category: "text-tools", keywords: ["line", "count", "empty", "text"], emoji: "📏", isNew: true },
-  { slug: "sentence-counter", title: "Sentence Counter", description: "Count sentences, paragraphs, and words in your text.", category: "text-tools", keywords: ["sentence", "paragraph", "count"], emoji: "📝", isNew: true },
+  { slug: "text-to-html", title: "Text to HTML", description: "Convert plain text to HTML with paragraph and line break tags.", category: "text-tools", keywords: ["text", "html", "convert", "paragraph"], emoji: "🌐" },
+  { slug: "find-and-replace", title: "Find and Replace", description: "Find and replace text with case-sensitive matching and counts.", category: "text-tools", keywords: ["find", "replace", "search", "text"], emoji: "🔍" },
+  { slug: "line-counter", title: "Line Counter", description: "Count total, non-empty, and empty lines in your text.", category: "text-tools", keywords: ["line", "count", "empty", "text"], emoji: "📏" },
+  { slug: "sentence-counter", title: "Sentence Counter", description: "Count sentences, paragraphs, and words in your text.", category: "text-tools", keywords: ["sentence", "paragraph", "count"], emoji: "📝" },
 
   // Generators
   { slug: "password-generator", title: "Password Generator", description: "Generate strong, secure passwords with customizable options.", category: "generators", keywords: ["password", "security", "random"], emoji: "🔑", priority: "high", featured: true, popular: true },
@@ -176,8 +176,8 @@ export const tools: ToolMeta[] = [
   { slug: "workdays-calculator", title: "Workdays Calculator", description: "Calculate total working days between two dates.", category: "student-tools", keywords: ["workdays", "working", "business"], emoji: "💼" },
   { slug: "week-number-calculator", title: "Week Number Calculator", description: "Find the ISO week number for any date.", category: "student-tools", keywords: ["week", "number", "iso", "date"], emoji: "📅" },
   { slug: "unix-timestamp-converter", title: "Unix Timestamp Converter", description: "Convert Unix timestamps to readable dates and vice versa.", category: "student-tools", keywords: ["unix", "timestamp", "epoch", "date"], emoji: "🕐", popular: true },
-  { slug: "flashcard-maker", title: "Flashcard Maker", description: "Create and study flashcards with flip-to-reveal answers.", category: "student-tools", keywords: ["flashcard", "study", "quiz", "memorize"], emoji: "🃏", isNew: true },
-  { slug: "grade-calculator", title: "Grade Calculator", description: "Calculate overall percentage and grade from subject marks.", category: "student-tools", keywords: ["grade", "marks", "percentage", "result"], emoji: "📝", isNew: true },
+  { slug: "flashcard-maker", title: "Flashcard Maker", description: "Create and study flashcards with flip-to-reveal answers.", category: "student-tools", keywords: ["flashcard", "study", "quiz", "memorize"], emoji: "🃏" },
+  { slug: "grade-calculator", title: "Grade Calculator", description: "Calculate overall percentage and grade from subject marks.", category: "student-tools", keywords: ["grade", "marks", "percentage", "result"], emoji: "📝" },
 
   // Developer Tools
   { slug: "json-to-csv", title: "JSON to CSV Converter", description: "Convert JSON data into downloadable CSV format.", category: "developer-tools", keywords: ["json", "csv", "convert", "data"], emoji: "📊", featured: true },
@@ -187,8 +187,8 @@ export const tools: ToolMeta[] = [
   { slug: "regex-tester", title: "Regex Tester", description: "Test regular expressions with live matching and highlighting.", category: "developer-tools", keywords: ["regex", "regular", "expression", "test"], emoji: "🧪", featured: true },
   { slug: "cron-expression-parser", title: "Cron Expression Parser", description: "Parse cron expressions and see next scheduled run times.", category: "developer-tools", keywords: ["cron", "schedule", "job", "expression"], emoji: "⏰" },
   { slug: "chmod-calculator", title: "Chmod Calculator", description: "Calculate Unix file permissions in numeric and symbolic notation.", category: "developer-tools", keywords: ["chmod", "permissions", "unix", "linux"], emoji: "🔐" },
-  { slug: "html-entity-encoder", title: "HTML Entity Encoder", description: "Encode and decode HTML entities and special characters.", category: "developer-tools", keywords: ["html", "entity", "encode", "decode"], emoji: "🔣", isNew: true },
-  { slug: "ip-address-converter", title: "IP Address Converter", description: "Convert IPv4 addresses to binary, hexadecimal, decimal, and octal.", category: "developer-tools", keywords: ["ip", "address", "binary", "hex"], emoji: "🌐", isNew: true },
+  { slug: "html-entity-encoder", title: "HTML Entity Encoder", description: "Encode and decode HTML entities and special characters.", category: "developer-tools", keywords: ["html", "entity", "encode", "decode"], emoji: "🔣" },
+  { slug: "ip-address-converter", title: "IP Address Converter", description: "Convert IPv4 addresses to binary, hexadecimal, decimal, and octal.", category: "developer-tools", keywords: ["ip", "address", "binary", "hex"], emoji: "🌐" },
 
   // Design Tools
   { slug: "gradient-generator", title: "Gradient Generator", description: "Generate beautiful CSS gradients with live preview and copy code.", category: "design-tools", keywords: ["gradient", "css", "color", "background"], emoji: "🌈", featured: true, popular: true },
@@ -198,9 +198,9 @@ export const tools: ToolMeta[] = [
   { slug: "image-color-picker", title: "Image Color Picker", description: "Pick colors from uploaded images and get HEX, RGB values.", category: "design-tools", keywords: ["image", "color", "picker", "eyedropper"], emoji: "🔍" },
   { slug: "css-unit-converter", title: "CSS Unit Converter", description: "Convert between px, rem, em, vh, vw, and other CSS units.", category: "design-tools", keywords: ["css", "px", "rem", "em", "unit"], emoji: "📐" },
   { slug: "box-shadow-generator", title: "Box Shadow Generator", description: "Generate CSS box-shadow with live preview and copy code.", category: "design-tools", keywords: ["shadow", "css", "box-shadow", "design"], emoji: "🖼️", popular: true },
-  { slug: "color-blender", title: "Color Blender", description: "Blend two colors and generate smooth color gradients between them.", category: "design-tools", keywords: ["color", "blend", "mix", "gradient"], emoji: "🎨", isNew: true },
-  { slug: "border-radius-generator", title: "Border Radius Generator", description: "Generate CSS border-radius with visual preview for all corners.", category: "design-tools", keywords: ["border", "radius", "css", "rounded"], emoji: "⬜", isNew: true },
-  { slug: "text-shadow-generator", title: "Text Shadow Generator", description: "Generate CSS text-shadow with live preview and copy code.", category: "design-tools", keywords: ["text", "shadow", "css", "effect"], emoji: "✨", isNew: true },
+  { slug: "color-blender", title: "Color Blender", description: "Blend two colors and generate smooth color gradients between them.", category: "design-tools", keywords: ["color", "blend", "mix", "gradient"], emoji: "🎨" },
+  { slug: "border-radius-generator", title: "Border Radius Generator", description: "Generate CSS border-radius with visual preview for all corners.", category: "design-tools", keywords: ["border", "radius", "css", "rounded"], emoji: "⬜" },
+  { slug: "text-shadow-generator", title: "Text Shadow Generator", description: "Generate CSS text-shadow with live preview and copy code.", category: "design-tools", keywords: ["text", "shadow", "css", "effect"], emoji: "✨" },
   { slug: "aspect-ratio-calculator", title: "Aspect Ratio Calculator", description: "Calculate and simplify aspect ratios for images and screens.", category: "design-tools", keywords: ["aspect", "ratio", "screen", "image"], emoji: "📺" },
 ];
 

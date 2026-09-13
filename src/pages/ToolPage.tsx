@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import Layout from "@/components/Layout";
 import { useParams } from "react-router-dom";
+import { expansionRoutes } from "@/config/expansion";
 
 const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentType>> = {
   "percentage-calculator": lazy(() => import("@/tools/PercentageCalculator")),
@@ -138,6 +139,8 @@ const toolComponents: Record<string, React.LazyExoticComponent<React.ComponentTy
   "ip-address-converter": lazy(() => import("@/tools/IpAddressConverter")),
   "flashcard-maker": lazy(() => import("@/tools/FlashcardMaker")),
   "grade-calculator": lazy(() => import("@/tools/GradeCalculator")),
+  // Expansion batches (finance, date & time, math, productivity, writing, developer)
+  ...expansionRoutes,
 };
 
 const ToolPage = () => {

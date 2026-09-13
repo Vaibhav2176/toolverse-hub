@@ -215,10 +215,23 @@ export const getToolsByCategory = (cat: ToolCategory) =>
 export const getFeaturedTools = () => tools.filter(t => t.featured);
 export const getPopularTools = () => tools.filter(t => t.popular);
 export const getNewTools = () => tools.filter(t => t.isNew);
+/**
+ * Related tools: same-category siblings first, then keyword-matched tools from
+ * other categories so every page links out of its own silo.
+ */
 export const getRelatedTools = (slug: string, count = 6) => {
   const tool = tools.find(t => t.slug === slug);
   if (!tool) return [];
-  return tools.filter(t => t.slug !== slug && t.category === tool.category).slice(0, count);
+  const sameCat = tools
+    .filter(t => t.slug !== slug && t.category === tool.category)
+    .sort((a, b) => priorityOrder[a.priority || "normal"] - priorityOrder[b.priority || "normal"]);
+  if (sameCat.length >= count) return sameCat.slice(0, count);
+
+  const keys = new Set(tool.keywords);
+  const crossCat = tools.filter(
+    t => t.slug !== slug && t.category !== tool.category && t.keywords.some(k => keys.has(k))
+  );
+  return [...sameCat, ...crossCat].slice(0, count);
 };
 export const getCategoryMeta = (slug: string) => categories.find(c => c.slug === slug);
 export const getToolMeta = (slug: string) => tools.find(t => t.slug === slug);

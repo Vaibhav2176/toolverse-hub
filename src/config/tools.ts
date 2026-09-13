@@ -46,11 +46,16 @@ export const categories: CategoryMeta[] = [
   { slug: "student-tools", title: "Student Tools", description: "Study aids and academic tools", icon: GraduationCap, colorClass: "text-cat-student", bgClass: "bg-cat-student/10" },
   { slug: "developer-tools", title: "Developer Tools", description: "JSON, CSV, UUID, JWT, and regex utilities", icon: Code, colorClass: "text-cat-dev", bgClass: "bg-cat-dev/10" },
   { slug: "design-tools", title: "Design Tools", description: "Gradients, palettes, and color utilities", icon: Palette, colorClass: "text-cat-design", bgClass: "bg-cat-design/10" },
+  { slug: "finance", title: "Finance & Business", description: "Salary, margin, ROI, tax, and invoice calculators", icon: Wallet, colorClass: "text-cat-finance", bgClass: "bg-cat-finance/10" },
+  { slug: "date-time", title: "Date & Time", description: "Date maths, durations, time zones, and weekdays", icon: CalendarClock, colorClass: "text-cat-datetime", bgClass: "bg-cat-datetime/10" },
+  { slug: "math-tools", title: "Math & Engineering", description: "Equation solvers, geometry, and statistics", icon: Sigma, colorClass: "text-cat-math", bgClass: "bg-cat-math/10" },
+  { slug: "productivity", title: "Productivity", description: "Work hours, countdowns, and random pickers", icon: Timer, colorClass: "text-cat-productivity", bgClass: "bg-cat-productivity/10" },
+  { slug: "writing-tools", title: "Writing & Content", description: "Readability, keyword density, and text analysis", icon: PenLine, colorClass: "text-cat-writing", bgClass: "bg-cat-writing/10" },
 ];
 
 const priorityOrder: Record<ToolPriority, number> = { high: 0, medium: 1, normal: 2 };
 
-export const tools: ToolMeta[] = [
+const baseTools: ToolMeta[] = [
   // Calculators
   { slug: "basic-calculator", title: "Basic Calculator", description: "A simple calculator for addition, subtraction, multiplication, and division.", category: "calculators", keywords: ["basic", "calculator", "math", "arithmetic"], emoji: "🧮", priority: "high", popular: true },
   { slug: "scientific-calculator", title: "Scientific Calculator", description: "Full scientific calculator with trigonometry, logarithms, powers, and roots.", category: "calculators", keywords: ["scientific", "trig", "sin", "cos", "log"], emoji: "🔬", priority: "high", featured: true, popular: true },
@@ -85,12 +90,12 @@ export const tools: ToolMeta[] = [
   { slug: "square-root-calculator", title: "Square Root Calculator", description: "Calculate square roots and nth roots of any number.", category: "calculators", keywords: ["square", "root", "math", "sqrt"], emoji: "√" },
   { slug: "exponent-calculator", title: "Exponent Calculator", description: "Calculate powers and exponents of any base number.", category: "calculators", keywords: ["exponent", "power", "math"], emoji: "🔺" },
   { slug: "ratio-calculator", title: "Ratio Calculator", description: "Solve ratios, scale values, and find missing ratio terms.", category: "calculators", keywords: ["ratio", "proportion", "scale"], emoji: "⚖️" },
-  { slug: "standard-deviation-calculator", title: "Standard Deviation", description: "Calculate mean, variance, and standard deviation from a dataset.", category: "calculators", keywords: ["standard", "deviation", "variance", "statistics"], emoji: "📊", isNew: true },
-  { slug: "pythagorean-calculator", title: "Pythagorean Theorem", description: "Calculate the hypotenuse or side of a right triangle.", category: "calculators", keywords: ["pythagorean", "triangle", "hypotenuse", "geometry"], emoji: "📐", isNew: true },
-  { slug: "permutation-calculator", title: "Permutation Calculator", description: "Calculate permutations P(n, r) for arrangements.", category: "calculators", keywords: ["permutation", "arrangement", "nPr", "math"], emoji: "🔢", isNew: true },
-  { slug: "combination-calculator", title: "Combination Calculator", description: "Calculate combinations C(n, r) for selections.", category: "calculators", keywords: ["combination", "selection", "nCr", "math"], emoji: "🎯", isNew: true },
-  { slug: "percentage-to-fraction", title: "Percentage to Fraction", description: "Convert any percentage to its simplified fraction form.", category: "calculators", keywords: ["percentage", "fraction", "convert", "simplify"], emoji: "🔄", isNew: true },
-  { slug: "number-to-words", title: "Number to Words", description: "Convert numbers into their written English word form.", category: "calculators", keywords: ["number", "words", "english", "spell"], emoji: "🔤", isNew: true },
+  { slug: "standard-deviation-calculator", title: "Standard Deviation", description: "Calculate mean, variance, and standard deviation from a dataset.", category: "calculators", keywords: ["standard", "deviation", "variance", "statistics"], emoji: "📊" },
+  { slug: "pythagorean-calculator", title: "Pythagorean Theorem", description: "Calculate the hypotenuse or side of a right triangle.", category: "calculators", keywords: ["pythagorean", "triangle", "hypotenuse", "geometry"], emoji: "📐" },
+  { slug: "permutation-calculator", title: "Permutation Calculator", description: "Calculate permutations P(n, r) for arrangements.", category: "calculators", keywords: ["permutation", "arrangement", "nPr", "math"], emoji: "🔢" },
+  { slug: "combination-calculator", title: "Combination Calculator", description: "Calculate combinations C(n, r) for selections.", category: "calculators", keywords: ["combination", "selection", "nCr", "math"], emoji: "🎯" },
+  { slug: "percentage-to-fraction", title: "Percentage to Fraction", description: "Convert any percentage to its simplified fraction form.", category: "calculators", keywords: ["percentage", "fraction", "convert", "simplify"], emoji: "🔄" },
+  { slug: "number-to-words", title: "Number to Words", description: "Convert numbers into their written English word form.", category: "calculators", keywords: ["number", "words", "english", "spell"], emoji: "🔤" },
 
   // Converters
   { slug: "currency-converter", title: "Currency Converter", description: "Convert between 10 major world currencies with static exchange rates.", category: "converters", keywords: ["currency", "exchange", "money", "convert"], emoji: "💱", priority: "high", popular: true },
@@ -117,8 +122,8 @@ export const tools: ToolMeta[] = [
   { slug: "fuel-efficiency-converter", title: "Fuel Efficiency Converter", description: "Convert between km/L, mpg (US), mpg (UK), and L/100km.", category: "converters", keywords: ["fuel", "mpg", "efficiency", "mileage"], emoji: "⛽" },
   { slug: "density-converter", title: "Density Converter", description: "Convert between kg/m³, g/cm³, lb/ft³, and other density units.", category: "converters", keywords: ["density", "mass", "volume", "kg"], emoji: "🧊" },
   { slug: "illuminance-converter", title: "Illuminance Converter", description: "Convert between lux, foot-candle, phot, and kilolux.", category: "converters", keywords: ["illuminance", "lux", "light", "foot-candle"], emoji: "💡" },
-  { slug: "torque-converter", title: "Torque Converter", description: "Convert between N·m, lb·ft, lb·in, kg·cm, and dyn·cm.", category: "converters", keywords: ["torque", "newton", "meter", "pound", "foot"], emoji: "🔧", isNew: true },
-  { slug: "force-converter", title: "Force Converter", description: "Convert between Newton, Kilonewton, Dyne, lbf, and kgf.", category: "converters", keywords: ["force", "newton", "dyne", "pound"], emoji: "💪", isNew: true },
+  { slug: "torque-converter", title: "Torque Converter", description: "Convert between N·m, lb·ft, lb·in, kg·cm, and dyn·cm.", category: "converters", keywords: ["torque", "newton", "meter", "pound", "foot"], emoji: "🔧" },
+  { slug: "force-converter", title: "Force Converter", description: "Convert between Newton, Kilonewton, Dyne, lbf, and kgf.", category: "converters", keywords: ["force", "newton", "dyne", "pound"], emoji: "💪" },
 
   // Text Tools
   { slug: "word-counter", title: "Word Counter", description: "Count words, characters, sentences, and paragraphs in text.", category: "text-tools", keywords: ["word", "count", "character"], emoji: "📝", priority: "high", featured: true, popular: true },
@@ -141,10 +146,10 @@ export const tools: ToolMeta[] = [
   { slug: "text-to-binary", title: "Text to Binary", description: "Convert text to binary representation and binary back to text.", category: "text-tools", keywords: ["text", "binary", "ascii", "convert"], emoji: "🔟" },
   { slug: "word-frequency-counter", title: "Word Frequency Counter", description: "Count how often each word appears in your text.", category: "text-tools", keywords: ["word", "frequency", "count", "analysis"], emoji: "📊" },
   { slug: "text-to-morse-code", title: "Morse Code Translator", description: "Convert text to Morse code and Morse code back to text.", category: "text-tools", keywords: ["morse", "code", "translate", "dots"], emoji: "📡" },
-  { slug: "text-to-html", title: "Text to HTML", description: "Convert plain text to HTML with paragraph and line break tags.", category: "text-tools", keywords: ["text", "html", "convert", "paragraph"], emoji: "🌐", isNew: true },
-  { slug: "find-and-replace", title: "Find and Replace", description: "Find and replace text with case-sensitive matching and counts.", category: "text-tools", keywords: ["find", "replace", "search", "text"], emoji: "🔍", isNew: true },
-  { slug: "line-counter", title: "Line Counter", description: "Count total, non-empty, and empty lines in your text.", category: "text-tools", keywords: ["line", "count", "empty", "text"], emoji: "📏", isNew: true },
-  { slug: "sentence-counter", title: "Sentence Counter", description: "Count sentences, paragraphs, and words in your text.", category: "text-tools", keywords: ["sentence", "paragraph", "count"], emoji: "📝", isNew: true },
+  { slug: "text-to-html", title: "Text to HTML", description: "Convert plain text to HTML with paragraph and line break tags.", category: "text-tools", keywords: ["text", "html", "convert", "paragraph"], emoji: "🌐" },
+  { slug: "find-and-replace", title: "Find and Replace", description: "Find and replace text with case-sensitive matching and counts.", category: "text-tools", keywords: ["find", "replace", "search", "text"], emoji: "🔍" },
+  { slug: "line-counter", title: "Line Counter", description: "Count total, non-empty, and empty lines in your text.", category: "text-tools", keywords: ["line", "count", "empty", "text"], emoji: "📏" },
+  { slug: "sentence-counter", title: "Sentence Counter", description: "Count sentences, paragraphs, and words in your text.", category: "text-tools", keywords: ["sentence", "paragraph", "count"], emoji: "📝" },
 
   // Generators
   { slug: "password-generator", title: "Password Generator", description: "Generate strong, secure passwords with customizable options.", category: "generators", keywords: ["password", "security", "random"], emoji: "🔑", priority: "high", featured: true, popular: true },
@@ -171,8 +176,8 @@ export const tools: ToolMeta[] = [
   { slug: "workdays-calculator", title: "Workdays Calculator", description: "Calculate total working days between two dates.", category: "student-tools", keywords: ["workdays", "working", "business"], emoji: "💼" },
   { slug: "week-number-calculator", title: "Week Number Calculator", description: "Find the ISO week number for any date.", category: "student-tools", keywords: ["week", "number", "iso", "date"], emoji: "📅" },
   { slug: "unix-timestamp-converter", title: "Unix Timestamp Converter", description: "Convert Unix timestamps to readable dates and vice versa.", category: "student-tools", keywords: ["unix", "timestamp", "epoch", "date"], emoji: "🕐", popular: true },
-  { slug: "flashcard-maker", title: "Flashcard Maker", description: "Create and study flashcards with flip-to-reveal answers.", category: "student-tools", keywords: ["flashcard", "study", "quiz", "memorize"], emoji: "🃏", isNew: true },
-  { slug: "grade-calculator", title: "Grade Calculator", description: "Calculate overall percentage and grade from subject marks.", category: "student-tools", keywords: ["grade", "marks", "percentage", "result"], emoji: "📝", isNew: true },
+  { slug: "flashcard-maker", title: "Flashcard Maker", description: "Create and study flashcards with flip-to-reveal answers.", category: "student-tools", keywords: ["flashcard", "study", "quiz", "memorize"], emoji: "🃏" },
+  { slug: "grade-calculator", title: "Grade Calculator", description: "Calculate overall percentage and grade from subject marks.", category: "student-tools", keywords: ["grade", "marks", "percentage", "result"], emoji: "📝" },
 
   // Developer Tools
   { slug: "json-to-csv", title: "JSON to CSV Converter", description: "Convert JSON data into downloadable CSV format.", category: "developer-tools", keywords: ["json", "csv", "convert", "data"], emoji: "📊", featured: true },
@@ -182,8 +187,8 @@ export const tools: ToolMeta[] = [
   { slug: "regex-tester", title: "Regex Tester", description: "Test regular expressions with live matching and highlighting.", category: "developer-tools", keywords: ["regex", "regular", "expression", "test"], emoji: "🧪", featured: true },
   { slug: "cron-expression-parser", title: "Cron Expression Parser", description: "Parse cron expressions and see next scheduled run times.", category: "developer-tools", keywords: ["cron", "schedule", "job", "expression"], emoji: "⏰" },
   { slug: "chmod-calculator", title: "Chmod Calculator", description: "Calculate Unix file permissions in numeric and symbolic notation.", category: "developer-tools", keywords: ["chmod", "permissions", "unix", "linux"], emoji: "🔐" },
-  { slug: "html-entity-encoder", title: "HTML Entity Encoder", description: "Encode and decode HTML entities and special characters.", category: "developer-tools", keywords: ["html", "entity", "encode", "decode"], emoji: "🔣", isNew: true },
-  { slug: "ip-address-converter", title: "IP Address Converter", description: "Convert IPv4 addresses to binary, hexadecimal, decimal, and octal.", category: "developer-tools", keywords: ["ip", "address", "binary", "hex"], emoji: "🌐", isNew: true },
+  { slug: "html-entity-encoder", title: "HTML Entity Encoder", description: "Encode and decode HTML entities and special characters.", category: "developer-tools", keywords: ["html", "entity", "encode", "decode"], emoji: "🔣" },
+  { slug: "ip-address-converter", title: "IP Address Converter", description: "Convert IPv4 addresses to binary, hexadecimal, decimal, and octal.", category: "developer-tools", keywords: ["ip", "address", "binary", "hex"], emoji: "🌐" },
 
   // Design Tools
   { slug: "gradient-generator", title: "Gradient Generator", description: "Generate beautiful CSS gradients with live preview and copy code.", category: "design-tools", keywords: ["gradient", "css", "color", "background"], emoji: "🌈", featured: true, popular: true },
@@ -193,11 +198,14 @@ export const tools: ToolMeta[] = [
   { slug: "image-color-picker", title: "Image Color Picker", description: "Pick colors from uploaded images and get HEX, RGB values.", category: "design-tools", keywords: ["image", "color", "picker", "eyedropper"], emoji: "🔍" },
   { slug: "css-unit-converter", title: "CSS Unit Converter", description: "Convert between px, rem, em, vh, vw, and other CSS units.", category: "design-tools", keywords: ["css", "px", "rem", "em", "unit"], emoji: "📐" },
   { slug: "box-shadow-generator", title: "Box Shadow Generator", description: "Generate CSS box-shadow with live preview and copy code.", category: "design-tools", keywords: ["shadow", "css", "box-shadow", "design"], emoji: "🖼️", popular: true },
-  { slug: "color-blender", title: "Color Blender", description: "Blend two colors and generate smooth color gradients between them.", category: "design-tools", keywords: ["color", "blend", "mix", "gradient"], emoji: "🎨", isNew: true },
-  { slug: "border-radius-generator", title: "Border Radius Generator", description: "Generate CSS border-radius with visual preview for all corners.", category: "design-tools", keywords: ["border", "radius", "css", "rounded"], emoji: "⬜", isNew: true },
-  { slug: "text-shadow-generator", title: "Text Shadow Generator", description: "Generate CSS text-shadow with live preview and copy code.", category: "design-tools", keywords: ["text", "shadow", "css", "effect"], emoji: "✨", isNew: true },
+  { slug: "color-blender", title: "Color Blender", description: "Blend two colors and generate smooth color gradients between them.", category: "design-tools", keywords: ["color", "blend", "mix", "gradient"], emoji: "🎨" },
+  { slug: "border-radius-generator", title: "Border Radius Generator", description: "Generate CSS border-radius with visual preview for all corners.", category: "design-tools", keywords: ["border", "radius", "css", "rounded"], emoji: "⬜" },
+  { slug: "text-shadow-generator", title: "Text Shadow Generator", description: "Generate CSS text-shadow with live preview and copy code.", category: "design-tools", keywords: ["text", "shadow", "css", "effect"], emoji: "✨" },
   { slug: "aspect-ratio-calculator", title: "Aspect Ratio Calculator", description: "Calculate and simplify aspect ratios for images and screens.", category: "design-tools", keywords: ["aspect", "ratio", "screen", "image"], emoji: "📺" },
 ];
+
+/** Central registry: original tools plus every expansion batch. */
+export const tools: ToolMeta[] = [...baseTools, ...expansionTools];
 
 export const getToolsByCategory = (cat: ToolCategory) =>
   tools
@@ -207,10 +215,23 @@ export const getToolsByCategory = (cat: ToolCategory) =>
 export const getFeaturedTools = () => tools.filter(t => t.featured);
 export const getPopularTools = () => tools.filter(t => t.popular);
 export const getNewTools = () => tools.filter(t => t.isNew);
+/**
+ * Related tools: same-category siblings first, then keyword-matched tools from
+ * other categories so every page links out of its own silo.
+ */
 export const getRelatedTools = (slug: string, count = 6) => {
   const tool = tools.find(t => t.slug === slug);
   if (!tool) return [];
-  return tools.filter(t => t.slug !== slug && t.category === tool.category).slice(0, count);
+  const sameCat = tools
+    .filter(t => t.slug !== slug && t.category === tool.category)
+    .sort((a, b) => priorityOrder[a.priority || "normal"] - priorityOrder[b.priority || "normal"]);
+  if (sameCat.length >= count) return sameCat.slice(0, count);
+
+  const keys = new Set(tool.keywords);
+  const crossCat = tools.filter(
+    t => t.slug !== slug && t.category !== tool.category && t.keywords.some(k => keys.has(k))
+  );
+  return [...sameCat, ...crossCat].slice(0, count);
 };
 export const getCategoryMeta = (slug: string) => categories.find(c => c.slug === slug);
 export const getToolMeta = (slug: string) => tools.find(t => t.slug === slug);

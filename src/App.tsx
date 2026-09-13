@@ -38,6 +38,11 @@ const App = () => (
             <Route path="/student-tools" element={<CategoryPage />} />
             <Route path="/developer-tools" element={<CategoryPage />} />
             <Route path="/design-tools" element={<CategoryPage />} />
+            <Route path="/finance" element={<CategoryPage />} />
+            <Route path="/date-time" element={<CategoryPage />} />
+            <Route path="/math-tools" element={<CategoryPage />} />
+            <Route path="/productivity" element={<CategoryPage />} />
+            <Route path="/writing-tools" element={<CategoryPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/about" element={<About />} />

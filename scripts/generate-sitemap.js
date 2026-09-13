@@ -1,6 +1,6 @@
 // This script generates sitemap.xml from the tools config
 // Run: node scripts/generate-sitemap.js
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, readdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -8,14 +8,28 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const toolsFile = readFileSync(resolve(__dirname, '../src/config/tools.ts'), 'utf-8');
 const blogFile = readFileSync(resolve(__dirname, '../src/config/blogPosts.ts'), 'utf-8');
 
-// Extract tool slugs ONLY from the `tools` array (category slugs live in a
-// separate array and are NOT valid /tools/:slug routes).
-const toolsArray = toolsFile.slice(toolsFile.indexOf('export const tools'));
+// Extract tool slugs from the base `baseTools` array in tools.ts plus every
+// expansion batch file. Category slugs live in a separate array and are NOT
+// valid /tools/:slug routes, so they are excluded.
+const expansionDir = resolve(__dirname, '../src/config/expansion');
+const sources = [toolsFile.slice(toolsFile.indexOf('const baseTools'))];
+for (const f of readdirSync(expansionDir)) {
+  if (f === 'index.ts') continue;
+  const content = readFileSync(resolve(expansionDir, f), 'utf-8');
+  const toolsIdx = content.indexOf('Tools: ToolMeta[]');
+  const seoIdx = content.indexOf('Seo: Record');
+  if (toolsIdx === -1) continue;
+  sources.push(content.slice(toolsIdx, seoIdx === -1 ? undefined : seoIdx));
+}
+
 const slugRegex = /slug:\s*"([^"]+)"/g;
 const slugs = [];
 let match;
-while ((match = slugRegex.exec(toolsArray)) !== null) {
-  if (!slugs.includes(match[1])) slugs.push(match[1]);
+for (const src of sources) {
+  slugRegex.lastIndex = 0;
+  while ((match = slugRegex.exec(src)) !== null) {
+    if (!slugs.includes(match[1])) slugs.push(match[1]);
+  }
 }
 
 // Extract all blog slugs
@@ -44,6 +58,11 @@ const staticPages = [
   { loc: '/student-tools', priority: '0.8', changefreq: 'weekly' },
   { loc: '/developer-tools', priority: '0.8', changefreq: 'weekly' },
   { loc: '/design-tools', priority: '0.8', changefreq: 'weekly' },
+  { loc: '/finance', priority: '0.8', changefreq: 'weekly' },
+  { loc: '/date-time', priority: '0.8', changefreq: 'weekly' },
+  { loc: '/math-tools', priority: '0.8', changefreq: 'weekly' },
+  { loc: '/productivity', priority: '0.8', changefreq: 'weekly' },
+  { loc: '/writing-tools', priority: '0.8', changefreq: 'weekly' },
   { loc: '/about', priority: '0.5', changefreq: 'monthly' },
   { loc: '/contact', priority: '0.5', changefreq: 'monthly' },
   { loc: '/privacy', priority: '0.3', changefreq: 'yearly' },

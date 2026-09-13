@@ -1,3 +1,5 @@
+import { expansionSeo } from "@/config/expansion";
+
 export interface SeoContent {
   whatIs: string;
   extraSeo?: string;
@@ -2307,5 +2309,5 @@ const seo: Record<string, SeoContent> = {
   }
 };
 
-export const getSeoContent = (slug: string): SeoContent | undefined => seo[slug];
+export const getSeoContent = (slug: string): SeoContent | undefined => seo[slug] ?? expansionSeo[slug];
 export default seo;

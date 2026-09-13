@@ -49,7 +49,7 @@ const Header = () => {
               Categories <ChevronDown className={`h-3.5 w-3.5 transition-transform duration-300 ${catOpen ? 'rotate-180' : ''}`} />
             </button>
             {catOpen && (
-              <div className="absolute top-full left-0 mt-1 w-64 rounded-xl border border-border bg-card p-2 shadow-2xl animate-fade-in">
+              <div className="absolute top-full left-0 mt-1 grid w-[34rem] grid-cols-2 gap-0.5 rounded-xl border border-border bg-card p-2 shadow-2xl animate-fade-in">
                 {categories.map(c => (
                   <Link key={c.slug} to={`/${c.slug}`} className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm hover:bg-secondary/60 transition-all group/item" onClick={() => setCatOpen(false)}>
                     <div className={`h-9 w-9 rounded-lg ${c.bgClass} flex items-center justify-center group-hover/item:scale-110 transition-transform`}>

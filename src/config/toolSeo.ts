@@ -89,16 +89,6 @@ const overrides: Record<string, { title: string; description: string }> = {
 
 const clean = (s: string) => s.replace(/\s+/g, " ").trim();
 
-/** "Calculate percentages, increases and ratios easily." -> "Calculate Percentages" */
-const actionPhrase = (tool: ToolMeta) => {
-  const first = tool.description.split(/[.,—]/)[0] || "";
-  const words = clean(first).split(" ").slice(0, 4).join(" ");
-  return words
-    .split(" ")
-    .map(w => (w.length > 3 ? w[0].toUpperCase() + w.slice(1) : w))
-    .join(" ");
-};
-
 export interface ToolSeo {
   title: string;
   description: string;
@@ -112,7 +102,7 @@ export const getToolSeo = (slug: string): ToolSeo | undefined => {
   const o = overrides[slug];
   if (o) return { title: `${o.title} | ${SITE_NAME}`, description: o.description, path };
 
-  const title = clean(`${tool.title} – ${actionPhrase(tool)} Online`).slice(0, 58);
+  const title = clean(`${tool.title} – Free Online Tool, No Signup`);
   const description = clean(
     `${tool.description} Use it free in your browser — no signup, no downloads, works on mobile and desktop.`
   ).slice(0, 158);

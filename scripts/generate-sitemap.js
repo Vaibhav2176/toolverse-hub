@@ -11,7 +11,7 @@ const blogFile = readFileSync(resolve(__dirname, '../src/config/blogPosts.ts'), 
 // Extract tool slugs from the base `baseTools` array in tools.ts plus every
 // expansion batch file. Category slugs live in a separate array and are NOT
 // valid /tools/:slug routes, so they are excluded.
-const expansionDir = resolve(__dirname, '../src/config/expansion');
+const expansionDir = resolve(__dirname, '../src/config/expansion/batches');
 const sources = [toolsFile.slice(toolsFile.indexOf('const baseTools'))];
 for (const f of readdirSync(expansionDir)) {
   if (f === 'index.ts') continue;
@@ -22,7 +22,7 @@ for (const f of readdirSync(expansionDir)) {
   sources.push(content.slice(toolsIdx, seoIdx === -1 ? undefined : seoIdx));
 }
 
-const slugRegex = /slug:\s*"([^"]+)"/g;
+const slugRegex = /"?slug"?:\s*"([^"]+)"/g;
 const slugs = [];
 let match;
 for (const src of sources) {
